@@ -15,10 +15,9 @@
 		<img class="logo" src="CSS/logo.png">
 		<ul>
 			<li><a href="#" class="active">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Products</a></li>
-			<li><a href="#">Blog</a></li>
-			<li><a href="#">Contact</a></li>
+			<li><a href="#">Notícias</a></li>
+			<li><a href="#">Comunidades</a></li>
+			<li><a href="#">Sobre</a></li>
 		</ul>
 	</div>
 
