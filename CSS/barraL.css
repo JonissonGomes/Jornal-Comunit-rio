@@ -1,0 +1,139 @@
+body {
+	background: url();
+	background-repeat: no-repeat;
+	background-size: 100%;
+
+}
+
+
+/*logo da página*/
+
+
+/* borda do cabeçalho*/
+.fieldsettop{
+	border: none;
+	background:darkgrey;
+	margin: -8px -8px 0px -8px;
+}
+
+.logo {
+	float: left;
+	margin: -80px 10px;
+	width: 200px; 
+	height: 200px;
+}
+
+/*Edição dos Botões*/
+a:link{
+	text-decoration: none;
+}
+
+/* Botões de envio */
+.sendtop{
+	background-color: gray;
+	border: none;
+	border-radius: 8px;
+	color: white;
+	padding: 8px 10px;
+	font-size: 14px;
+	text-align: center;
+	text-decoration: none;
+	float: right;
+	margin-top: 8px;
+	margin-right: 16px;
+}
+
+.sendtop:hover{
+	font-size: 15px;
+	font-weight: bold;
+	transition-duration: 0.2s;
+	color: white;
+}
+
+.send{
+	background-color: darkgray;
+	border: none;
+	color: white;
+	padding: 0px 0px;
+	text-align: center;
+	font-size: 18px;
+	text-decoration: none;
+	border-radius: 8px;
+}
+
+/* Botões do cabeçalho da página */
+.bartop{
+	background-color: gray;
+	border: none;
+	color: white;
+	padding: 8px 14px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	float: left;
+	margin-top: 8px;
+	margin-right: 10px;
+}
+
+
+/* Nome do usuário ao lado dos botões*/
+.usertop{
+	background-color: white;
+	border: none;
+	color: black;
+	padding: 9px 10px;
+	font-size: 20px;
+	text-align: center;
+	text-decoration: none;
+	float: right;
+	margin-top: 3px;
+	margin-right: 8px;
+}
+
+#menu {
+	margin: -8px -8px 0px -8px;
+	width: auto;
+	background-color: #565656;
+	font-size: 16px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	padding: 15px;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 8px 0;
+	list-style: none;
+}
+
+#menu li {
+	display: inline;
+	padding: 8px;
+}
+
+#menu a {
+	color: #FFF;
+	padding: 10px;
+	text-decoration: none;
+}
+
+#menu a:hover {
+	background-color: #1B191B;
+	color: #FFF;
+	border-radius: 20px;
+	
+}
+
+#menu li .active {
+	background-color: #1B191B;
+	color: #FFF;
+	border-radius: 20px;
+}
+
+.lc{
+	position: absolute;
+	float: right;
+	right: 0;
+	margin: 8px;
+}

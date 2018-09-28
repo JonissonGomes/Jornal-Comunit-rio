@@ -1,0 +1,64 @@
+body{
+	background: url(k.jpg);
+	min-height: 100vh;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.formulario{
+	padding-top: 94px;
+}
+
+.login{
+	padding-top: 200px;
+}
+
+h1{
+	text-align: center;
+	font-size: 24px;
+	font-style:sans-serif;
+}
+
+fieldset{
+	border-color:3px gray;
+	background: white;
+	width: 400px;
+	margin-top: 200px;
+	margin-left: 690px;
+}
+
+.cadastrar{
+	text-align: center;
+	font-size: 20px; 
+}
+
+.divlogin{
+	text-align: center;
+}
+
+.send{
+	background-color: gray;
+	border: none;
+	color: white;
+	padding: 8px 10px;
+	text-align: center;
+	font-size: 14px;
+	text-decoration: none;
+	border-radius: 8px;
+}
+
+h2{
+	text-align: center;
+}
+
+.concluido.h1{
+	color: white;
+}
+
+.rodape{
+	position: absolute;
+	bottom: 0;
+	left: 820px;
+	color: white;
+}
