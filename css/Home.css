@@ -1,12 +1,12 @@
 body {
-	background: url();
+	background: url(../img/igarassu.jpg);
 	background-repeat: no-repeat;
 	background-size: 100%;
 
 }
 .fieldsettop{
 	border: none;
-	background:darkgrey;
+	background-color: #565656;
 	margin: -8px -8px 0px -8px;
 }
 
@@ -17,14 +17,14 @@ body {
 	height: 200px;
 }
 
-/*Edição dos Botões*/
+/*EdiÃ§Ã£o dos BotÃµes*/
 a:link{
 	text-decoration: none;
 }
 
-/* Botões de envio */
+/* BotÃµes de envio */
 .sendtop{
-	background-color: gray;
+	background-color: darkgray;
 	border: none;
 	border-radius: 8px;
 	color: white;
@@ -99,7 +99,7 @@ a:link{
 	font-size: 20px;
 }
 
-/* Botões do cabeçalho da página */
+/* BotÃµes do cabeÃ§alho da pÃ¡gina */
 .bartop{
 	background-color: gray;
 	border: none;
@@ -114,7 +114,7 @@ a:link{
 }
 
 
-/* Nome do usuário ao lado dos botões*/
+/* Nome do usuÃ¡rio ao lado dos botÃµes*/
 .usertop{
 	background-color: white;
 	border: none;
@@ -126,17 +126,6 @@ a:link{
 	float: right;
 	margin-top: 3px;
 	margin-right: 8px;
-}
-
-#menu {
-	margin: -8px -8px 0px -8px;
-	width: auto;
-	background-color: #565656;
-	font-size: 16px;
-	font-family: Tahoma, Geneva, sans-serif;
-	font-weight: bold;
-	text-align: center;
-	padding: 15px;
 }
 
 #menu ul {
@@ -175,4 +164,3 @@ a:link{
 	right: 0;
 	margin: 8px;
 }
-

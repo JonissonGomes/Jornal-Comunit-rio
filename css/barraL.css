@@ -1,5 +1,5 @@
 body {
-	background: url();
+	background: url(../img/k.jpg);
 	background-repeat: no-repeat;
 	background-size: 100%;
 
@@ -8,6 +8,12 @@ body {
 
 /*logo da página*/
 
+.logo {
+	float: left;
+	margin: -80px 10px;
+	width: 200px; 
+	height: 200px;
+}
 
 /* borda do cabeçalho*/
 .fieldsettop{
@@ -16,12 +22,6 @@ body {
 	margin: -8px -8px 0px -8px;
 }
 
-.logo {
-	float: left;
-	margin: -80px 10px;
-	width: 200px; 
-	height: 200px;
-}
 
 /*Edição dos Botões*/
 a:link{
@@ -38,6 +38,7 @@ a:link{
 	font-size: 14px;
 	text-align: center;
 	text-decoration: none;
+	font-family: Tahoma, Geneva, sans-serif;
 	float: right;
 	margin-top: 8px;
 	margin-right: 16px;
@@ -56,6 +57,7 @@ a:link{
 	color: white;
 	padding: 0px 0px;
 	text-align: center;
+	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 18px;
 	text-decoration: none;
 	border-radius: 8px;
@@ -85,6 +87,7 @@ a:link{
 	font-size: 20px;
 	text-align: center;
 	text-decoration: none;
+	font-family: Tahoma, Geneva, sans-serif;
 	float: right;
 	margin-top: 3px;
 	margin-right: 8px;
