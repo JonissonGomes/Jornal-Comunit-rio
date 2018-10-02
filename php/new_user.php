@@ -6,7 +6,7 @@ $ps2= $_POST['password'];
 //se as senhas baterem;
 if ($ps == $ps2) {
 	//conecta ao banco 
-	include('./conect.php');
+	include('conect.php');
 	//procura se ja existe usuarioom o nickname passado;
 	$stmt= $pdo->prepare("SELECT * FROM login WHERE nickname=?");
 	$stmt->execute([$us]);

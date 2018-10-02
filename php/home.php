@@ -12,7 +12,7 @@ if(!isset ($_SESSION['user'])){
 <head>
 	<meta charset="UTF-8">
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="CSS/Home.css">
+	<link rel="stylesheet" type="text/css" href="../css/Home.css">
 </head>
 <body>
 	<header>
@@ -29,12 +29,12 @@ if(!isset ($_SESSION['user'])){
 
 						<p> <a href="noticia.php"> <button class="drop"> Notícias </button> </a></p>
 
-						<p> <a href="sobre.php"> <button class="drop"> Conheça-nos </button> </a></p>
+						<p> <a href="../html/pessoas.html"> <button class="drop"> Conheça-nos </button> </a></p>
 
 					</div>
 				</div>
 
-				<img class="logo" src="CSS/logo.png">
+				<img class="logo" src="../img/logo.png">
 
 				<a href="logout.php"> <button class="sendtop"> Sair </button> </a>
 
