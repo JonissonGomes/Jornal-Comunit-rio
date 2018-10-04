@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href= "../css/form.css">
+ 	<?php include('bar.php'); ?>
 </head>
 <body>
 	<div class="login">
@@ -11,11 +12,11 @@
 			<center>
 				<h1>Entrar</h1>
 				<?php 
-				if(isset($_SESSION['logado'])){
+				if(isset($_SESSION['inc'])){
 				?>
 				<span style="color: blue;">Usuário cadastrado com sucesso!</span>
 				<?php
-				unset($_SESSION['logado']);
+				unset($_SESSION['inc']);
 				}if (isset($_SESSION['error'])){
 				?>
 				<span style="color: red;">Usuário não existe!</span>
@@ -27,13 +28,13 @@
 					<p>Login: <input type="text" name="user" placeholder="Usuário"></p>
 					<p>Senha: <input type="password" name="pass" placeholder="Digite sua senha"></p>
 					<input class="send" type="submit" value="Login">
-					<a href="cadastro.php" class="send">Cadastrar</a>
+					<a href="cadastro.php"><button class="send">Cadastrar</button></a>
 				</form>
 			</center>
 		</fieldset>
 	</div>
-	<footer class="rodape">
-		<center><p class="trodape">Copyright - Jornal comunitario </center>
+	<footer>
+		<center>Copyright - Jornal comunitario </center>
 	</footer>
 </body>
 </html>

@@ -1,7 +1,6 @@
 <?php 
 
 session_start();
-
 if(!isset ($_SESSION['user'])){
 	header('location:login.php');
 }
@@ -13,12 +12,11 @@ if(!isset ($_SESSION['user'])){
 	<meta charset="UTF-8">
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="../css/Home.css">
-</head>
+	<?php include('bar.php'); ?>
+	</head>
 <body>
-	<header>
-		<div class="cabecalho">
-			<fieldset class="fieldsettop">
-
+<!-- 	<header>
+		<div id="menu">
 				<div class="dropdown">
 					&#9776;
 
@@ -33,14 +31,8 @@ if(!isset ($_SESSION['user'])){
 
 					</div>
 				</div>
-
-				<img class="logo" src="../img/logo.png">
-
-				<a href="logout.php"> <button class="sendtop"> Sair </button> </a>
-
-			</fieldset>
 		</div>
-	</header>
+	</header> -->
 
 </body>
 </html>

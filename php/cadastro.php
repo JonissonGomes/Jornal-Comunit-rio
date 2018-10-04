@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 	<title>Cadastro</title>
 	<link rel="stylesheet" type="text/css" href="../css/form.css">
+	<?php include('bar.php');?>
 </head>
 <body>
 	<fieldset class="cadastrar">
