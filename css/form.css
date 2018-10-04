@@ -26,7 +26,7 @@ fieldset{
 	margin-right: 40%;
 	margin-top: 15%;
 	margin-left: 40%;
-	border-radius: 10px;
+	border-radius: 6px;
 }
 
 .cadastrar{
@@ -44,9 +44,8 @@ fieldset{
 	color: white;
 	padding: 8px 8px;
 	text-align: center;
-	font-size: 14px;
+	font-size: 10px;
 	text-decoration: none;
-	border-radius: 10px;
 }
 
 h2{
@@ -57,7 +56,7 @@ h2{
 	color: white;
 }
 
-.rodape{
+footer{
 	position: absolute;
 	bottom: 0;
 	right: 30%;

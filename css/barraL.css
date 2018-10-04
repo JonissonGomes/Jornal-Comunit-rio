@@ -8,11 +8,11 @@ body {
 
 /*logo da página*/
 
-.logo {
+.logo{
 	float: left;
-	margin: -80px 10px;
-	width: 200px; 
-	height: 200px;
+	margin: -120px -8px;
+	width: 200; 
+	height: 200;
 }
 
 /* borda do cabeçalho*/
@@ -24,8 +24,8 @@ body {
 
 
 /*Edição dos Botões*/
-a:link{
-	text-decoration: none;
+a{
+    text-decoration:none;
 }
 
 /* Botões de envio */
@@ -139,4 +139,13 @@ a:link{
 	float: right;
 	right: 0;
 	margin: 8px;
+}
+footer{
+	bottom: 0;
+	text-align: center;
+	margin-top: 24.3%;
+	width: 100%;
+	background-color: #565656;
+	color:white;
+
 }
