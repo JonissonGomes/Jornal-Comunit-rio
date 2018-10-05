@@ -15,15 +15,9 @@
 		<a href="logout.php"> <button class="sendtop"> Sair </button> </a>
 	    <?php }else{ 	
 	    	} ?>
-	</div>
-	
-	
-	 <div>
-		<img src="../img/logo.png" class="logo">
-	 	
-	 </div>  
+	</div>  
 	<div id="menu">
-	
+	<img src="../img/logo.png" class="logo">
 	<ul>
 			<!-- marca o link da pagina atual em que o usuario esta acessando //a concluir -->
 			<?php if ($paginaCorrente == "index.php"){?>

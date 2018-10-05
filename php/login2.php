@@ -6,7 +6,7 @@ $ps= $_POST['pass'];
 
 include('conect.php');
 
-$stmt= $pdo->prepare("SELECT * FROM login WHERE nickname=? and senha=?");
+$stmt= $pdo->prepare("SELECT * FROM users WHERE username=? and password=?");
 $stmt->execute([$us,$ps]);
 $data = $stmt-> fetchall();
 

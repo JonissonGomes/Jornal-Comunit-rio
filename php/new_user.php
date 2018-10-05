@@ -8,7 +8,7 @@ if ($ps == $ps2) {
 	//conecta ao banco 
 	include('conect.php');
 	//procura se ja existe usuarioom o nickname passado;
-	$stmt= $pdo->prepare("SELECT * FROM login WHERE nickname=?");
+	$stmt= $pdo->prepare("SELECT * FROM users WHERE username=?");
 	$stmt->execute([$us]);
 	$data = $stmt-> fetchall();
 	if (in_array($us, $data)) {
@@ -17,7 +17,7 @@ if ($ps == $ps2) {
 	}
 //se não houver ira cadastrar o usuario;
 	else{
-		$stmt= $pdo->prepare("INSERT INTO login (nickname, senha) VALUES (?,?)");
+		$stmt= $pdo->prepare("INSERT INTO users (username, password) VALUES (?,?)");
 		$stmt->execute([$us,$ps]);
 		$_SESSION['inc']='Usuario cadastrado com sucesso';
 		header('location:login.php');

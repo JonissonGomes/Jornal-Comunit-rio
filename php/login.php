@@ -8,7 +8,6 @@
 </head>
 <body>
 	<div class="login">
-		<fieldset class="divlogin">
 			<center>
 				<h1>Entrar</h1>
 				<?php 
@@ -27,14 +26,10 @@
 				<form method="post" action="login2.php">
 					<p>Login: <input type="text" name="user" placeholder="Usuário"></p>
 					<p>Senha: <input type="password" name="pass" placeholder="Digite sua senha"></p>
-					<input class="send" type="submit" value="Login">
-					<a href="cadastro.php"><button class="send">Cadastrar</button></a>
+					<input class="enviar" type="submit" value="Login">
 				</form>
+			<a href="../index.php"><button class="enviar">voltar</button></a>
 			</center>
-		</fieldset>
 	</div>
-	<footer>
-		<center>Copyright - Jornal comunitario </center>
-	</footer>
 </body>
 </html>

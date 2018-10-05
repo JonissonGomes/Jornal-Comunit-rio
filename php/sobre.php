@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
-	<title>Sobre dos bbzinhos</title>
+	<title>Sobre</title>
 	<link rel="stylesheet" type="text/css" href="../css/sobre.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> 
 </head>
