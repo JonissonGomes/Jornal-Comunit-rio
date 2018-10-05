@@ -1,18 +1,10 @@
-body {
-	background: url(../img/k.jpg);
-	background-repeat: no-repeat;
-	background-size: 100%;
-
-}
-
-
 /*logo da página*/
 
 .logo{
 	float: left;
-	margin: -120px -8px;
-	width: 200; 
-	height: 200;
+	margin: -80px -8px;
+	width: 200px; 
+	height: 200px;
 }
 
 /* borda do cabeçalho*/
@@ -139,13 +131,4 @@ a{
 	float: right;
 	right: 0;
 	margin: 8px;
-}
-footer{
-	bottom: 0;
-	text-align: center;
-	margin-top: 24.3%;
-	width: 100%;
-	background-color: #565656;
-	color:white;
-
 }

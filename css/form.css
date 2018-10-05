@@ -1,6 +1,6 @@
 body{
 	background: url(../img/k.jpg);
-	min-height: 100vh;
+	min-height: 98vh;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -10,23 +10,14 @@ body{
 	padding-top: 94px;
 }
 
-.login{
-	padding-top: 200px;
-}
-
 h1{
 	text-align: center;
 	font-size: 24px;
 	font-style:sans-serif;
 }
 
-fieldset{
-	border-color:darkgrey;
-	background: white;
-	margin-right: 40%;
-	margin-top: 15%;
-	margin-left: 40%;
-	border-radius: 6px;
+.login{
+	
 }
 
 .cadastrar{
@@ -34,32 +25,30 @@ fieldset{
 	font-size: 20px; 
 }
 
-.divlogin{
-	text-align: center;
+.login {
+    text-align: center;
+    margin: 14% 36% 18% 37%;
+    border-color:darkgrey;
+	background: white;
+	border-radius: 6px;
+}
+.cadastro {
+    text-align: center;
+    margin: 12% 36% 13% 37%;
+    border-color:darkgrey;
+	background: white;
+	border-radius: 6px;
 }
 
-.send{
-	background-color: gray;
-	border: none;
-	color: white;
-	padding: 8px 8px;
-	text-align: center;
-	font-size: 10px;
-	text-decoration: none;
-}
+.enviar{
+    background-color: gray;
+    border: none;
+    color: white;
 
 h2{
 	text-align: center;
 }
 
 .concluido.h1{
-	color: white;
-}
-
-footer{
-	position: absolute;
-	bottom: 0;
-	right: 30%;
-	left: 30%;
 	color: white;
 }
