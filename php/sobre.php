@@ -9,7 +9,7 @@
 <body>
 <?php include("bar.php");?>
 	<h1>Conheça-nos!</h1>
-	O jornal comunitário, tem como público alvo as comunidades, onde a população pode expor suas reclamações e dicas para a melhoria da sua localidade.
+<h4>O jornal comunitário, tem como público alvo as comunidades, onde a população pode expor suas reclamações e dicas para a melhoria da sua localidade.</h4>
 	<hr>
 	<fieldset class="fundobranco">
 	<div class="alinha">
