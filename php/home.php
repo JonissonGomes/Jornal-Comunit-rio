@@ -13,18 +13,30 @@ if(!isset ($_SESSION['user'])){
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="../css/Home.css">
 	<?php include('bar.php'); ?>
-	</head>
+</head>
+
 <body>
-<form method="post" action="post.php">
-	<label>Titulo</label>
-	<input type="text" name="title" maxlength="60">
-	<label>Descrição</label>
-	<input type="text" name="desc" maxlength="120">
-	<label>Postagem</label>
-	<textarea name="post" maxlength="510" cols="30" rows="5"></textarea>
-	<!-- <input type="text" name="post" maxlength="510"><br> -->
-	<input type="submit" name="">
-</form>
+
+
+
+	<fieldset class="POSTS">
+		<form method="post" action="post.php">
+			<hr>
+			<fieldset class="descricao">
+				<label>Titulo:</label>
+				<input type="text" name="title" size="20" maxlength="40">
+				<label>Descrição:</label>
+				<input type="text" name="desc" size="20" maxlength="120">
+			</fieldset>
+
+			<label>Postagem:</label><br>
+			<textarea name="post" maxlength="510" cols="63" rows="3"></textarea>
+			<br>
+			<!-- <input type="text" name="post" maxlength="510"><br> -->
+			<input class="sendtop" type="submit" name="">
+			<hr>
+		</form>
+	</fieldset>
 
 	<?php 
 	include('conect.php');
@@ -32,17 +44,18 @@ if(!isset ($_SESSION['user'])){
 	$feed->execute();
 	$posts=$feed->fetchall();
 	for ($i=0; $i < sizeof($posts); $i++) { 
-	
-		echo '<div style="background-color: white; width: auto;max-width: 100000px;">';
+
+		echo '<div class="postagens">';
 		echo "<h1>".$posts[$i]['title']."</h1>";
 		echo "<h2>".$posts[$i]['descricao']."</h2>";
 		echo "<p>".$posts[$i]['post']."</p>";
 		echo "</div><br>";
-	
-	}
 
+	}
+	
 
 	?>
+
 </body>
 </html>
 </body>
