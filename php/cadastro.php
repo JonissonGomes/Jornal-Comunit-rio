@@ -1,17 +1,14 @@
-
-
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Cadastro</title>
 	<link rel="stylesheet" type="text/css" href="../css/form.css">
-	<?php include('bar.php');?>
-	<?php session_start();
-
+	<?php include('bar.php');
  	if (isset($_SESSION['erro'])) { ?>
  		<script type="text/javascript">
- 			alert(<?=$_SESSION['erro']?>);
+ 			alert("<?=$_SESSION['erro']?>");
  		</script>
 
  	<?php unset($_SESSION['erro']); }?>

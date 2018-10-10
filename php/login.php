@@ -1,15 +1,15 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href= "../css/form.css">
- 	<?php include('bar.php'); ?>
- 	<?php session_start();
+ 	<?php include('bar.php');  	
 
  	if (isset($_SESSION['inc'])) { ?>
  		<script type="text/javascript">
- 			alert(<?=$_SESSION['inc']?>);
+ 			alert("<?=$_SESSION['inc']?>");
  		</script>
 
  	<?php unset($_SESSION['inc']); }?>

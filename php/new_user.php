@@ -11,7 +11,7 @@ if ($ps == $ps2) {
 	$stmt= $pdo->prepare("SELECT * FROM users WHERE username=?");
 	$stmt->execute([$us]);
 	$data = $stmt-> fetchall();
-	if (in_array($us, $data)) {
+	if (in_array($us, $data[0])) {
 		$_SESSION['erro']= "Nome de usuario ja existe";
 		header('location:cadastro.php');
 	}
