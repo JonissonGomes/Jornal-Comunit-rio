@@ -28,13 +28,13 @@ if(!isset ($_SESSION['user'])){
 
 	<?php 
 	include('conect.php');
-	$feed=$pdo->prepare('SELECT * FROM posts');
+	$feed=$pdo->prepare('SELECT * FROM post');
 	$feed->execute();
 	$posts=$feed->fetchall();
 	for ($i=0; $i < sizeof($posts); $i++) { 
 	
 		echo '<fieldset style="background-color: white; ;">';
-		echo "<h1>".$posts[$i]['tiltle']."</h1>";
+		echo "<h1>".$posts[$i]['title']."</h1>";
 		echo "<h2>".$posts[$i]['descricao']."</h2>";
 		echo "<p>".$posts[$i]['post']."</p>";
 		echo "</fieldset><br>";

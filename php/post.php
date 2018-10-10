@@ -6,7 +6,7 @@ $title=$_POST['title'];
 include('conect.php');
 
 
-$stmt= $pdo->prepare("INSERT INTO posts (title,descricao,post) VALUES (?,?,?)");
+$stmt= $pdo->prepare("INSERT INTO post (title,descricao,post) VALUES (?,?,?)");
 $stmt->execute([$title,$desc,$post]);
 
 header("location:home.php");
