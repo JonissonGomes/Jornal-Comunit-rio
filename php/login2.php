@@ -12,6 +12,7 @@ $data = $stmt-> fetchall();
 
 if ($data != null) {
 			$_SESSION['user']=$us;
+			$_SESSION['id']=$data[0]['id'];
 			header('location:home.php');
 }else{
 	$_SESSION['inc']='Usuario ou Senha incorreta(o)';

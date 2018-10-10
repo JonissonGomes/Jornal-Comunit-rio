@@ -33,17 +33,16 @@ if(!isset ($_SESSION['user'])){
 	$posts=$feed->fetchall();
 	for ($i=0; $i < sizeof($posts); $i++) { 
 	
-		echo '<fieldset style="background-color: white; ;">';
+		echo '<div style="background-color: white; width: auto;max-width: 100000px;">';
 		echo "<h1>".$posts[$i]['title']."</h1>";
 		echo "<h2>".$posts[$i]['descricao']."</h2>";
 		echo "<p>".$posts[$i]['post']."</p>";
-		echo "</fieldset><br>";
+		echo "</div><br>";
 	
 	}
 
 
 	?>
-</fieldset>
 </body>
 </html>
 </body>
