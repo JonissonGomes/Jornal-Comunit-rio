@@ -5,24 +5,19 @@
 	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href= "../css/form.css">
  	<?php include('bar.php'); ?>
+ 	<?php session_start();
+
+ 	if (isset($_SESSION['inc'])) { ?>
+ 		<script type="text/javascript">
+ 			alert(<?=$_SESSION['inc']?>);
+ 		</script>
+
+ 	<?php unset($_SESSION['inc']); }?>
 </head>
 <body>
 	<div class="login">
 			<center>
 				<h1>Entrar</h1>
-				<?php 
-				if(isset($_SESSION['inc'])){
-				?>
-				<span style="color: blue;">Usuário cadastrado com sucesso!</span>
-				<?php
-				unset($_SESSION['inc']);
-				}if (isset($_SESSION['error'])){
-				?>
-				<span style="color: red;">Usuário não existe!</span>
-				<?php
-				unset($_SESSION['error']);
-				}
-				?>
 				<form method="post" action="login2.php">
 					<p>Login: <input type="text" name="user" placeholder="Usuário"></p>
 					<p>Senha: <input type="password" name="pass" placeholder="Digite sua senha"></p>

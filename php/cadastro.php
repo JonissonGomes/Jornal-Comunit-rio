@@ -7,6 +7,14 @@
 	<title>Cadastro</title>
 	<link rel="stylesheet" type="text/css" href="../css/form.css">
 	<?php include('bar.php');?>
+	<?php session_start();
+
+ 	if (isset($_SESSION['erro'])) { ?>
+ 		<script type="text/javascript">
+ 			alert(<?=$_SESSION['erro']?>);
+ 		</script>
+
+ 	<?php unset($_SESSION['erro']); }?>
 </head>
 <body>
 	<div class="cadastro">
