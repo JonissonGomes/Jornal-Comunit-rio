@@ -17,7 +17,7 @@
 
 /*Edição dos Botões*/
 a{
-    text-decoration:none;
+	text-decoration:none;
 }
 
 /* Botões de envio */
@@ -50,9 +50,9 @@ a{
 	padding: 0px 0px;
 	text-align: center;
 	font-family: Tahoma, Geneva, sans-serif;
-	font-size: 18px;
+	font-size: 20px;
 	text-decoration: none;
-	border-radius: 8px;
+	border-radius: 4px;
 }
 
 /* Botões do cabeçalho da página */
@@ -60,31 +60,36 @@ a{
 	background-color: gray;
 	border: none;
 	color: white;
-	padding: 8px 14px;
 	font-size: 15px;
 	text-align: center;
 	text-decoration: none;
 	float: left;
 	margin-top: 8px;
-	margin-right: 10px;
+	margin-right: 2px;
 }
 
-
-/* Nome do usuário ao lado dos botões*/
-.usertop{
-	background-color: white;
-	border: none;
-	color: black;
-	padding: 9px 10px;
-	font-size: 20px;
-	text-align: center;
-	text-decoration: none;
-	font-family: Tahoma, Geneva, sans-serif;
-	float: right;
-	margin-top: 3px;
-	margin-right: 8px;
+.enviar{
+	background-color: gray;
+	border-radius: 10px;
+	font-size: 14px;
+	font-family: 'Merriweather', serif;
+	padding-left: 10px;
+	padding-right: 10px; 
+	padding-top:3px;
+	padding-bottom: 3px; 
+}
+.enviar:hover{
+	border-radius: 10px;
+	background-color: black;
+	color: white;
+	font-size: 14px;
+	font-family: 'Merriweather', serif;
 }
 
+p{
+	font-size: 18px;
+}
+/*Tabelas*/
 #menu {
 	margin: -8px -8px 0px -8px;
 	width: auto;

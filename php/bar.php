@@ -31,9 +31,9 @@
 			<li><a href="home.php" <?php if ($paginaCorrente == "home.php") { echo 'class="active"';} ?>>Notícias</a></li>	
 			<?php }	?>	
 			<?php if ($paginaCorrente == "index.php"){?>
-			<li><a href="php/comunidade.php" >Comunidades</a></li>	
+			<li><a href="php/comunidades.php" >Comunidades</a></li>	
 			<?php } else { ?>
-			<li><a href="comunidade.php" >Comunidades</a></li>	
+			<li><a href="comunidades.php" >Comunidades</a></li>	
 			<?php }	?>
 			<?php if ($paginaCorrente == "index.php"){?>
 			<li><a href="php/sobre.php" >Sobre</a></li>	

@@ -6,10 +6,10 @@
 	<link rel="stylesheet" type="text/css" href="../css/sobre.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> 
 </head>
-<body>
+<body style="background-image:url('../img/igarassu3.jpg'); background-size:100%; background-repeat:no repeat; " >
 <?php include("bar.php");?>
 	<h1>Conheça-nos!</h1>
-<h4>O jornal comunitário, tem como público alvo as comunidades, onde a população pode expor suas reclamações e dicas para a melhoria da sua localidade.</h4>
+	<h4>O jornal comunitário, tem como público alvo as comunidades, onde a população pode expor suas reclamações e dicas para a melhoria da sua localidade.</h4>
 	<hr>
 	<fieldset class="fundobranco">
 	<div class="alinha">
@@ -50,9 +50,5 @@
 	</fieldset>
 	</div>
 	</fieldset>
-	<footer>
-		Copyright - Jornal Comunitário
-	</footer>
-	
 </body>
 </html>
