@@ -1,0 +1,22 @@
+body{
+    color: white;
+    min-height:768px ;
+    min-width: 1024px;
+}
+
+.cortar{
+    
+    width:200px;
+    height:20px;
+    padding:20px;
+    border:1px solid black;
+        
+    overflow:hidden;
+    background-color: darkgray;
+}
+.cortar:hover {
+    width: auto;
+    white-space: initial;
+    overflow:visible;
+    cursor: pointer;
+}
