@@ -28,7 +28,7 @@ if(!isset ($_SESSION['user'])){
 				<input type="text" id="desc" name="desc" size="20" maxlength="120">
 				<label class="file" >
 					<span data-default='Choose file'> Escolher Imagem</span>
-				<input type="file" name="imagem" required>
+				<input type="file" name="imagem">
 				</label>
 			</fieldset>
 
