@@ -1,11 +1,15 @@
 <?php 
 session_start();
-$desc= $_POST['desc'];
-$post=$_POST['post'];
-$title=$_POST['title'];
-// $texto = str_replace(' ','' ,$_FILES[ 'imagem' ][ 'name' ] );
-$destino = '../img/'.date('d-m-Y').time() ;
+$re = '/jpg|png|jpge/m';
+preg_match_all($re, $_FILES['imagem']['name'], $nam, PREG_SET_ORDER, 0);
+if ($nam!=null) {
+$destino = '../img/'.date('d-m-Y')."_".date('h:m:s') ;
 $arquivo_tmp = $_FILES[ 'imagem' ][ 'tmp_name' ];
+}
+$desc= strip_tags($_POST['desc']);
+$post=strip_tags($_POST['post']);
+$title=strip_tags($_POST['title']);
+
  move_uploaded_file ( $arquivo_tmp, $destino );
 include('conect.php');
 

@@ -1,7 +1,7 @@
 <?php session_start();
-$us= $_POST['user'];
-$ps= $_POST['pass'];
-$ps2= $_POST['password'];
+$us= addslashes($_POST['user']);
+$ps= addslashes($_POST['pass']);
+$ps2= addslashes($_POST['password']);
 
 //se as senhas baterem;
 if ($ps == $ps2) {

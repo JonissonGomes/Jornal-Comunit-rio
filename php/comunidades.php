@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Comunidades</title>
-	<link rel="stylesheet" href="/css/comunidades.css">
+    <?php include("bar.php"); ?>
+    <link rel="stylesheet" href="/css/comunidades.css">
 </head>
 <body>
     

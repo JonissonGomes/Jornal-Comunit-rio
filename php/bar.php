@@ -2,8 +2,7 @@
 	<link rel="shortcut icon" href="../img/icon.png" >
     <div class="lc">
     <!-- ver qual a pagina que o usuario esta acessando -->
-    	<?php $paginaCorrente = basename($_SERVER['PHP_SELF']);?>
-     <?php
+    	<?php $paginaCorrente = basename($_SERVER['PHP_SELF']);
      /*se o usuario não estiver logado mostrara os links para login e cadastro*/
     if(!isset($_SESSION['user']) && $paginaCorrente == "index.php" ){ ?>
 		<a href="php/cadastro.php"> <button class="sendtop" > Cadastrar-se</button></a>
@@ -13,30 +12,26 @@
 	    <a href="php/logout.php"> <button class="sendtop"> Sair </button> </a>
 	    <?php }elseif(isset($_SESSION['user'])){?>
 		<a href="logout.php"> <button class="sendtop"> Sair </button> </a>
-	    <?php }else{ 	
-	    	} ?>
+	    <?php } ?>
 	</div>  
 	<div id="menu">
-	<img src="../img/logo.png" class="logo">
-	<ul>
+	<a href="/index.php"><img src="../img/logo.png" class="logo"></a>
+	<ul id="menu2">
 			<!-- marca o link da pagina atual em que o usuario esta acessando //a concluir -->
 			<?php if ($paginaCorrente == "index.php"){?>
 			<li><a href="index.php" <?php if ($paginaCorrente == "index.php") { echo 'class="active"';} ?>>Home</a></li>	
 			<?php } else { ?>
-			<li><a href="../index.php">Home</a></li>	
-			<?php }	?>
-			<?php if ($paginaCorrente == "index.php"){?>
+			<li><a href="/index.php">Home</a></li>	
+			<?php }	 if ($paginaCorrente == "index.php"){?>
 			<li><a href="/php/home.php" >Notícias</a></li>	
 			<?php } else { ?>
 			<li><a href="home.php" <?php if ($paginaCorrente == "home.php") { echo 'class="active"';} ?>>Notícias</a></li>	
-			<?php }	?>	
-			<?php if ($paginaCorrente == "index.php"){?>
-			<li><a href="php/comunidades.php" >Comunidades</a></li>	
+			<?php } if ($paginaCorrente == "index.php"){?>
+			<li><a href="/php/comunidades.php" >Comunidades</a></li>	
 			<?php } else { ?>
-			<li><a href="comunidades.php" >Comunidades</a></li>	
-			<?php }	?>
-			<?php if ($paginaCorrente == "index.php"){?>
-			<li><a href="php/sobre.php" >Sobre</a></li>	
+			<li><a href="comunidades.php" <?php if ($paginaCorrente == "comunidades.php") { echo 'class="active"';} ?>>Comunidades</a></li>	
+			<?php }	if ($paginaCorrente == "index.php"){?>
+			<li><a href="/php/sobre.php" >Sobre</a></li>	
 			<?php } else { ?>
 			<li><a href="sobre.php"<?php if ($paginaCorrente == "sobre.php") { echo 'class="active"';} ?>>Sobre</a></li>	
 			<?php }	?>
