@@ -1,6 +1,4 @@
-<?php 
-
-session_start();
+<?php include('bar.php');
 if(!isset ($_SESSION['user'])){
 	header('location:login.php');
 }
@@ -12,7 +10,6 @@ if(!isset ($_SESSION['user'])){
 	<meta charset="UTF-8">
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="../css/home.css">
-	<?php include('bar.php'); ?>
 </head>
 
 <body>
