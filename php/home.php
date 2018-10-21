@@ -50,6 +50,9 @@ if(!isset ($_SESSION['user'])){
 		echo "<h2>".$posts[$i]['descricao']."</h2>";
 		echo "<p>".$posts[$i]['post']."</p>";
 		echo '<img src="'.$posts[$i]['imagem'].'">';
+		if ($_SESSION['id']==$posts[$i]['user_id']) {
+			echo '<a href="#" >excluir</a>';
+		}
 		echo "</div><br>";
 
 	}
