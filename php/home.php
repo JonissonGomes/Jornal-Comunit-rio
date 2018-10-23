@@ -32,7 +32,6 @@ if(!isset ($_SESSION['user'])){
 			<label>Postagem:</label><br>
 			<textarea name="post" maxlength="510" cols="63" rows="3" required></textarea>
 			<br>
-			<!-- <input type="text" name="post" maxlength="510"><br> -->
 			<input class="sendtop" type="submit" name="">
 			<hr>
 		</form>
@@ -50,9 +49,12 @@ if(!isset ($_SESSION['user'])){
 		echo "<h2>".$posts[$i]['descricao']."</h2>";
 		echo "<p>".$posts[$i]['post']."</p>";
 		echo '<img src="'.$posts[$i]['imagem'].'">';
+		echo '<div class="postA">';
 		if ($_SESSION['id']==$posts[$i]['user_id']) {
-			echo '<a href="#" >excluir</a>';
+			echo '<button ><a href="#" >Excluir </a></button>';
+			echo '<a href="/php/editar.php?edit='.$posts[$i]['id'].'" ><button > Editar </button></a>';
 		}
+		echo "</div>";
 		echo "</div><br>";
 
 	}

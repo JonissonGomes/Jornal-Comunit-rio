@@ -74,6 +74,27 @@ span{
     border-radius: 2px;
     font: normal 14px/1.412 Helvetica;
     }
+   .postA button{
+   	width: 50vh	;
+		text-align: center;
+    margin: 10px 0 10px;
+    padding: 5px 5px;
+    text-decoration: none;
+    background: #418edb;
+    border-radius: 5px;
+    font: normal 14px/1.412 Helvetica;
+    cursor: pointer;
+    }
+    .postA {
+    	margin-left: 5px;
+    	text-align: center;
+    }
+    .postA a{
+    	color: #fff;
+    }
+    .postA button:hover{
+    	box-shadow: 2px 2px 2px #418efe ;
+    }
 @media (max-width: 767px) {
 	
   body {
