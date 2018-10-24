@@ -19,10 +19,11 @@ session_start();
 <img style="width: 50%;" src="<?=$posts['imagem']?>">
 	</div>
 	<div>
-		<form>
+		<form action="comentar.php" method="post">
 			<textarea name="coment" ></textarea>
 			<input type="submit" name="">
 		</form>
 	</div>
+	
 </body>
 </html>

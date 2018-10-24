@@ -18,7 +18,7 @@ $post=strip_tags($_POST['post']);
 $title=strip_tags($_POST['title']);
 
 move_uploaded_file ( $arquivo_tmp, $destino );
-$update=$pdo->prepare("UPDATE posts SET user_id= ?, title=? , descricao=? , post=? , imagem=? WHERE id=".$_POST['id']);
+$update=$pdo->prepare("UPDATE posts SET users_id= ?, title=? , descricao=? , post=? , imagem=? WHERE id=".$_POST['id']);
 $update->execute([$_SESSION['id'],$title,$desc,$post,$destino]);
 
 

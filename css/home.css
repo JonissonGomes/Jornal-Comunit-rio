@@ -22,7 +22,7 @@ body {
 	overflow: hidden;
 	text-overflow:ellipsis;
 	direction: ltr;
-	background-color: lightgrey; 
+	background-color: #fff; 
 	width: auto;
 	max-width: 1200px;
 	border: 2px ;

@@ -1,4 +1,5 @@
-<?php include('bar.php');
+<?php 
+session_start();
 if(!isset ($_SESSION['user'])){
 	header('location:login.php');
 }
@@ -7,6 +8,7 @@ if(!isset ($_SESSION['user'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<?php include('bar.php');?>
 	<meta charset="UTF-8">
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="../css/home.css">
@@ -37,6 +39,16 @@ window.location.assign("/php/excluir.php?del="+id);
 					<span data-default='Choose file'> Escolher Imagem</span>
 				<input type="file" name="imagem">
 				</label>
+				<select>
+					<?php
+						include('conect.php');
+						$stmt=$pdo->prepare("SELECT * FROM comunidades");
+						$stmt->execute();
+						$com=$stmt->fetchall();
+					 for ($i=0; $i < sizeof($com); $i++) { 
+						echo '<option value="'.$com[$i]['id'].'">'.$com[$i]['nome'].'</option>';
+					}?>
+				</select>
 			</fieldset>
 
 			<label>Postagem:</label><br>
@@ -58,7 +70,9 @@ window.location.assign("/php/excluir.php?del="+id);
 		echo '<a href="coment.php?post='.$posts[$i]['id'].'"><h1>'.$posts[$i]['title']."</h1></a>";
 		echo "<h2>".$posts[$i]['descricao']."</h2>";
 		echo "<p>".$posts[$i]['post']."</p>";
+		if ($posts[$i]['imagem']!=null) {
 		echo '<a href="coment.php?post='.$posts[$i]['id'].'"><img src="'.$posts[$i]['imagem'].'"></a>';
+		}
 		echo '<div class="postA">';
 		if ($_SESSION['id']==$posts[$i]['users_id']) {
 			echo '<a onclick="confirma('.$posts[$i]['id'].')" ><button >Excluir </button></a>';

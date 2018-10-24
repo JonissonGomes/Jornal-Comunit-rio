@@ -8,6 +8,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<?php include('bar.php');?>
 	<meta charset="UTF-8">
 	<title>Editar</title>
 	<link rel="stylesheet" type="text/css" href="/css/home.css">
@@ -23,7 +24,7 @@ session_start();
 				<input type="text" id="desc" name="desc" size="20" maxlength="120" value="<?=$posts['descricao']?>">
 				<label class="file" >
 					<span data-default='Choose file'> Escolher Imagem</span>
-				<input type="file" name="imagem" value="<?=$posts['imagem']?>">
+				<input type="file" name="imagem" ">
 				</label>
 			</fieldset>
 
