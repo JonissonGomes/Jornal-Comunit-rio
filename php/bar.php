@@ -1,4 +1,4 @@
-   <?php session_start(); ?>
+
     <link rel="stylesheet" type="text/css" href="../css/barraL.css" >
 	<link rel="shortcut icon" href="../img/icon.png" >
     <div class="lc">

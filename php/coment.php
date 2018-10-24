@@ -1,8 +1,11 @@
 <?php 
 session_start();
+if (isset($_GET['post'])) {
+$_SESSION['post']=$_GET['post'];
+}
 	include('conect.php');
 	$feed=$pdo->prepare('SELECT * FROM posts WHERE id=?');
-	$feed->execute([$_GET['post']]);
+	$feed->execute([$_SESSION['post']]);
 	$posts=$feed->fetch();
 	?>
 <!DOCTYPE html>
@@ -24,6 +27,5 @@ session_start();
 			<input type="submit" name="">
 		</form>
 	</div>
-	
 </body>
 </html>
