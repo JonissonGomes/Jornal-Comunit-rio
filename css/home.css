@@ -89,7 +89,7 @@ span{
     	margin-left: 5px;
     	text-align: center;
     }
-    .postA a{
+    .postA button{
     	color: #fff;
     }
     .postA button:hover{

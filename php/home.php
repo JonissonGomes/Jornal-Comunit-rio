@@ -10,6 +10,16 @@ if(!isset ($_SESSION['user'])){
 	<meta charset="UTF-8">
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="../css/home.css">
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+function confirma(id){
+decisao = confirm("Deseja excluir a publicação ?");
+
+if (decisao){
+window.location.assign("/php/excluir.php?del="+id);
+
+}
+}
+</SCRIPT>
 </head>
 
 <body>
@@ -45,21 +55,19 @@ if(!isset ($_SESSION['user'])){
 	for ($i=sizeof($posts)-1; $i >=0 ; $i--) { 
 
 		echo '<div class="postagens">';
-		echo "<h1>".$posts[$i]['title']."</h1>";
+		echo '<a href="coment.php?post='.$posts[$i]['id'].'"><h1>'.$posts[$i]['title']."</h1></a>";
 		echo "<h2>".$posts[$i]['descricao']."</h2>";
 		echo "<p>".$posts[$i]['post']."</p>";
-		echo '<img src="'.$posts[$i]['imagem'].'">';
+		echo '<a href="coment.php?post='.$posts[$i]['id'].'"><img src="'.$posts[$i]['imagem'].'"></a>';
 		echo '<div class="postA">';
-		if ($_SESSION['id']==$posts[$i]['user_id']) {
-			echo '<button ><a href="#" >Excluir </a></button>';
+		if ($_SESSION['id']==$posts[$i]['users_id']) {
+			echo '<a onclick="confirma('.$posts[$i]['id'].')" ><button >Excluir </button></a>';
 			echo '<a href="/php/editar.php?edit='.$posts[$i]['id'].'" ><button > Editar </button></a>';
 		}
 		echo "</div>";
 		echo "</div><br>";
 
 	}
-	
-
 	?>
 
 </body>

@@ -14,7 +14,7 @@ $title=strip_tags($_POST['title']);
 include('conect.php');
 
 
-$stmt= $pdo->prepare("INSERT INTO posts (user_id,title,descricao,post,imagem) VALUES (?,?,?,?,?)");
-$stmt->execute([$_SESSION['id'],$title,$desc,$post,$destino]);
+$stmt= $pdo->prepare("INSERT INTO posts (title,descricao,post,imagem,users_id,comunidades_id) VALUES (?,?,?,?,?,?)");
+$stmt->execute([$title,$desc,$post,$destino,$_SESSION['id'],1]);
 
 header("location:home.php");

@@ -5,11 +5,15 @@
     <!-- ver qual a pagina que o usuario esta acessando -->
     	<?php $paginaCorrente = basename($_SERVER['PHP_SELF']);
      /*se o usuario não estiver logado mostrara os links para login e cadastro*/
-    if(!isset($_SESSION['user'])){ ?>
+    if(!isset($_SESSION['user'])){ 
+    	if ($paginaCorrente!="cadastro.php") {?>
 		<a href="/php/cadastro.php"> <button class="sendtop" > Cadastrar-se</button></a>
+    	<?php }
+    	if ($paginaCorrente!="login.php") {?>
 		<a href="/php/login.php"> <button class="sendtop"> Login</button></a>
+
 		<!-- caso ja esteja logado mostrara o link para sair, a um link adional pois houve a necessidade de dois paramentros para o link  -->
-	<?php }elseif (isset($_SESSION['user'])){ ?>
+	<?php }} elseif (isset($_SESSION['user'])){ ?>
 	    <a href="/php/logout.php"> <button class="sendtop"> Sair </button> </a>
 	    <?php } ?>
 	</div>  

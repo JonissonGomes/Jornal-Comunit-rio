@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 18-Out-2018 às 18:55
+-- Generation Time: 10-Out-2018 às 17:07
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.0.26
 
@@ -21,30 +21,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `id7031787_login`
 --
-CREATE Database if not exists wjc;
-use wjc;
 
 -- --------------------------------------------------------
-
+CREATE DATABASE wjc;
+USE wjc;
 --
--- Estrutura da tabela `posts`
+-- Estrutura da tabela `post`
 --
 
-CREATE TABLE `posts` (
+CREATE TABLE `post` (
   `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `title` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `descricao` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `post` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `imagem` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+  `title` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `descricao` varchar(120) COLLATE utf8_unicode_ci NOT NULL,
+  `post` varchar(510) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Extraindo dados da tabela `posts`
+-- Extraindo dados da tabela `post`
 --
 
-INSERT INTO `posts` (`id`, `user_id`, `title`, `descricao`, `post`, `imagem`) VALUES
-(32, 21, 'Notícia', 'Descrição da notícia', 'Lorem ipsum sit dolor amet...', '../img/17-10-20181539801012');
+INSERT INTO `post` (`id`, `user_id`, `title`, `descricao`, `post`) VALUES
+(8, 11, 'Teste', 'zsdadsa', 'adadkasjhsad\r\n'),
+(9, 1, 'efjf', 'ishganf', 'jmfdsgvmnǘdsdsajgjasidjgçofa'),
+(10, 11, 'John ', 'Wick', 'I\'m not Dead\r\n');
 
 -- --------------------------------------------------------
 
@@ -65,20 +65,17 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (1, 'opa', '123'),
 (2, 'aline', '123'),
-(11, '123', '123'),
-(18, '<script> alert(\"eae\") </script>', '123'),
-(19, '1\'or\'1 \'=\' 1', ''),
-(20, 'miguel', '123'),
-(21, 'Bertonni', 'bertonni');
+(10, 'aline', '123'),
+(11, '123', '123');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `posts`
+-- Indexes for table `post`
 --
-ALTER TABLE `posts`
+ALTER TABLE `post`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
@@ -93,26 +90,26 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `posts`
+-- AUTO_INCREMENT for table `post`
 --
-ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+ALTER TABLE `post`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Limitadores para a tabela `posts`
+-- Limitadores para a tabela `post`
 --
-ALTER TABLE `posts`
-  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+ALTER TABLE `post`
+  ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

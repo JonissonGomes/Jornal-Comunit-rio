@@ -22,7 +22,7 @@ a{
 
 /* Botões de envio */
 .sendtop{
-	background-color: gray;
+	background-color: black;
 	border: none;
 	border-radius: 8px;
 	color: white;
@@ -93,12 +93,14 @@ p{
 #menu {
 	margin: -8px -8px 0px -8px;
 	width: auto;
-	background-color: #565656;
+	background-color:#045FB4;
 	font-size: 16px;
 	font-family: Tahoma, Geneva, sans-serif;
 	font-weight: bold;
 	text-align: center;
 	padding: 15px;
+	border-style: groove;
+	border-color: #045FB8;
 }
 
 #menu ul {
@@ -122,6 +124,16 @@ p{
 	background-color: #1B191B;
 	color: #FFF;
 	border-radius: 20px;
+	border-style: ridge;
+	border-color: grey;
+	
+}
+#menu2 a:active {
+	background-color: #1B191B;
+	color: #FFF;
+	border-radius: 20px;
+	border-style: inset;
+	border-color: white;
 	
 }
 

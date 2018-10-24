@@ -1,3 +1,10 @@
+<?php 
+session_start();
+	include('conect.php');
+	$feed=$pdo->prepare('SELECT * FROM posts WHERE id=?');
+	$feed->execute([$_GET['edit']]);
+	$posts=$feed->fetch();
+	?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +13,8 @@
 	<link rel="stylesheet" type="text/css" href="/css/home.css">
 </head>
 <body>
-<?php 
-	include('conect.php');
-	$feed=$pdo->prepare('SELECT * FROM posts WHERE id=?');
-	$feed->execute([$_GET['edit']]);
-	$posts=$feed->fetch();
-	?>
 	<fieldset class="POSTS">
-		<form method="post" action="post.php" enctype="multipart/form-data">
+		<form method="post" action="edit.php" enctype="multipart/form-data">
 			<hr>
 			<fieldset class="descricao">
 				<label for="title">Titulo:</label>
@@ -22,13 +23,14 @@
 				<input type="text" id="desc" name="desc" size="20" maxlength="120" value="<?=$posts['descricao']?>">
 				<label class="file" >
 					<span data-default='Choose file'> Escolher Imagem</span>
-				<input type="file" name="imagem">
+				<input type="file" name="imagem" value="<?=$posts['imagem']?>">
 				</label>
 			</fieldset>
 
 			<label>Postagem:</label><br>
 			<textarea name="post" maxlength="510" cols="63" rows="3" required><?=$posts['post']?></textarea>
 			<br>
+			<input style="display: none;" type="text" name="id" value="<?=$_GET['edit']?>">
 			<input class="sendtop" type="submit" name="">
 			<hr>
 		</form>
