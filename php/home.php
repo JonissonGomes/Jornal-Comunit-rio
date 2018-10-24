@@ -54,7 +54,7 @@ window.location.assign("/php/excluir.php?del="+id);
 			<label>Postagem:</label><br>
 			<textarea name="post" maxlength="510" cols="63" rows="3" required></textarea>
 			<br>
-			<input class="sendtop" type="submit" name="">
+			<input class="enviar" type="submit" name="">
 			<hr>
 		</form>
 	</fieldset>
