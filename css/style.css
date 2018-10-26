@@ -34,6 +34,7 @@ html {
   display: none;
 }
 .slideshow .slider .item img {
+  opacity:0.6;
   min-width: 101%;
   min-height: 101%;
   position: absolute;
