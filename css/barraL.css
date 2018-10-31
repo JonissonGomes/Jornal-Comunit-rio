@@ -1,5 +1,7 @@
 /*logo da página*/
-
+body{
+	background-color:#e6f3ff;
+}
 .logo{
 	float: left;
 	margin: -80px -8px;
@@ -91,7 +93,8 @@ p{
 }
 /*Tabelas*/
 #menu {
-	margin: -8px -8px 0px -8px;
+	
+	
 	width: auto;
 	background-color:#045FB4;
 	font-size: 16px;
@@ -124,16 +127,12 @@ p{
 	background-color: #1B191B;
 	color: #FFF;
 	border-radius: 20px;
-	border-style: ridge;
-	border-color: grey;
 	
 }
 #menu2 a:active {
 	background-color: #1B191B;
 	color: #FFF;
 	border-radius: 20px;
-	border-style: inset;
-	border-color: white;
 	
 }
 
