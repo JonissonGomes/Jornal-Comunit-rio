@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 26-Out-2018 às 15:02
+-- Generation Time: 31-Out-2018 às 16:53
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.0.26
 
@@ -21,8 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `id7031787_login`
 --
-CREATE Database jc;
-use jc;
+create Database jc;
+  use jc;
 -- --------------------------------------------------------
 
 --
@@ -52,7 +52,33 @@ CREATE TABLE `comunidades` (
 --
 
 INSERT INTO `comunidades` (`id`, `nome`) VALUES
-(1, 'joão de barro');
+(1, 'joão de barro'),
+(2, 'Agamenon Magalhães'),
+(3, 'Alto do Céu'),
+(4, 'Ana de Albuquerque'),
+(5, 'Área Rural de Igarassu'),
+(6, 'Bela Vista'),
+(7, 'Bonfim'),
+(8, 'Campina de Feira'),
+(9, 'Centro'),
+(10, 'Cruz de Rebouças'),
+(11, 'Encanto Igarassu'),
+(12, 'Inhamã'),
+(13, 'Jabacó'),
+(14, 'Jardim Boa Sorte'),
+(15, 'Monjope'),
+(16, 'Pancó'),
+(17, 'Posto de Monta'),
+(18, 'Rubina'),
+(19, 'Santa Luzia'),
+(20, 'Santa Rita'),
+(21, 'Santo Antônio'),
+(22, 'Saramandaia'),
+(23, 'Sítio dos Marcos'),
+(24, 'Tabatinga'),
+(25, 'Triunfo'),
+(26, 'Vila Rural'),
+(27, 'Umbura');
 
 -- --------------------------------------------------------
 
@@ -69,13 +95,6 @@ CREATE TABLE `posts` (
   `users_id` int(11) DEFAULT NULL,
   `comunidades_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Extraindo dados da tabela `posts`
---
-
-INSERT INTO `posts` (`id`, `title`, `descricao`, `post`, `imagem`, `users_id`, `comunidades_id`) VALUES
-(19, 'olha so que bonito ', 'bunitu', 'olha esses raios de luz !! ooolha eesseees raaaiozzz de luiizzz', '../img/25-10-2018_07:10:23', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -95,7 +114,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (1, 'opa', '123'),
-(2, 'silvio', '123');
+(2, 'silvio', '123'),
+(3, 'gui', 'gui'),
+(4, 'Filipe', 'lipeh777');
 
 --
 -- Indexes for dumped tables
@@ -137,25 +158,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `coments`
 --
 ALTER TABLE `coments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `comunidades`
 --
 ALTER TABLE `comunidades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

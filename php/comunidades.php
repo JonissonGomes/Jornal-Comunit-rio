@@ -3,53 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Comunidades</title>
-    <?php include("bar.php"); ?>
+    <?php include("bar.php"); include("filtro.php");?>
     <link rel="stylesheet" href="/css/comunidades.css">
 </head>
 <body>
+    <form>
+        <select id='comunidade' onchange="val()">
+            <?php
+            include('conect.php');
+            $stmt=$pdo->prepare("SELECT * FROM comunidades");
+            $stmt->execute();
+            $com=$stmt->fetchall();
+            for ($i=0; $i < sizeof($com); $i++) { 
+                echo '<option value="'.$com[$i]['id'].'">'.$com[$i]['nome'].'</option>';
+            }?>
+        </select>
+
+    </form>
     
-                            <div class="cortar">
-                     A,B,C <br>
-                     Agamenon Magalhães, Alto do Ceu, Ana Albuquerque, Ana de Albuquerque, Araçoiaba,
-                     Bela Vista, Bonfim, Bom Retiro, Botafogo,
-										 Campina Feira, Centro, Cruz de Rebouças
-                            </div>
-                            <br>
-                            <div class="cortar">
-                     D,E,I <br>
-                     Distrito Industrial,
-                     Encanto Igarassu,
-                     Inhama
-                            </div>
-                            <br>
-                            <div class="cortar">
-                      J,L,M <br>
-                      Jabaco, Jardim Boa Sorte,
-                      Lot Ns Conceicao,Lot Agamenon, Lot Ana Albuquerque, Lot Cortegada, Loteamento Jacoca, Lot Sao Marcos
-                      Mangabeira, Marcos, Monjope                    
-
-                            </div>
-                            <br>
-                            <div class="cortar">
-                     N,P,R <br>
-                     Nova Cruz
-                     Panco, Posto de Monta
-
-                            </div>
-                            <br>
-                            <div class="cortar">
-                    S,T <br>
-                    Santa Luzia, Santa Rita, Santo Antonio, Saramandaia, Sede, Sítio Boa Vista, Sítio dos Marcos, Sítio Mumbaba
-                    Tabatinga, Triunfo
-                            </div>
-                            <br>
-                            <div class="cortar">
-                    U,V,Z <br>
-                    Umbura
-                    Vila Rural
-                    Zona Rural                                     
-                   
-            			</div>
-	
 </body>
 </html>
