@@ -21,6 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `id7031787_login`
 --
+DROP Database jc;
 create Database jc;
   use jc;
 -- --------------------------------------------------------

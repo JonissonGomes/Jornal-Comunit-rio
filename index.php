@@ -1,28 +1,17 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<title>Início</title> 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/barraL.css" >
+  
+  
 	<link rel="shortcut icon" href="img/icon.png" >
 	<?php include('php/bar.php') ?>
 </head>
 <body>
-<script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $(".dropdown-menu li").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
-
 <div class="container">
   <h2>Últimas publicações</h2>  
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -36,7 +25,7 @@ $(document).ready(function(){
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="/img/a.jpg" alt="" style="width:100%;">
+        <img src="/img/igarassu.jpg" alt="" style="width:100%;">
       </div>
 
       <div class="item">

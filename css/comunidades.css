@@ -1,8 +1,4 @@
-body{
-    color: white;
-    min-height:768px ;
-    min-width: 1024px;
-}
+
 
 .cortar{
     
@@ -12,7 +8,7 @@ body{
     border:1px solid black;
         
     overflow:hidden;
-    background-color: darkgray;
+    background-color: white;
 }
 .cortar:hover {
     width: auto;

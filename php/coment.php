@@ -41,9 +41,6 @@ $_SESSION['post']=$_GET['post'];
 		$get=$stmt->fetchall();
 
 		for ($i=sizeof($get)-1; $i >=0 ; $i--) { 
-			$user=$pdo->prepare('SELECT * FROM users WHERE id=?');
-			$user->execute([$get[$i]['users_id']]);
-			$id=$user->fetch();
 			echo '<div class="postagens">';
 			echo '<h1>'.$get[$i]['username'].'</h1>';
 			echo '<h2 >'.$get[$i]['coment'].'</h2>';

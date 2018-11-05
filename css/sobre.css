@@ -1,5 +1,6 @@
 body{
 	text-align: center;
+
 	
 }
 .foto{
@@ -20,20 +21,16 @@ h1{
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 55px;
 	margin-bottom: 20px;
-	color:white;
+	color:black;
 }
 h4{
-    color:white;
+    color:black;
 }
 .alinha{
 	text-align: center;
 	margin-top: 40px;
 }
 
-.fundobranco{
-    background-color:white;
-    border:none;
-}
 footer{
 	bottom: 0;
 	text-align: center;

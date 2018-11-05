@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,12 +7,12 @@
 	<link rel="stylesheet" type="text/css" href="../css/sobre.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> 
 </head>
-<body style="background-image:url('../img/igarassu3.jpg'); background-size:100%; background-repeat:no repeat; " >
+<body >
 <?php include("bar.php");?>
 	<h1>Conheça-nos!</h1>
 	<h4>O jornal comunitário, tem como público alvo as comunidades, onde a população pode expor suas reclamações e dicas para a melhoria da sua localidade.</h4>
-	<hr>
-	<fieldset class="fundobranco">
+	
+	
 	<div class="alinha">
 	<fieldset class="foto">
 		<img  class="aline" src="../img/a'.jpg" width="150" height="150">	
@@ -43,12 +44,7 @@
 		<p>22 anos
 	</fieldset>
 
-	<fieldset class="foto">
-		<img src="../img/m.jpg" width="150" height="150">
-		<p>Marinaldo Silva
-		<p>23 anos
-	</fieldset>
 	</div>
-	</fieldset>
+
 </body>
 </html>
