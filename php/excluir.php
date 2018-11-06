@@ -12,4 +12,5 @@ $delete->execute([$_GET['del']]);
 $delete= $pdo->prepare("DELETE FROM posts where id=?");
 $delete->execute([$_GET['del']]);
 
-header('location:home.php');
+
+header('location:'.$_SERVER['HTTP_REFERER']);

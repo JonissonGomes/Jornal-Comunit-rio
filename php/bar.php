@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/index.js"></script>
 	<link rel="shortcut icon" href="../img/icon.png" >
     <?php $paginaCorrente = basename($_SERVER['PHP_SELF']); ?>
 	<div id="menu">

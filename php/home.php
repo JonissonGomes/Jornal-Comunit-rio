@@ -12,34 +12,31 @@ if(!isset ($_SESSION['user'])){
 	<meta charset="UTF-8">
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="../css/home.css">
-<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
-function confirma(id){
-decisao = confirm("Deseja excluir a publicação ?");
+	<script type="text/javascript">
+		function cor(){
+			var cor = document.getElementById('file');
+			cor.className='file1';
+		}
+	</script>
 
-if (decisao){
-window.location.assign("/php/excluir.php?del="+id);
-
-}
-}
-</SCRIPT>
 </head>
 
 <body>
 
 
-	<fieldset class="POSTS">
+	<div class="form-group" id="POSTS">
 		<form method="post" action="post.php" enctype="multipart/form-data">
 			<hr>
 			<fieldset class="descricao">
 				<label for="title">Titulo:</label>
-				<input type="text" id="title" name="title" size="20" maxlength="40" required>
+				<input class="form-control-inline" type="text" id="title" name="title" size="20" maxlength="40" required>
 				<label for="desc">Descrição:</label>
-				<input type="text" id="desc" name="desc" size="20" maxlength="120">
-				<label class="file" >
+				<input class="form-control-inline" type="text" id="desc" name="desc" size="20" maxlength="120">
+				<label class="file" id="file" >
 					<span data-default='Choose file'> Escolher Imagem</span>
-				<input type="file" name="imagem" >
+				<input class="form-control" type="file" name="imagem" onchange="cor()" >
 				</label>
-				<select>
+				<select class="form-control"  name="comunidade">
 					<?php
 						include('conect.php');
 						$stmt=$pdo->prepare("SELECT * FROM comunidades");
@@ -52,12 +49,12 @@ window.location.assign("/php/excluir.php?del="+id);
 			</fieldset>
 
 			<label>Postagem:</label><br>
-			<textarea name="post" maxlength="510" cols="63" rows="3" required></textarea>
+			<textarea class="form-control" name="post" maxlength="510" cols="63" rows="3" required></textarea>
 			<br>
-			<input class="enviar" type="submit" name="">
+			<input class="form-control" class="enviar" type="submit" name="">
 			<hr>
 		</form>
-	</fieldset>
+	</div>
 
 	<?php 
 	include('conect.php');
@@ -65,8 +62,8 @@ window.location.assign("/php/excluir.php?del="+id);
 	$feed->execute();
 	$posts=$feed->fetchall(); 
 	for ($i=sizeof($posts)-1; $i >=0 ; $i--) { 
-
 		echo '<div class="postagens">';
+		echo '<footer>'.$posts[$i]['created_at'].'</footer>';
 		echo '<a href="coment.php?post='.$posts[$i]['id'].'"><h1>'.$posts[$i]['title']."</h1></a>";
 		echo "<h2>".$posts[$i]['descricao']."</h2>";
 		echo "<p>".$posts[$i]['post']."</p>";

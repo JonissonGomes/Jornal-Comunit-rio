@@ -47,7 +47,7 @@ p{
 	font-family: Tahoma, Geneva, sans-serif;
 	font-weight: bold;
 	text-align: center;
-	padding: 15px;
+	padding: 12px;
 	border-style: groove;
 	border-color:#045FB8;
 }
@@ -56,16 +56,17 @@ p{
 	margin: 0;
 	padding: 8px 0;
 	list-style: none;
+	margin-top: 5px;
 }
 
 #menu li {
 	display: inline;
-	padding: 8px;
+	padding: 6px;
 }
 
 #menu2 a {
 	color: #FFF;
-	padding: 10px;
+	padding: 8px;
 	text-decoration: none;
 }
 
@@ -75,7 +76,7 @@ p{
 	border-radius: 10px;
 	border-style: ridge;
 	border-color: grey;
-	
+	padding: 8px;
 }
 #menu2 a:active {
 	background-color: #1B191B;

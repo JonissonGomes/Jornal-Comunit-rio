@@ -26,7 +26,7 @@ $_SESSION['post']=$_GET['post'];
 	</div>
 	<div style="margin: 0 310px;">
 		<form action="comentar.php" method="post">
-			<textarea name="coment" style="width: 1200px;height: 50px; border-radius: 10px;"></textarea>
+			<textarea name="coment" style="width: 1200px;height: 50px; border-radius: 10px;" required></textarea>
 			<input style="width: 250px; height: 40px;background-color: #3db0f7;border: none;border-radius: 5px;margin-left: 40%" type="submit" value="Comentar">
 		</form>
 	</div>
@@ -35,9 +35,6 @@ $_SESSION['post']=$_GET['post'];
 		//$stmt=$pdo->prepare('SELECT * FROM coments WHERE posts_id=?');
 		$stmt=$pdo->prepare("SELECT u.username, c.coment FROM users u INNER JOIN coments c WHERE u.id = c.users_id AND c.posts_id = ?");
 		$stmt->execute([$_SESSION['post']]);
-
-
-
 		$get=$stmt->fetchall();
 
 		for ($i=sizeof($get)-1; $i >=0 ; $i--) { 

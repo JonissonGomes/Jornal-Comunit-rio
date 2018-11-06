@@ -21,8 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `id7031787_login`
 --
-DROP Database jc;
-create Database jc;
+drop Database if exists jc;
+create Database if not exists jc;
   use jc;
 -- --------------------------------------------------------
 
@@ -34,7 +34,8 @@ CREATE TABLE `coments` (
   `id` int(11) NOT NULL,
   `coment` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `posts_id` int(11) NOT NULL,
-  `users_id` int(11) NOT NULL
+  `users_id` int(11) NOT NULL,
+  `created_at` timestamp DEFAULT current_timestamp
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -94,7 +95,8 @@ CREATE TABLE `posts` (
   `post` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   `imagem` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `users_id` int(11) DEFAULT NULL,
-  `comunidades_id` int(11) DEFAULT NULL
+  `comunidades_id` int(11) DEFAULT NULL,
+  `created_at` timestamp DEFAULT current_timestamp
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------

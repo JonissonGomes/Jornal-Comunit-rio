@@ -75,3 +75,12 @@ $('.slideshow-text').slick({
   speed: 900,
   cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
 });
+
+function confirma(id){
+decisao = confirm("Deseja excluir a publicação ?");
+
+if (decisao){
+window.location.assign("/php/excluir.php?del="+id);
+
+}
+}

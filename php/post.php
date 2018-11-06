@@ -13,12 +13,13 @@ move_uploaded_file ( $arquivo_tmp, $destino );
 $desc= strip_tags($_POST['desc']);
 $post=strip_tags($_POST['post']);
 $title=strip_tags($_POST['title']);
+$com=$_POST['comunidade'];
 
  
 include('conect.php');
 
 
 $stmt= $pdo->prepare("INSERT INTO posts (title,descricao,post,imagem,users_id,comunidades_id) VALUES (?,?,?,?,?,?)");
-$stmt->execute([$title,$desc,$post,$destino,$_SESSION['id'],1]);
+$stmt->execute([$title,$desc,$post,$destino,$_SESSION['id'],$com]);
 
 header("location:home.php");

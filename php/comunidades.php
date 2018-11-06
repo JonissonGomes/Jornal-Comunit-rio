@@ -1,4 +1,10 @@
-<?php session_start();?>
+<?php 
+session_start();
+if(!isset ($_SESSION['user'])){
+  header('location:login.php');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +33,7 @@
   }
 
   </style>
+  <link rel="stylesheet" type="text/css" href="/css/home.css">
 </head>
 <body>
 <div class="div">
@@ -46,7 +53,7 @@
       $com=$stmt->fetchall();
 
       for ($i=0; $i < sizeof($com); $i++) { 
-          echo '<li><a href="'.$com[$i]['id'].'">'.$com[$i]['nome'].'</a>';
+          echo '<li><a href="comunidades.php?comunidade='.$com[$i]['id'].'">'.$com[$i]['nome'].'</a>';
       }
 
     ?>
@@ -66,7 +73,34 @@ $(document).ready(function(){
 </script>
 
 
+<hr>
 </div>
+<?php 
+if (isset($_GET['comunidade'])) {
+  $feed=$pdo->prepare('SELECT * FROM posts WHERE comunidades_id=?');
+  $feed->execute([$_GET['comunidade']]);
+  $posts=$feed->fetchall();
+
+}
+for ($i=sizeof($posts)-1; $i >=0 ; $i--) { 
+
+    echo '<div class="postagens">';
+    echo '<a href="coment.php?post='.$posts[$i]['id'].'"><h1>'.$posts[$i]['title']."</h1></a>";
+    echo "<h2>".$posts[$i]['descricao']."</h2>";
+    echo "<p>".$posts[$i]['post']."</p>";
+    if ($posts[$i]['imagem']!=null) {
+    echo '<a href="coment.php?post='.$posts[$i]['id'].'"><img src="'.$posts[$i]['imagem'].'"></a>';
+    }
+    echo '<div class="postA">';
+    if ($_SESSION['id']==$posts[$i]['users_id']) {
+      echo '<a onclick="confirma('.$posts[$i]['id'].')" ><button >Excluir </button></a>';
+      echo '<a href="/php/editar.php?edit='.$posts[$i]['id'].'" ><button > Editar </button></a>';
+    }
+    echo "</div>";
+    echo "</div><br>";
+                  
+  }
+?>
 </body>
 </html>
 
