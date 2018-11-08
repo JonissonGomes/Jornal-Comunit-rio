@@ -6,12 +6,11 @@ if(!isset ($_SESSION['user'])){
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<?php include('bar.php');?>
 	<meta charset="UTF-8">
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="../css/home.css">
 	<script type="text/javascript">
 		function cor(){
 			var cor = document.getElementById('file');

@@ -4,14 +4,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Sobre</title>
-	<link rel="stylesheet" type="text/css" href="../css/sobre.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> 
 </head>
 <body >
 <?php include("bar.php");?>
+<div id="sobre">
 	<h1>Conheça-nos!</h1>
 	<h4>O jornal comunitário, tem como público alvo as comunidades, onde a população pode expor suas reclamações e dicas para a melhoria da sua localidade.</h4>
-	
+	</div>
 	
 	<div class="alinha">
 	<fieldset class="foto">

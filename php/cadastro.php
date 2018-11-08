@@ -1,10 +1,9 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<title>Cadastro</title>
-	<link rel="stylesheet" type="text/css" href="../css/form.css">
 	<?php include('bar.php');
  	if (isset($_SESSION['erro'])) { ?>
  		<script type="text/javascript">
