@@ -16,5 +16,5 @@ if ($data != null) {
 			header('location:home.php');
 }else{
 	$_SESSION['inc']='Usuario ou Senha incorreta(o)';
-		header('location:login.php');
+		header('location:'.$_SERVER['HTTP_REFERER']);
 	}

@@ -13,18 +13,18 @@ if ($ps == $ps2) {
 	$data = $stmt-> fetchall();
 	if ($data!=null) {		
 		$_SESSION['erro']= "Nome de usuario ja existe";
-		header('location:cadastro.php');
+		header('location:'.$_SERVER['HTTP_REFERER']);
 		}
 //se não houver ira cadastrar o usuario;
 		else{
 		$stmt= $pdo->prepare("INSERT INTO users (username, password) VALUES (?,?)");
 		$stmt->execute([$us,$ps]);
 		$_SESSION['inc']='Usuario cadastrado com sucesso';
-		header('location:login.php');
+		header('location:'.$_SERVER['HTTP_REFERER']);
 		}
 }else{
 	$_SESSION['erro']= "Senhas não combinam";
-		header('location:cadastro.php');
+		header('location:'.$_SERVER['HTTP_REFERER']);
 }
 
 
