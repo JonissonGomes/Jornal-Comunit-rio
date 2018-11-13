@@ -10,6 +10,7 @@ a{
 
 /* Botões de envio */
 .sendtop{
+	outline: none;
 	background-color: black;
 	border: none;
 	border-radius: 8px;
@@ -40,8 +41,6 @@ p{
 	font-weight: bold;
 	text-align: center;
 	padding: 12px;
-	border-style: none;
-	border-color:#337ab7;
 }
 
 #menu ul {
@@ -64,6 +63,7 @@ p{
 }
 
 #menu2 a:hover {
+	cursor: pointer;
 	background-color: #1B191B;
 	color: #FFF;
 	border-radius: 10px;
@@ -74,6 +74,10 @@ p{
 #menu2 a:active {
 	background-color: #1B191B;
 	color: #FFF;
+	border-radius: 10px;
+	border-style: inset;
+	border-color: white;
+	
 }
 
 #menu li .active {
@@ -106,14 +110,7 @@ p{
 
 * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
 
-.login { 
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -150px 0 0 -150px;
-	width:300px;
-	height:300px;
-}
+
 .login h1 { color: #000; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
 .login input { 
@@ -159,8 +156,7 @@ p{
 	overflow: hidden;
 	text-overflow:ellipsis;
 	direction: ltr;
-	background-color: #fff;
-	box-shadow:10px 10px 50px #000000; 
+	background-color: #fff; 
 	width: auto;
 	max-width: 1200px;
 	border: 2px ;
