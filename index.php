@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container">
-  <h2>Últimas publicações</h2>  
+  <h2></h2>  
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -25,18 +25,33 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="/img/igarassu.jpg" alt="" style="width:100%;">
+        <img src="/img/igarassu.jpg" alt="" style="width:100%;filter: brightness(50%)">
+        <div class="item">
+          <div class="carousel-caption">
+            <h3>Web Jornal</h3>
+            <p>As notícias sobre a sua comunidade você encontra nesta plataforma.</p>
+        </div>
+    </div>
       </div>
-
       <div class="item">
-        <img src="/img/igarassu2.jpg" alt="" style="width:100%;">
+        <img src="/img/igarassu2.jpg" alt="" style="width:100%;filter: brightness(50%)">
+        <div class="item">
+        <div class="carousel-caption">
+          <h3>Seu texto aqui</h3>
+          <p>Seu texto aqui</p>
+          </div>
+        </div>
       </div>
-    
       <div class="item">
-        <img src="/img/igarassu3.jpg" alt="" style="width:100%;">
+        <img src="/img/igarassu3.jpg" alt="" style="width:100%;filter: brightness(50%)">
+        <div class="item">
+          <div class="carousel-caption">
+           <h3>Seu texto aqui</h3>
+           <p>Seu texto aqui</p>
+          </div>
+        </div>
       </div>
     </div>
-
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
