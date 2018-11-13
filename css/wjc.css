@@ -34,14 +34,14 @@ p{
 	justify-content: space-between;
 	margin: -8px -8px 0px -8px;
 	width: auto;
-	background-color:#000080;
+	background-color:#337ab7;
 	font-size: 16px;
 	font-family: Tahoma, Geneva, sans-serif;
 	font-weight: bold;
 	text-align: center;
 	padding: 12px;
-	border-style: groove;
-	border-color:#045FB8;
+	border-style: none;
+	border-color:#337ab7;
 }
 
 #menu ul {
@@ -74,10 +74,6 @@ p{
 #menu2 a:active {
 	background-color: #1B191B;
 	color: #FFF;
-	border-radius: 10px;
-	border-style: inset;
-	border-color: white;
-	
 }
 
 #menu li .active {
@@ -163,7 +159,8 @@ p{
 	overflow: hidden;
 	text-overflow:ellipsis;
 	direction: ltr;
-	background-color: #fff; 
+	background-color: #fff;
+	box-shadow:10px 10px 50px #000000; 
 	width: auto;
 	max-width: 1200px;
 	border: 2px ;
