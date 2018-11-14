@@ -292,12 +292,21 @@ p{
 	margin-right: 10px;
 	padding: 0;
 	border-radius:4px;
-
 }
 
 .foto img{
 	margin-left: 10px; 
 	margin-right: 10px;
+}
+.foto1 {
+	width: 10%;
+	display: inline-block;
+	margin-right: 10px;
+	padding: 0;
+	border-radius:50px;
+}
+.foto1 img {
+	border-radius: 100px;
 }
 #sobre{
 	text-align: center;
