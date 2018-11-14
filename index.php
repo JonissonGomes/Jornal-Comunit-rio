@@ -37,17 +37,17 @@
         <img src="/img/igarassu2.jpg" alt="" style="width:100%;filter: brightness(50%)">
         <div class="item">
         <div class="carousel-caption">
-          <h3>Seu texto aqui</h3>
-          <p>Seu texto aqui</p>
+          <h3>O que o Web Jornal oferece?</h3>
+          <p>Web Jornal oferece ao usuário a possibilidade de fazer publicações sobre problemas locais e a receber feedback sobre a resolução dos problemas. </p>
           </div>
         </div>
       </div>
       <div class="item">
-        <img src="/img/igarassu3.jpg" alt="" style="width:100%;filter: brightness(50%)">
+        <img src="/img/a.jpg" alt="" style="width:100%;filter: brightness(50%)">
         <div class="item">
           <div class="carousel-caption">
-           <h3>Seu texto aqui</h3>
-           <p>Seu texto aqui</p>
+           <h3>Web Jornal</h3>
+           <p>Faça publicações sobre os problemas da sua cidade, receba feedbacks e contribua para a melhoria da sua comunidade.</p>
           </div>
         </div>
       </div>
@@ -63,5 +63,34 @@
     </a>
   </div>
 </div>
+	<div class="alinha">
+	<h3>Sobre o que você pode publicar?</h3><br>
+	<br>
+	<fieldset class="foto1">
+		<img  class="aline" src="../img/saude.png" width="150" height="150">
+		<p> Saúde	
+	</fieldset>
+
+	<fieldset class="foto1">
+		<img src="../img/agua.png" width="150" height="150">
+		<p>Saneamento básico
+	</fieldset>
+
+	<fieldset class="foto1">
+		<img src="../img/educacao.png" width="150" height="150">
+		<p> Educação
+	</fieldset>
+
+	<fieldset class="foto1">
+		<img src="../img/saude.png" width="150" height="150">
+
+	</fieldset>
+
+	<fieldset class="foto1">
+		<img src="../img/saude.png" width="150" height="150">
+
+	</fieldset>
+
+	</div>
 </body>
 </html>
