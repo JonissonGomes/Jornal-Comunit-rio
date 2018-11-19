@@ -1,13 +1,4 @@
 
-
-	<?php 
-	if (isset($_SESSION['erro'])) { ?>
-	<script type="text/javascript">
-		alert("<?=$_SESSION['erro']?>");
-	</script>
-
-	<?php unset($_SESSION['erro']); }?>
-
 <div class="modal fade" id="mCadastrar" role="dialog">
 	<div class="modal-dialog">
 
@@ -22,6 +13,7 @@
 					<form method="post" action="/php/new_user.php">
 
 						<label>Username</label> <input type="text" name="user" placeholder="Digite seu nome">
+						<label>E-mail</label> <input type="email" name="email" placeholder="Digite seu E-mail">
 						<label>Digite sua senha</label> <input type="password" name="password" placeholder="Digite sua senha">
 						<label>Confirme sua senha</label> <input type="password" name="pass" placeholder="Confirme sua senha">
 						<div class="modal-footer">

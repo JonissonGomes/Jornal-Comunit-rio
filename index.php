@@ -68,7 +68,7 @@
 
 <!-- Área de seleção abaixo do SlideShow -->
   <div class="alinha">
-  <h3>Sobre o que você pode publicar?</h3><br>
+  <h3>Sobre o que você pode publicar:</h3><br>
   <br>
   <fieldset class="foto1">
   <button type="button" class="btn btn-info" id="categorias">

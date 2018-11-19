@@ -57,8 +57,6 @@ if (isset($_GET['comunidade'])) {
   $feed=$pdo->prepare('SELECT * FROM posts WHERE comunidades_id=?');
   $feed->execute([$_GET['comunidade']]);
   $posts=$feed->fetchall();
-
-}
 for ($i=sizeof($posts)-1; $i >=0 ; $i--) { 
 
     echo '<div class="postagens">';
@@ -77,6 +75,8 @@ for ($i=sizeof($posts)-1; $i >=0 ; $i--) {
     echo "</div><br>";
                   
   }
+}
+
 ?>
 </body>
 </html>

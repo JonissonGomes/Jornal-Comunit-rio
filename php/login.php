@@ -1,13 +1,4 @@
 
-
-    <?php   	
-
-  if (isset($_SESSION['inc'])) { ?>
-  <script type="text/javascript">
-    alert("<?=$_SESSION['inc']?>");
-</script>
-
-<?php unset($_SESSION['inc']); }?>
 <script type="text/javascript">
     function ver(){
         var s = document.getElementById("senha");            

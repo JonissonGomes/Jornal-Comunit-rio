@@ -13,7 +13,7 @@
 	<h4>O jornal comunitário, tem como público alvo as comunidades, onde a população pode expor suas reclamações e dicas para a melhoria da sua localidade.</h4>
 	</div>
 	
-	<div class="alinha">
+	<div class="comp">
 	<fieldset class="foto">
 		<img  class="aline" src="../img/a'.jpg" width="150" height="150">	
 		<p>Aline Venceslau

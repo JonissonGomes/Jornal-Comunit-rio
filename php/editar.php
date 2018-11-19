@@ -14,32 +14,37 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="/css/home.css">
 </head>
 <body>
-	<fieldset class="POSTS">
+	<div class="form-group" id="POSTS">
 		<form method="post" action="edit.php" enctype="multipart/form-data">
 			<hr>
 			<fieldset class="descricao">
 				<label for="title">Titulo:</label>
-				<input type="text" id="title" name="title" size="20" maxlength="40" value="<?=$posts['title']?>" required>
+				<input class="form-control-inline" type="text" id="title" name="title" size="20" maxlength="40" value="<?=$posts['title']?>" required>
 				<label for="desc">Descrição:</label>
-				<input type="text" id="desc" name="desc" size="20" maxlength="120" value="<?=$posts['descricao']?>">
-				<label class="file" >
+				<input class="form-control-inline" type="text" id="desc" name="desc" size="20" maxlength="120" value="<?=$posts['descricao']?>">
+                <label class="file" id="file" >
 					<span data-default='Choose file'> Escolher Imagem</span>
-				<input type="file" name="imagem" ">
+				<input class="form-control" type="file" name="imagem" onchange="cor()" >
 				</label>
+				<select class="form-control"  name="comunidade">
+					<?php
+						include('conect.php');
+						$stmt=$pdo->prepare("SELECT * FROM comunidades");
+						$stmt->execute();
+						$com=$stmt->fetchall();
+					 for ($i=0; $i < sizeof($com); $i++) { 
+						echo '<option value="'.$com[$i]['id'].'">'.$com[$i]['nome'].'</option>';
+					}?>
+				</select>
 			</fieldset>
 
 			<label>Postagem:</label><br>
-			<textarea name="post" maxlength="510" cols="63" rows="3" required><?=$posts['post']?></textarea>
+			<textarea class="form-control" name="post" maxlength="510" cols="63" rows="3" required><?=$posts['post']?></textarea>
 			<br>
-			<input style="display: none;" type="text" name="id" value="<?=$_GET['edit']?>">
-			<input class="sendtop" type="submit" name="">
+			<input class="form-control" class="enviar" type="submit" name="">
 			<hr>
+			<input style="display: none;" type="text" name="id" value="<?=$_GET['edit']?>">
 		</form>
-	</fieldset>
-	<!-- <div style="height: 500px;margin-left: 451px; ">
-	<form >
-	<label><span style="width: 66.2%;margin: 0 0 auto;">Comentar Noticia</span><textarea type="text" name="coment" style="width: 938px;height: 50px"></textarea></label>
-	</form>
-	</div> -->
+	</div>
 </body>
 </html>

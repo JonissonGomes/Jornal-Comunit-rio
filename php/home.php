@@ -24,14 +24,14 @@ if(!isset ($_SESSION['user'])){
 
 
 	<div class="form-group" id="POSTS">
-		<form method="post" action="post.php" enctype="multipart/form-data">
+		<form method="post" action="post.php?post" enctype="multipart/form-data">
 			<hr>
 			<fieldset class="descricao">
 				<label for="title">Titulo:</label>
 				<input class="form-control-inline" type="text" id="title" name="title" size="20" maxlength="40" required>
 				<label for="desc">Descrição:</label>
 				<input class="form-control-inline" type="text" id="desc" name="desc" size="20" maxlength="120">
-				<label class="file" id="file" >
+                <label class="file" id="file" >
 					<span data-default='Choose file'> Escolher Imagem</span>
 				<input class="form-control" type="file" name="imagem" onchange="cor()" >
 				</label>
