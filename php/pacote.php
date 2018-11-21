@@ -1,4 +1,4 @@
-<?php 
+<?php session_start();
 try {
 
 	$pdo = new PDO ('mysql:dbname=2jc;host=localhost;port=3306', 'root','');
@@ -15,14 +15,14 @@ class Postagem{
 	var $comunidade;
 
 
-	function __construct(){
-		$this->titulo=addslashes($_POST['title']);
-		$this->descricao=addslashes($_POST['desc']);
-		$this->comunidade=addslashes($_POST['comunidade']);
-		$this->corpo=addslashes($_POST['post']);
+	function __construct($titulo,$desc,$comunidade,$post){
+		$this->titulo=addslashes($titulo);
+		$this->descricao=addslashes($desc);
+		$this->comunidade=addslashes($comunidade);
+		$this->corpo=addslashes($post);
 	}
 
-	function imagem($img){
+	function getimagem($img){
 		//VERIFICAR SE O ARQUIVO ENVIADO É UMA IMAGEM 
 		$re = '/jpg|png|jpge/m';
 		preg_match_all($re, $img['name'], $nam, PREG_SET_ORDER, 0);
@@ -39,18 +39,18 @@ class Postagem{
 		$resultado=[$this->titulo, $this->descricao, $this->corpo, $this->imagem, $this->comunidade,$_SESSION['id']];
 		query("INSERT INTO posts (title,descricao,post,imagem,comunidades_id,users_id) VALUES (?,?,?,?,?,?)",$resultado);
 	}
-	function imgDEL(){
-		$post_id=$_POST['id'];
+	function imgDEL($post_id){
 		$del=fetch("SELECT * FROM posts WHERE id=".$post_id);
 		if (is_file($del['imagem'])) {
 			unlink($del['imagem']);
 		}
 	}
-	function editar(){
+	function editar($edit){
 		$post=[$this->titulo, $this->descricao, $this->corpo, $this->imagem, $this->comunidade,$_SESSION['id']];
-		query("UPDATE posts SET title=?, descricao=? , post=? , imagem=? , comunidades_id=?, users_id= ? WHERE id=".$_POST['id'],$post);
+		query("UPDATE posts SET title=?, descricao=? , post=? , imagem=? , comunidades_id=?, users_id= ? WHERE id=".$edit,$post);
 	}
 }
+
 
 
 

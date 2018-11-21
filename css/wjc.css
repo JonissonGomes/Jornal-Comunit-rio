@@ -283,8 +283,11 @@ a{
 	margin: 0 auto;
 	width: 80%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	text-align: center;
+}
+.comp .foto{
+	margin-left: 50px;
 }
 /*----------------------------------------------------------------------------------------*/
 .alinha{
@@ -322,6 +325,9 @@ a{
 
 
 @media (max-width: 767px) {
+	html{
+		width: 100%;
+	}
 	.POSTS{
 		width: 100px;
 		border-radius: 16px;
@@ -352,14 +358,24 @@ a{
 	flex-direction: column;
 	text-align: center;
 }
+/*#menu{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+
+}*/
 #menu{
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	margin: 0 auto;
 }
 
 #menu ul {
+	display: flex;
+	justify-content: center;
 	margin: 0;
-	padding: 8px 0;
 	list-style: none;
 	margin-top: 5px;
 }

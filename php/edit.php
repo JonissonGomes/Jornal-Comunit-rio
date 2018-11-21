@@ -1,12 +1,12 @@
 <?php 
-session_start();
+
 require_once 'pacote.php';
 
-$postagem= new postagem();
-$postagem->imgDEL();
+$postagem= new postagem($_POST['title'],$_POST['desc'],$_POST['comunidade'],$_POST['post']);
+$postagem->imgDEL($_POST['id']);
 if (isset($_FILES['imagem'])) {
-	$postagem->imagem($_FILES['imagem']);
+	$postagem->getimagem($_FILES['imagem']);
 }
-$postagem->editar();
+$postagem->editar($_POST['id']);
 
 header("location:home.php");
