@@ -24,7 +24,7 @@ if(!isset ($_SESSION['user'])){
     <ul class="dropdown-menu" id="ul-comunidades">
       <input class="form-control" id="procurarcomunidade" type="text" placeholder="Search..">
       <?php
-      require_once('conect.php');
+      require_once('pacote.php');
       $stmt= $pdo->prepare('SELECT * FROM comunidades');
       $stmt->execute();
       $com=$stmt->fetchall();

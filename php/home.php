@@ -21,7 +21,7 @@ if(!isset ($_SESSION['user'])){
 </head>
 
 <body>
-
+ 
 
 	<div class="form-group" id="POSTS">
 		<form method="post" action="post.php?post" enctype="multipart/form-data">
@@ -29,15 +29,21 @@ if(!isset ($_SESSION['user'])){
 			<fieldset class="descricao">
 				<label for="title">Titulo:</label>
 				<input class="form-control-inline" type="text" id="title" name="title" size="20" maxlength="40" required>
-				<label for="desc">Descrição:</label>
-				<input class="form-control-inline" type="text" id="desc" name="desc" size="20" maxlength="120">
-                <label class="file" id="file" >
-					<span data-default='Choose file'> Escolher Imagem</span>
-				<input class="form-control" type="file" name="imagem" onchange="cor()" >
-				</label>
+                 <input type="file" accept="image/*" onmouseleave="loadFile2(event)" onmouseover ="loadFile(event)">
+<img id="output"/>
+<script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+  };
+  var loadFile2 = function(event) {
+    var output = document.getElementById('output');
+    output.src = "";
+  };
+</script>
 				<select class="form-control"  name="comunidade">
 					<?php
-						include('conect.php');
+						include('pacote.php');
 						$stmt=$pdo->prepare("SELECT * FROM comunidades");
 						$stmt->execute();
 						$com=$stmt->fetchall();
@@ -56,7 +62,6 @@ if(!isset ($_SESSION['user'])){
 	</div>
 
 	<?php 
-	include('conect.php');
 	$feed=$pdo->prepare('SELECT * FROM posts');
 	$feed->execute();
 	$posts=$feed->fetchall(); 

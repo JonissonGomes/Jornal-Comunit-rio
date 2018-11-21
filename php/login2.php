@@ -4,7 +4,7 @@ $us= $_POST['user'];
 $ps= $_POST['pass'];
 
 
-include('conect.php');
+include('pacote.php');
 
 $stmt= $pdo->prepare("SELECT * FROM users WHERE username=? and password=?");
 $stmt->execute([$us,$ps]);

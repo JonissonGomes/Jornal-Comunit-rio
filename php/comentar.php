@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include('conect.php');
+include('pacote.php');
 
 
 $stmt=$pdo->prepare("INSERT INTO coments(coment,posts_id,users_id) values (?,?,?)");

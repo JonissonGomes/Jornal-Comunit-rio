@@ -1,6 +1,6 @@
 <?php 
 function show($id){
-	include("conect.php");
+	include("pacote.php");
 	$stmt = $pdo -> prepare("SELECT * FROM posts WHERE comunidade_id = ?");
 	$stmt -> execute([$id]);
 	$posts = $stmt->fetchall();
