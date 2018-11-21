@@ -21,8 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `id7031787_login`
 --
-DROP Database if exist jc;
-CREATE Database if not exist jc;
+DROP Database if exists jc;
+CREATE Database if not exists jc;
 use jc ;
 -- --------------------------------------------------------
 

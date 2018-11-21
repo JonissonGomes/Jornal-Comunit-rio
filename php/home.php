@@ -11,46 +11,52 @@ if(!isset ($_SESSION['user'])){
 	<?php include('bar.php');?>
 	<meta charset="UTF-8">
 	<title>Home</title>
-	<script type="text/javascript">
-		function cor(){
-			var cor = document.getElementById('file');
-			cor.className='file1';
-		}
-	</script>
 
 </head>
 
 <body>
- 
+
 
 	<div class="form-group" id="POSTS">
 		<form method="post" action="post.php?post" enctype="multipart/form-data">
 			<hr>
-			<fieldset class="descricao">
+			<fieldset class="formPost">
 				<label for="title">Titulo:</label>
-				<input class="form-control-inline" type="text" id="title" name="title" size="20" maxlength="40" required>
-                 <input type="file" accept="image/*" onmouseleave="loadFile2(event)" onmouseover ="loadFile(event)">
-<img id="output"/>
-<script>
-  var loadFile = function(event) {
-    var output = document.getElementById('output');
-    output.src = URL.createObjectURL(event.target.files[0]);
-  };
-  var loadFile2 = function(event) {
-    var output = document.getElementById('output');
-    output.src = "";
-  };
-</script>
+				<input class="form-control-inline" type="text" id="title" name="title" size="20" maxlength="40" placeholder="Insira o titulo" required>				
+				<input type="file" accept="image/*" name="imagem" id="arquivo" class="arquivo" >
+				<input type="text" name="file" id="file" class="form-control-inline" placeholder="Selecione a imagem" readonly="readonly" >
+				<input type="button" class="btnI" value="SELECIONAR">
+				<script>
+					$('.btnI').on('click', function() {
+						$('.arquivo').trigger('click');
+					});
+
+					$('.arquivo').on('change', function() {
+						var fileName = $(this)[0].files[0].name;
+						$('#file').val(fileName);
+					});
+					
+				</script>
+				<div class="form-group row">
+					<div class="col-xs-6">
 				<select class="form-control"  name="comunidade">
+					<option disabled selected>Selecione a comunidade</option>
 					<?php
-						include('pacote.php');
-						$stmt=$pdo->prepare("SELECT * FROM comunidades");
-						$stmt->execute();
-						$com=$stmt->fetchall();
-					 for ($i=0; $i < sizeof($com); $i++) { 
+					include('pacote.php');
+					$stmt=$pdo->prepare("SELECT * FROM comunidades");
+					$stmt->execute();
+					$com=$stmt->fetchall();
+					for ($i=0; $i < sizeof($com); $i++) { 
 						echo '<option value="'.$com[$i]['id'].'">'.$com[$i]['nome'].'</option>';
 					}?>
 				</select>
+				</div>
+				<div class="col-xs-6">
+				<select class="form-control">
+					<option>opition</option>
+				</select>
+				</div>
+				</div>
 			</fieldset>
 
 			<label>Postagem:</label><br>
@@ -72,7 +78,7 @@ if(!isset ($_SESSION['user'])){
 		echo "<h2>".$posts[$i]['descricao']."</h2>";
 		echo "<p>".$posts[$i]['post']."</p>";
 		if ($posts[$i]['imagem']!=null) {
-		echo '<a href="coment.php?post='.$posts[$i]['id'].'"><img src="'.$posts[$i]['imagem'].'"></a>';
+			echo '<a href="coment.php?post='.$posts[$i]['id'].'"><img src="'.$posts[$i]['imagem'].'"></a>';
 		}
 		echo '<div class="postA">';
 		if ($_SESSION['id']==$posts[$i]['users_id']) {

@@ -170,7 +170,7 @@ a{
 	border-radius: 10px;
 }
 
-.descricao{
+.formPost{
 	border-radius: 10px;
 }
 .postagens h1{
@@ -196,36 +196,23 @@ a{
 	border: 8px 8px 8px ;
 }
 
-.file {
-	cursor: pointer;
+.formPost input[type=file] {
+  display: none;
 }
-.file input[type=file]{
-	display: none;
+.formPost input[type=text]{
+	width: 400px;
+	margin-left: 12px;
+	margin-bottom: 15px;
 }
-.file span{
-	text-align: center;
-	display: block;
-	color: #fff;
-	margin: 10px 0 10px;
-	padding: 5px 80px;
-	text-decoration: none;
-	background: #418edb;
-	border-radius: 2px;
-	font: normal 14px/1.412 Helvetica;
+.formPost select{
+	width: 480px;
 }
-.file1 span{
-	text-align: center;
-	display: block;
-	color: #fff;
-	margin: 10px 0 10px;
-	padding: 5px 80px;
-	text-decoration: none;
-	background: red;
-	border-radius: 2px;
-	font: normal 14px/1.412 Helvetica;
-}
-.file1 input[type=file]{
-	display: none;
+.btnI {
+  border: none;
+  box-sizing: border-box;
+  padding: 4px 10px;
+  background-color: #4493c7;
+  color: #FFF;
 }
 .postA button{
 	width: 50vh	;
@@ -246,11 +233,6 @@ a{
 }
 .postA button:hover{
 	box-shadow: 2px 2px 2px #418efe ;
-}
-
-#output {
-	width: 100px;
-	position: absolute;
 }
 
 
@@ -297,21 +279,21 @@ a{
 /*----------------------------------------------------------------------------------------*/
 .alinha{
 	text-align: center;
-	margin-top: 40px;
+	margin-bottom: 60px;
 }
 .foto1{
 	font-size: 20px;
 	transition-duration: 1s;
 }
 .foto1 {
-	width: 10%;
+	width: 100%;
 	display: inline-block;
-	margin-right: 10px;
 	padding: 0;
 	border-radius:50px;
 }
 .foto1 img {
 	border-radius: 100px;
+	width: 100%;
 }
 /*Index - Categorias*/
 #categorias{
@@ -323,11 +305,9 @@ a{
 	transition: 0.2s;
 }
 .foto1:hover{
-	font-size: 80px;
+	margin-top: -50px;
 	transition-duration: 0.6s;
 }
-
-
 
 @media (max-width: 767px) {
 	html{
