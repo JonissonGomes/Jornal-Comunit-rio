@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 31-Out-2018 às 16:53
+-- Generation Time: 21-Nov-2018 às 16:12
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.0.26
 
@@ -21,9 +21,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `id7031787_login`
 --
-drop Database if exists jc;
-create Database if not exists jc;
-  use jc;
+DROP Database if exist jc;
+CREATE Database if not exist jc;
+use jc ;
 -- --------------------------------------------------------
 
 --
@@ -35,8 +35,15 @@ CREATE TABLE `coments` (
   `coment` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `posts_id` int(11) NOT NULL,
   `users_id` int(11) NOT NULL,
-  `created_at` timestamp DEFAULT current_timestamp
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `coments`
+--
+
+INSERT INTO `coments` (`id`, `coment`, `posts_id`, `users_id`, `created_at`) VALUES
+(8, '.', 40, 18, '2018-11-20 15:37:47');
 
 -- --------------------------------------------------------
 
@@ -96,8 +103,16 @@ CREATE TABLE `posts` (
   `imagem` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `users_id` int(11) DEFAULT NULL,
   `comunidades_id` int(11) DEFAULT NULL,
-  `created_at` timestamp DEFAULT current_timestamp
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `posts`
+--
+
+INSERT INTO `posts` (`id`, `title`, `descricao`, `post`, `imagem`, `users_id`, `comunidades_id`, `created_at`) VALUES
+(39, 'Estrada', 'Buracos na estrada', 'muitos buracos na estradas', '../img/16-11-2018_04:11:05', 7, 11, '2018-11-16 16:52:06'),
+(40, 'Buraco na rua', 'buracao imenso', 'bla bla bla quebrou o meu carro', '../img/16-11-2018_06:11:39', 15, 1, '2018-11-16 18:16:40');
 
 -- --------------------------------------------------------
 
@@ -108,18 +123,37 @@ CREATE TABLE `posts` (
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(45) COLLATE utf8_unicode_ci NOT NULL
+  `password` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `validate` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`) VALUES
-(1, 'opa', '123'),
-(2, 'silvio', '123'),
-(3, 'gui', 'gui'),
-(4, 'Filipe', 'lipeh777');
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `validate`) VALUES
+(1, 'opa', '123', '', 0),
+(2, 'silvio', '123', '', 0),
+(3, 'gui', 'gui', '', 0),
+(4, 'Filipe', 'lipeh777', '', 0),
+(5, 'naadabe', '123', 'jornalcomunitarioprojeto@gmail.com', 0),
+(6, '123', '123', 'jonissonsportsempre@gmail.com', 1),
+(7, 'adriene', '123', 'adrienebarbosa22@gmail.com', 1),
+(8, 'teste', '123', 'silvioej@gmail.com', 0),
+(9, 'Eu', '123', 'jonissonsportsempre@gmail.com', 1),
+(10, 'lien', '123', 'silvioej@gmail.com', 1),
+(11, 'juen', '123', 'silvioej@gmail.com', 1),
+(12, 'Kkk', 'kkk', 'jonissonsportsempre@gmail.com', 0),
+(13, 'hiei', '123', 'silvio.cursoejpg@GMAIL.COM', 0),
+(14, 'alexandre', '123', 'strapacao@gmail.com', 1),
+(15, 'jonisson', '123', 'jonisson@hotmail.com', 1),
+(16, '000', '000', 'lucascrieumaconta1@gmail.com', 0),
+(17, 'lucas123', 'lucas', 'lucascrieumaconta@gmail.com', 0),
+(18, 'raquel', 'raquel', 'lucascrieumaconta@gmail.com', 1),
+(19, 'kaka', '123', 'silvioej@gmail.com', 0),
+(20, 'lola', '123', 'silvioej@hotmail.com', 1),
+(21, 'aline ', '123', 'alineepecris79@gmail.com', 1);
 
 --
 -- Indexes for dumped tables
@@ -161,7 +195,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `coments`
 --
 ALTER TABLE `coments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `comunidades`
@@ -173,13 +207,13 @@ ALTER TABLE `comunidades`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Constraints for dumped tables
