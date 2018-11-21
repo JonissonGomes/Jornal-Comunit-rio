@@ -148,7 +148,7 @@ a{
 
 /*Campo de postagem*/
 #POSTS{
-	width: 800px;
+	width: 1000px;
 	height: 300px;
 	border-radius: 16px;
 	color: black;
@@ -246,6 +246,11 @@ a{
 }
 .postA button:hover{
 	box-shadow: 2px 2px 2px #418efe ;
+}
+
+#output {
+	width: 100px;
+	position: absolute;
 }
 
 
