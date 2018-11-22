@@ -1,16 +1,15 @@
-<?php 
-session_start();
-if(!isset ($_SESSION['user'])){
-  header('location:/');
-}
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Comunidades</title>
     <?php include("bar.php"); ?>
+<?php 
+if(!isset ($_SESSION['user'])){
+  header('location:/');
+}
+
+?>
 </head>
 <body>
 <div class="div">

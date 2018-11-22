@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 try {
 
 	$pdo = new PDO ('mysql:dbname=jc;host=localhost;port=3306', 'root','');

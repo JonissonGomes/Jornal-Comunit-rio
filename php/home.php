@@ -1,16 +1,15 @@
-<?php 
-session_start();
-if(!isset ($_SESSION['user'])){
-	header('location:/');
-}
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 	<?php include('bar.php');?>
 	<meta charset="UTF-8">
 	<title>Home</title>
+<?php 
+if(!isset ($_SESSION['user'])){
+	header('location:/');
+}
+
+?>
 
 </head>
 

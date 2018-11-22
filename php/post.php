@@ -9,4 +9,4 @@ if (isset($_FILES['imagem'])) {
 $postagem->postar();
 
 
-header("location:home.php");
+header("location:".$_SERVER['HTTP_REFERER']);
