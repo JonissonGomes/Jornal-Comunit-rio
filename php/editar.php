@@ -1,10 +1,5 @@
 <?php 
-session_start();
-	include('conect.php');
-	$feed=$pdo->prepare('SELECT * FROM posts WHERE id=?');
-	$feed->execute([$_GET['edit']]);
-	$posts=$feed->fetch();
-	?>
+session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +12,11 @@ session_start();
 	<div class="form-group" id="POSTS">
 		<form method="post" action="edit.php" enctype="multipart/form-data">
 			<hr>
+<?php
+	$feed=$pdo->prepare('SELECT * FROM posts WHERE id=?');
+	$feed->execute([$_GET['edit']]);
+	$posts=$feed->fetch();
+	?>
 			<fieldset class="descricao">
 				<label for="title">Titulo:</label>
 				<input class="form-control-inline" type="text" id="title" name="title" size="20" maxlength="40" value="<?=$posts['title']?>" required>
@@ -28,7 +28,6 @@ session_start();
 				</label>
 				<select class="form-control"  name="comunidade">
 					<?php
-						include('conect.php');
 						$stmt=$pdo->prepare("SELECT * FROM comunidades");
 						$stmt->execute();
 						$com=$stmt->fetchall();

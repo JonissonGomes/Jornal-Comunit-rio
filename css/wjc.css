@@ -157,6 +157,8 @@ a{
 	font-size: 15px;
 }
 .postagens{
+	display: flex;
+	flex-direction: column;
 	margin: auto;
 	overflow: hidden;
 	text-overflow:ellipsis;

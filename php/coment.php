@@ -1,27 +1,37 @@
 <?php 
-session_start();
-if (isset($_GET['post'])) {
-$_SESSION['post']=$_GET['post'];
-}
-	include('pacote.php');
-	$feed=$pdo->prepare('SELECT * FROM posts WHERE id=?');
-	$feed->execute([$_SESSION['post']]);
-	$posts=$feed->fetch();
-	?>
+session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<?php include('bar.php');?>
 	<meta charset="UTF-8">
 	<title><?=$posts['title']?></title>
 	<link rel="stylesheet" type="text/css" href="/css/home.css">
-	<?php include('bar.php');?>
 </head>
 <body>
-<div style="display: flex; flex-direction: column;"> 
-<div class="postagens">
-<h1><?=$posts['title']?></h1>
-<h2><?=$posts['descricao']?></h2>
-<p><?=$posts['post']?></p>
+<?php
+if (isset($_GET['post'])) {
+$_SESSION['post']=$_GET['post'];
+}
+	$feed=$pdo->prepare('SELECT * FROM posts WHERE id=?');
+	$feed->execute([$_SESSION['post']]);
+	$posts=$feed->fetch();
+		echo '<div class="postagens">';
+		echo '<footer>'.$posts['created_at'].'</footer>';
+		echo '<a href="coment.php?post='.$posts['id'].'"><h1>'.$posts['title']."</h1></a>";
+		echo "<h2>".$posts['descricao']."</h2>";
+		echo "<p>".$posts['post']."</p>";
+		if ($posts['imagem']!=null) {
+			echo '<a href="coment.php?post='.$posts['id'].'"><img src="'.$posts['imagem'].'"></a>';
+		}
+		echo '<div class="postA">';
+		if ($_SESSION['id']==$posts['users_id']) {
+			echo '<a onclick="confirma('.$posts['id'].')" ><button >Excluir </button></a>';
+			echo '<a href="/php/editar.php?edit='.$posts['id'].'" ><button > Editar </button></a>';
+		}
+		echo "</div>";
+		echo "</div><br>";
+	?>
 <img style="width: 50%;" src="<?=$posts['imagem']?>">
 	</div>
 	<div style="margin: 0 310px;">
@@ -38,10 +48,11 @@ $_SESSION['post']=$_GET['post'];
 		$get=$stmt->fetchall();
 
 		for ($i=sizeof($get)-1; $i >=0 ; $i--) { 
-			echo '<div class="postagens">';
+			echo '<div class="">';
 			echo '<h1>'.$get[$i]['username'].'</h1>';
-			echo '<h2 >'.$get[$i]['coment'].'</h2>';
+			echo '<h2>'.$get[$i]['coment'].'</h2>';
 			echo "</div>";
+			echo '<hr>';
 		}
 		?>
 	</div>

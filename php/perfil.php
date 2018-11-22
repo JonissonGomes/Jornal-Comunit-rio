@@ -1,23 +1,12 @@
-<?php 
-session_start();
-if(!isset ($_SESSION['user'])){
-	header('location:/');
-}
 
-?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-	<?php include('bar.php');?>
-	<meta charset="UTF-8">
-	<title>Home</title>
-
+	<title></title>
+	<?php include 'bar.php';?>
 </head>
-
 <body>
-
-
-	<div class="form-group" id="POSTS">
+<div class="form-group" id="POSTS">
 		<form method="post" action="post.php?post" enctype="multipart/form-data">
 			<hr>
 			<fieldset class="formPost">
@@ -65,14 +54,15 @@ if(!isset ($_SESSION['user'])){
 			<hr>
 		</form>
 	</div>
-
+<center><strong><h1>SUAS POSTAGENS</h1></strong></center>
 	<?php 
-	$feed=$pdo->prepare('SELECT * FROM posts');
-	$feed->execute();
+	$feed=$pdo->prepare('SELECT u.username, p.* FROM users u INNER JOIN posts p WHERE u.id = p.users_id AND p.users_id = ?');
+	$feed->execute([$_SESSION['id']]);
 	$posts=$feed->fetchall(); 
 	for ($i=sizeof($posts)-1; $i >=0 ; $i--) { 
 		echo '<div class="postagens">';
-		echo '<footer>'.$posts[$i]['created_at'].'</footer>';
+		echo '<div><footer style="float: right;margin-right: 50px;">'.$posts[$i]['created_at'].'</footer>';
+		echo '<footer style="float: left;margin-left: 50px;font-size: 20px;"><strong>'.$posts[$i]['username'].'</strong></footer></div>';
 		echo '<a href="coment.php?post='.$posts[$i]['id'].'"><h1>'.$posts[$i]['title']."</h1></a>";
 		echo "<h2>".$posts[$i]['descricao']."</h2>";
 		echo "<p>".$posts[$i]['post']."</p>";
@@ -90,7 +80,5 @@ if(!isset ($_SESSION['user'])){
 	}
 	?>
 
-</body>
-</html>
 </body>
 </html>

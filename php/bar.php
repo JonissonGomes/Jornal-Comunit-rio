@@ -12,6 +12,7 @@
      	<script src="/js/jquery.min.js"></script>
      	<script src="/js/bootstrap.min.js"></script>
      	<script src="/js/index.js"></script>
+          <?php include('pacote.php'); ?>
      	<link rel="shortcut icon" href="../img/icon.png" >
      	<?php $paginaCorrente = basename($_SERVER['PHP_SELF']); ?>
      	<div id="menu">
@@ -36,7 +37,8 @@
      			<button type="button" class="sendtop" data-toggle="modal" data-target="#mLogin">Login</button>
 
      		<?php } else { ?>
-     			<a href="/php/logout.php"> <button class="sendtop"> Sair </button> </a>
+                    <a href="/php/logout.php"> <button class="sendtop"> Sair </button> </a>
+     			<a href="/php/perfil.php"> <button class="sendtop"> Perfil </button> </a>
      		<?php } ?>
      	</div>  
      </div>
