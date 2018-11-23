@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<?php include 'bar.php';?>
+<?php include 'bar.php';?>
+<title>Perfil</title>
 </head>
 <body>
-<div class="form-group" id="POSTS">
+	<div class="form-group" id="POSTS">
 		<form method="post" action="post.php?post" enctype="multipart/form-data">
 			<hr>
 			<fieldset class="formPost">
@@ -27,22 +24,22 @@
 				</script>
 				<div class="form-group row">
 					<div class="col-xs-6">
-				<select class="form-control"  name="comunidade">
-					<option disabled selected>Selecione a comunidade</option>
-					<?php
-					$stmt=$pdo->prepare("SELECT * FROM comunidades");
-					$stmt->execute();
-					$com=$stmt->fetchall();
-					for ($i=0; $i < sizeof($com); $i++) { 
-						echo '<option value="'.$com[$i]['id'].'">'.$com[$i]['nome'].'</option>';
-					}?>
-				</select>
-				</div>
-				<div class="col-xs-6">
-				<select class="form-control">
-					<option>opition</option>
-				</select>
-				</div>
+						<select class="form-control"  name="comunidade">
+							<option disabled selected>Selecione a comunidade</option>
+							<?php
+							$stmt=$pdo->prepare("SELECT * FROM comunidades");
+							$stmt->execute();
+							$com=$stmt->fetchall();
+							for ($i=0; $i < sizeof($com); $i++) { 
+								echo '<option value="'.$com[$i]['id'].'">'.$com[$i]['nome'].'</option>';
+							}?>
+						</select>
+					</div>
+					<div class="col-xs-6">
+						<select class="form-control">
+							<option>opition</option>
+						</select>
+					</div>
 				</div>
 			</fieldset>
 
@@ -53,7 +50,7 @@
 			<hr>
 		</form>
 	</div>
-<center><strong><h1>SUAS POSTAGENS</h1></strong></center>
+	<center><strong><h1>SUAS POSTAGENS</h1></strong></center>
 	<?php 
 	$feed=$pdo->prepare('SELECT u.username, p.* FROM users u INNER JOIN posts p WHERE u.id = p.users_id AND p.users_id = ?');
 	$feed->execute([$_SESSION['id']]);

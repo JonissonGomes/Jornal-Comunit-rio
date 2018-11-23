@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<?php include('bar.php');?>
-	<meta charset="UTF-8">
-	<title>Home</title>
+<?php include('bar.php');?>
+<meta charset="UTF-8">
+<title>Home</title>
 <?php 
 if(!isset ($_SESSION['user'])){
 	header('location:/');
@@ -38,22 +35,22 @@ if(!isset ($_SESSION['user'])){
 				</script>
 				<div class="form-group row">
 					<div class="col-xs-6">
-				<select class="form-control"  name="comunidade">
-					<option disabled selected>Selecione a comunidade</option>
-					<?php
-					$stmt=$pdo->prepare("SELECT * FROM comunidades");
-					$stmt->execute();
-					$com=$stmt->fetchall();
-					for ($i=0; $i < sizeof($com); $i++) { 
-						echo '<option value="'.$com[$i]['id'].'">'.$com[$i]['nome'].'</option>';
-					}?>
-				</select>
-				</div>
-				<div class="col-xs-6">
-				<select class="form-control">
-					<option>opition</option>
-				</select>
-				</div>
+						<select class="form-control"  name="comunidade">
+							<option disabled selected>Selecione a comunidade</option>
+							<?php
+							$stmt=$pdo->prepare("SELECT * FROM comunidades");
+							$stmt->execute();
+							$com=$stmt->fetchall();
+							for ($i=0; $i < sizeof($com); $i++) { 
+								echo '<option value="'.$com[$i]['id'].'">'.$com[$i]['nome'].'</option>';
+							}?>
+						</select>
+					</div>
+					<div class="col-xs-6">
+						<select class="form-control">
+							<option>opition</option>
+						</select>
+					</div>
 				</div>
 			</fieldset>
 
