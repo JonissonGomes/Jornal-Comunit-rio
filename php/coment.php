@@ -27,30 +27,58 @@
 	echo "</div>";
 	echo "</div><br>";
 	?>
-	<img style="width: 50%;" src="<?=$posts['imagem']?>">
 </div>
-<div style="margin: 0 310px;">
-	<form action="comentar.php" method="post" style="margin: 100px,100px, 100px;">
-		<textarea name="coment" required style="width: 70%; position: relative;"></textarea>
-		<input style="width: 250px; height: 40px;background-color: #3db0f7;border: none;border-radius: 5px;margin-left: 40%" type="submit" value="Comentar">
-	</form>
-</div>
-<div class="postagens" style="margin-top: 50px; width: 1000px;">
+
+			<form action="comentar.php" method="post" style="margin: 100px,100px, 100px;">
+				<div class="portlet">
+					<div class="sheet sheet-lg widget-comments">
+						<div class="autofit-row autofit-float widget-comments-header">
+							<div class="autofit-col autofit-col-expand">
+							</div>
+							<div class="autofit-col autofit-col-end">
+							</div>
+						</div>
+
+						<div class="autofit-row widget-comments-body">
+							<div class="autofit-col inline-item-before">
+								<span class="sticker sticker-lg sticker-success user-icon"></span>
+							</div>
+							<div class="autofit-col autofit-col-expand">
+								<div class="form-group">
+									<textarea name="coment" required class="form-control"></textarea>
+								</div>
+								<div class="form-group">
+									<button class="btn btn-primary btn-sm" type="submit">Enviar comentário</button>
+								</div>
+							</div>
+						</div>
+					</form>
 	<?php
 		//$stmt=$pdo->prepare('SELECT * FROM coments WHERE posts_id=?');
-	$stmt=$pdo->prepare("SELECT u.username, c.coment FROM users u INNER JOIN coments c WHERE u.id = c.users_id AND c.posts_id = ?");
+	$stmt=$pdo->prepare("SELECT u.username, c.coment ,c.created_at FROM users u INNER JOIN coments c WHERE u.id = c.users_id AND c.posts_id = ?");
 	$stmt->execute([$_SESSION['post']]);
 	$get=$stmt->fetchall();
 
-	for ($i=sizeof($get)-1; $i >=0 ; $i--) { 
-		echo '<div class="">';
-		echo '<h1>'.$get[$i]['username'].'</h1>';
-		echo '<h2>'.$get[$i]['coment'].'</h2>';
-		echo "</div>";
-		echo '<hr>';
-	}
+	for ($i=sizeof($get)-1; $i >=0 ; $i--) { ?>
+	<br>
+	<div class="body_com">
+	<section class="profilebox">
+		<aside>
+			<img class="profpic" src="//gravatar.com/avatar/59d2646254895816400fcb1eded7d86d?s=128&d=https://codepen.io/assets/avatars/user-avatar-512x512-e95b68f7d95e0e48bead22e5d64c95d9.png" alt="profile picture" />
+		</aside>
+		<header>
+			<h1 class="prof-name"><?=$get[$i]['username']?></h1>
+			<h5 class="prof-user"><?=$get[$i]['created_at']?></h5>
+		</header>
+		<main class="user-desc">
+			<br><br><br>
+				<?= $get[$i]['coment'] ?>
+			</br>
+		</main>
+	</section>
+	</div>
+	<?php }
 	?>
-</div>
 </div>	
 </body>
 </html>

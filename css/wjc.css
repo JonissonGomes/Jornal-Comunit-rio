@@ -403,3 +403,142 @@ a{
 	border-radius: 10px;
 }
 }
+
+.body_com {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+.body_com {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    flex-direction: column;
+}
+::selection {
+    background: rgba(73, 96, 128, 0.55);
+}
+.profilebox {
+    position: relative;
+    background: white;
+    min-height: 150px;
+    max-width: 700px;
+    width: calc(60% - 120px);
+    border-radius: 8px;
+    padding: 30px 20px 20px 70px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+.profpic {
+    position: absolute;
+    top: 20px;
+    left: -60px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 4px solid #22242a;
+    background: #22242a;
+    display: inline-block;
+    box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+}
+.prof-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
+    background: transparent;
+    outline: 0 none;
+    border: none;
+    border-radius: 50%;
+    font-size: 18pt;
+    color: rgba(255,255,255,.2);
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s ease-in-out;
+}
+.prof-close:active {
+    background: rgba(255,255,255,.02);
+    box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+}
+.prof-sm {
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    top: 152px;
+    left: -20px;
+    width: 40px;
+}
+.prof-sm .sm {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 4px;
+    border-radius: 50%;
+    background: #22242a;
+    transition: all 0.15s ease-in-out;
+    box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+}
+.prof-sm .sm:hover {
+    background: #26282E;
+}
+.prof-sm .sm:active {
+    background: #31343b;
+}
+.prof-sm a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.prof-sm svg {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 50%;
+}
+.prof-sm path {
+    fill: rgba(255,255,255,.2);
+}
+.prof-name {
+    display: block;
+    margin: 0;
+    color: black;
+    font-weight: normal;
+    font-size: 20pt;
+}
+.prof-user {
+    display: block;
+    margin: 0;
+    color: black;
+    font-weight: normal;
+    font-size: 8pt;
+}
+.user-tags {
+    margin: 20px 0 0 0;
+    padding: 0;
+    list-style: none;
+    cursor: default;
+}
+.user-tags .tag {
+    display: inline-block;
+    font-size: 8pt;
+    text-transform: lowercase;
+    color: black;
+    background: #e6e6e6;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 10px;
+    border-radius: 10px;
+    box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+}
+.user-desc {
+    color: black;
+    font-size: 11pt;
+    line-height: 12pt;
+    flex: 5px 0 auto;
+}

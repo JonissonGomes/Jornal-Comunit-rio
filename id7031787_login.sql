@@ -32,7 +32,7 @@ use jc ;
 
 CREATE TABLE `coments` (
   `id` int(11) NOT NULL,
-  `coment` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `coment` varchar(8000) COLLATE utf8_unicode_ci NOT NULL,
   `posts_id` int(11) NOT NULL,
   `users_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
