@@ -1,6 +1,7 @@
 <?php include('bar.php');?>
 <meta charset="UTF-8">
 <title><?=$posts['title']?></title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" >
 </head>
 <body>
 	<div id="postbox">
@@ -26,8 +27,77 @@
 				</div>
 			</div>
 		</footer>
+		<h1><?=$posts['title']?></h1>
 		<img src="<?= $posts['imagem']?>">
-		<a href="coment.php?post=<?=$posts['id']?>"><h1><?=$posts['title']?></h1></a>
+		<section class='rating-widget'>
+  
+  <!-- Rating Stars Box -->
+  <div class='rating-stars text-center'>
+    <ul id='stars'>
+      <li class='star' title='Péssimo' data-value='1'>
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+      <li class='star' title='Ruim' data-value='2'>
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+      <li class='star' title='Bom' data-value='3'>
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+      <li class='star' title='Muito bom' data-value='4'>
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+      <li class='star' title='Excelente' data-value='5'>
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+    </ul>
+  </div>
+  
+</section>
+<script type="text/javascript">
+	$(document).ready(function(){
+  
+  /* 1. Visualizing things on Hover - See next part for action on click */
+  $('#stars li').on('mouseover', function(){
+    var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+   
+    // Now highlight all the stars that's not after the current hovered star
+    $(this).parent().children('li.star').each(function(e){
+      if (e < onStar) {
+        $(this).addClass('hover');
+      }
+      else {
+        $(this).removeClass('hover');
+      }
+    });
+    
+  }).on('mouseout', function(){
+    $(this).parent().children('li.star').each(function(e){
+      $(this).removeClass('hover');
+    });
+  });
+  
+  
+  /* 2. Action to perform on click */
+  $('#stars li').on('click', function(){
+    var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+    var stars = $(this).parent().children('li.star');
+    
+    for (i = 0; i < stars.length; i++) {
+      $(stars[i]).removeClass('selected');
+    }
+    
+    for (i = 0; i < onStar; i++) {
+      $(stars[i]).addClass('selected');
+    }
+    
+    // JUST RESPONSE (Not needed)
+    var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
+    
+  });
+  
+  
+});
+</script>
 		<h2><?=$posts['descricao']?></h2>
 		<p><?=$posts['post']?></p>
 
@@ -50,7 +120,7 @@
 							</div>
 							<div class="autofit-col autofit-col-expand">
 								<div class="form-group">
-									<textarea name="coment" required class="form-control"></textarea>
+									<textarea name="coment" required style="width:100%; height:150px;"></textarea>
 									<button class="btn btn-primary btn-sm" type="submit">Enviar comentário</button>
 								</div>
 							</div>

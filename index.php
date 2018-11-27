@@ -13,7 +13,17 @@
 </head>
 <body>
 
-  <div class="container">
+  <div class='page'>
+
+    <section class='hero'>
+      <div class='cta'>Fórum Comunitário:</br><span class="par"></span>comece a participar!</div>
+      <button onclick="jump('sec-contact');" class='button-cta'>Publicar</button>
+    </section>
+    <section class='coments'>
+      <div class='section-name' id='sec-coments'></div>
+      <div class='hcarousel'>
+            </div>
+             <div class="container">
     <h2></h2>  
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -30,7 +40,7 @@
           <div class="item">
             <div class="carousel-caption">
               <h3>BEM VINDO</h3>
-              <p>As notícias sobre a sua comunidade você encontra nesta plataforma online.</p>
+              <p class="pr">As notícias sobre a sua comunidade você encontra nesta plataforma online.</p>
             </div>
           </div>
           <!-- Slide 2 -->
@@ -39,8 +49,8 @@
           <img src="/img/igarassu2.jpg" alt="" style="width:100%;filter: brightness(50%)">
           <div class="item">
             <div class="carousel-caption">
-              <h3>O que o Web Jornal oferece?</h3>
-              <p>Nós oferecemos a você usuário a possibilidade de fazer publicações sobre problemas locais e a receber feedback sobre a resolução dos problemas. </p>
+              <h3>O que o Fórum Comunitário oferece?</h3>
+              <p class="pr">Nós oferecemos a você usuário a possibilidade de fazer publicações sobre problemas locais e a receber feedback sobre a resolução dos problemas. </p>
             </div>
           </div>
         </div>
@@ -108,6 +118,20 @@
             </a>
           </div>
         </div>
+    </section>
+    <section class='second-cta'>
+      <div class='section-name' id='sec-contact'></div>
+      <div class='section-title negative'>Let's get started</div>
+      <button class='button-sec-cta'>GO!</button>
+    </section>
+    <section class='footer'>
+      </svg>
+      <div class='copy'>&copy;2018. Fórum Comunitário</div>
+    </section>
+  </div>
+</div>
+
+ 
 
 
       </body>
