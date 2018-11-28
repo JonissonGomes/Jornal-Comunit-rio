@@ -68,9 +68,9 @@
 
 							<div id="profile-pic"></div>
 							<div id="profile-details">
-							<h1><?= $_SESSION['user']?></h1>
+							<h1 style="color: black"><?= $_SESSION['user']?></h1>
 								<div id="profile-buttons">
-									<div class="view-profile"><a href="perfil.php" style="text-decoration: none;color: white"> Ver Perfil </a></div>
+									<div class="view-profile"><a href="/php/perfil.php" style="text-decoration: none;color: white"> Ver Perfil </a></div>
 								</div>
 							</div>
 
@@ -80,9 +80,9 @@
 
 							<ul class="account-menu-list">
 
-								<li>Feedback</li>
-								<li>Ajuda</li>
-								<li><a href="logout.php">Sair</a></li>
+								<li style="color: black">Feedback</li>
+								<li style="color: black">Ajuda</li>
+								<li style="color: black"><a href="logout.php">Sair</a></li>
 							</ul>
 
 						</div><!--end account-menu-->

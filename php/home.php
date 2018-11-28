@@ -12,30 +12,23 @@ if(!isset ($_SESSION['user'])){
 
 <body>
 
-
-	<div class="form-group" id="POSTS">
-		<form method="post" action="post.php?post" enctype="multipart/form-data">
-			<hr>
-			<fieldset class="formPost">
-				<label for="title">Titulo:</label>
-				<input class="form-control-inline" type="text" id="title" name="title" size="20" maxlength="40" placeholder="Insira o titulo" required>				
-				<input type="file" accept="image/*" name="imagem" id="arquivo" class="arquivo" >
-				<input type="text" name="file" id="file" class="form-control-inline" placeholder="Selecione a imagem" readonly="readonly" >
-				<input type="button" class="btnI" value="SELECIONAR">
-				<script>
-					$('.btnI').on('click', function() {
-						$('.arquivo').trigger('click');
-					});
-
-					$('.arquivo').on('change', function() {
-						var fileName = $(this)[0].files[0].name;
-						$('#file').val(fileName);
-					});
-					
-				</script>
-				<div class="form-group row">
-					<div class="col-xs-6">
-						<select class="form-control"  name="comunidade">
+<br>
+<div class="container">
+  <div class="row">
+    <div>
+      <div class="well well-sm well-social-post">
+        <form method="post" action="post.php?post" enctype="multipart/form-data">
+          <ul class="list-inline" id='list_PostActions'>
+            <li class='active'><a href='#'>Publique</a></li>
+          </ul>
+          <label style="color:black;">Titulo</label>
+         	<input class="form-control-inline" type="text" name="title">
+          <textarea class="form-control" name="post" placeholder="What's in your mind?"></textarea>
+          <ul class='list-inline post-actions'>
+						<input type="file" name="imagem" id="camera" style="display: none;">
+            <li ><label style="cursor: pointer;" for="camera"><span class="glyphicon glyphicon-camera"></span></label></li>
+            <li ><label style="cursor: pointer;" for="comunidades"><span class='glyphicon glyphicon-map-marker'></span></label></li>
+            <select style="display: none;" class="form-control" id="comunidades" name="comunidade">
 							<option disabled selected>Selecione a comunidade</option>
 							<?php
 							$stmt=$pdo->prepare("SELECT * FROM comunidades");
@@ -45,22 +38,13 @@ if(!isset ($_SESSION['user'])){
 								echo '<option value="'.$com[$i]['id'].'">'.$com[$i]['nome'].'</option>';
 							}?>
 						</select>
-					</div>
-					<div class="col-xs-6">
-						<select class="form-control">
-							<option>opition</option>
-						</select>
-					</div>
-				</div>
-			</fieldset>
-
-			<label>Postagem:</label><br>
-			<textarea class="form-control" name="post" maxlength="510" cols="63" rows="3" required></textarea>
-			<br>
-			<input class="form-control" class="enviar" type="submit" name="">
-			<hr>
-		</form>
-	</div>
+            <li class='pull-right'><a href="#" class='btn btn-primary btn-xs'>Publicar</a></li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>                                                            
 
 	<?php 
 	$feed=$pdo->prepare('SELECT * FROM posts');
@@ -69,7 +53,7 @@ if(!isset ($_SESSION['user'])){
 	for ($i=sizeof($posts)-1; $i >=0 ; $i--) { 
 		echo '<div class="postagens">';
 		echo '<footer>'.$posts[$i]['created_at'].'</footer>';
-		echo '<a href="coment.php?post='.$posts[$i]['id'].'"><h1>'.$posts[$i]['title']."</h1></a>";
+		echo '<h1><a href="coment.php?post='.$posts[$i]['id'].'">'.$posts[$i]['title']."</a></h1>";
 		echo "<h2>".$posts[$i]['descricao']."</h2>";
 		echo "<p>".$posts[$i]['post']."</p>";
 		if ($posts[$i]['imagem']!=null) {

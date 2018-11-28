@@ -25,17 +25,7 @@ DROP Database if exists jc;
 CREATE Database if not exists jc;
 use jc ;
 -- --------------------------------------------------------
-CREATE TABLE `tema` (
- id int not null auto_increment PRIMARY KEY,
- nome varchar(30) not null
-);
 
-INSERT INTO `tema` ( `nome`) VALUES 
-('saúde'),
-('saneamento'),
-('educação'),
-('ação social'),
-('meio ambiente');
 --
 -- Estrutura da tabela `coments`
 --
@@ -65,8 +55,6 @@ CREATE TABLE `comunidades` (
   `id` int(11) NOT NULL,
   `nome` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-
 
 --
 -- Extraindo dados da tabela `comunidades`
@@ -249,4 +237,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-

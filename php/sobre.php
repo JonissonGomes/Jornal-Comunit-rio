@@ -12,32 +12,32 @@
 	<div class="comp">
 		<div class="foto">
 			<img  class="aline" src="../img/a'.jpg" width="150" height="150">	
-			<p class="par">Aline Venceslau
-				<p class="par">17 anos
+			<p>Aline Venceslau
+				<p>17 anos
 				</div>
 
 				<div class="foto">
 					<img src="../img/ad.jpg" width="150" height="150">
-					<p class="par">Adriene Barbosa
-						<p class="par">18 anos
+					<p>Adriene Barbosa
+						<p>18 anos
 						</div>
 
 						<div class="foto">
 							<img src="../img/f.jpg" width="150" height="150">
-							<p class="par">Fernanda Batista
-								<p class="par">18 anos
+							<p>Fernanda Batista
+								<p>18 anos
 								</div>
 
 								<div class="foto">
 									<img src="../img/j.jpg" width="150" height="150">
-									<p class="par">Jonisson Gomes
-										<p class="par">19 anos
+									<p>Jonisson Gomes
+										<p>19 anos
 										</div>
 
 										<div class="foto">
 											<img src="../img/s.jpg" width="150" height="150">
-											<p class="par">Silvio Paiva
-												<p class="par">22 anos
+											<p>Silvio Paiva
+												<p>22 anos
 												</div>
 
 											</div>

@@ -11,9 +11,9 @@ if(!isset ($_SESSION['user'])){
 <body>
   <div class="div">
     <div class="container">
-      <h2>Comunidades Cadastradas</h2>
-      <p>Pesquise o nome da comunidade e tenha acesso as suas publicações.</p>
-      <p>Não encontrou uma comunidade? Faça o cadastro dela.</p>
+      <h2 class="pr">Comunidades Cadastradas</h2>
+      <p class="pr">Pesquise o nome da comunidade e tenha acesso as suas publicações.</p>
+      <p class="pr">Não encontrou uma comunidade? Faça o cadastro dela.</p>
       <div class="dropdown">
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Lista de Comunidades
           <span class="caret"></span></button>
@@ -45,8 +45,6 @@ if(!isset ($_SESSION['user'])){
         });
       </script>
 
-
-      <hr>
     </div>
     <?php 
     if (isset($_GET['comunidade'])) {

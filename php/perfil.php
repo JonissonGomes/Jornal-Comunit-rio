@@ -50,7 +50,7 @@
 			<hr>
 		</form>
 	</div>
-	<center><strong><h1>SUAS POSTAGENS</h1></strong></center>
+	<center><strong><h3>Suas publicações</h3></strong></center>
 	<?php 
 	$feed=$pdo->prepare('SELECT u.username, p.* FROM users u INNER JOIN posts p WHERE u.id = p.users_id AND p.users_id = ?');
 	$feed->execute([$_SESSION['id']]);
