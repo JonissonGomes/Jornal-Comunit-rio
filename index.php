@@ -106,7 +106,7 @@
                 </div>
               </div>
             </div>
-
+            
             <!-- Controles de direção (Esquerda e Direita) -->
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
               <span class="glyphicon glyphicon-chevron-left"></span>
@@ -117,12 +117,24 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
-        </div>
+        </div><br><br><br>
+        <!-- Informações -->
+        <div class=informacoes> <div class=> </div> <div class="informacoes-text"> <h2>Faça publicações sobre problemas da sua comunidade</h2> <p>Encontre os melhores conteúdos sociais (recursos abertos) de toda sua cidade. Ao usar o Fórum Comunitário, você pode pesquisar, públicar problemas, opiniões, eventos e criar enquetes de comunidades da sua cidade. Você pode até comentar, avaliar ou compartilhar públicações e conteúdo de outros usuários original.</p> </div>
+        </div><div id="icone_info"><img src="img/criacao.png" style="height: 140px;"></div>
+
+          <!-- Informações 2 -->
+        <div class=informacoes2> <div class=> </div> <div class="informacoes-text 2"> <h2>Comece a interagir sobre problemas comunitários</h2> <p>Encontre os melhores conteúdos sociais (recursos abertos) de toda a Web. Ao usar o Fórum Comunitário, você pode pesquisar, públicar e compartilhar grátis , problemas, opiniões, eventos e criar enquetes de comunidades da sua cidade. Você pode até comentar, avaliar ou compartilhar públicações e conteúdo de outros usuários original.</p> </div>
+        </div><div id="icone_info2"><img src="img/comunicação.png" style="height: 140px;"></div>
+
+        <!-- Informações 3-->
+        <div class=informacoes> <div class=> </div> <div class="informacoes-text"> <h2>Compartilhe publicações de toda sua cidade</h2> <p>Encontre os melhores conteúdos sociais (recursos abertos) de toda a Web. Ao usar o Fórum Comunitário, você pode pesquisar, públicar e compartilhar grátis , problemas, opiniões, eventos e criar enquetes de comunidades da sua cidade. Você pode até comentar, avaliar ou compartilhar públicações e conteúdo de outros usuários original.</p> </div>
+        </div><div id="icone_info"><img src="img/compartilhar.png" style="height: 140px;"></div><br>
+
     </section>
     <section class='second-cta'>
       <div class='section-name' id='sec-contact'></div>
-      <div class='section-title negative'>Comece a participar!</div>
-      <button class='button-sec-cta'>GO!</button>
+      <div class='section-title negative'>Crie sua conta já!</div>
+      <a href="cadastro.php"> <button class='button-sec-cta'>Criar</button></a>
     </section>
     <section class='footer'>
       </svg>
