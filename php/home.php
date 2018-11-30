@@ -19,11 +19,11 @@ if(!isset ($_SESSION['user'])){
       <div class="well well-sm well-social-post">
         <form method="post" action="post.php?post" enctype="multipart/form-data">
           <ul class="list-inline" id='list_PostActions'>
-            <li class='active'><a href='#'>Publique</a></li>
+            <center><li class='active'>Publique</li></center>
           </ul>
           <label style="color:black;">Titulo</label>
          	<input class="form-control-inline" type="text" name="title">
-          <textarea class="form-control" name="post" placeholder="What's in your mind?"></textarea>
+          <textarea class="form-control" name="post" placeholder="Faça uma publicação"></textarea>
           <ul class='list-inline post-actions'>
 						<input type="file" name="imagem" id="camera" style="display: none;">
             <li ><label style="cursor: pointer;" for="camera"><span class="glyphicon glyphicon-camera"></span></label></li>

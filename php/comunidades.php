@@ -44,7 +44,7 @@ if(!isset ($_SESSION['user'])){
           });
         });
       </script>
-
+    <br><br>
     </div>
     <?php 
     if (isset($_GET['comunidade'])) {
