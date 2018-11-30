@@ -12,23 +12,16 @@ if(!isset ($_SESSION['user'])){
 
 <body>
 
-<br>
-<div class="container">
-  <div class="row">
-    <div>
-      <div class="well well-sm well-social-post">
-        <form method="post" action="post.php?post" enctype="multipart/form-data">
-          <ul class="list-inline" id='list_PostActions'>
-            <center><li class='active'>Publique</li></center>
-          </ul>
-          <label style="color:black;">Titulo</label>
-         	<input class="form-control-inline" type="text" name="title">
-          <textarea class="form-control" name="post" placeholder="Faça uma publicação"></textarea>
-          <ul class='list-inline post-actions'>
-						<input type="file" name="imagem" id="camera" style="display: none;">
-            <li ><label style="cursor: pointer;" for="camera"><span class="glyphicon glyphicon-camera"></span></label></li>
-            <li ><label style="cursor: pointer;" for="comunidades"><span class='glyphicon glyphicon-map-marker'></span></label></li>
-            <select style="display: none;" class="form-control" id="comunidades" name="comunidade">
+	<div class="form-group container" id="POSTS">
+		<form method="post" action="post.php?post" enctype="multipart/form-data">
+			<div class="formPost">
+				<label for="title">Titulo:</label>
+				<input class="form-control" type="text" id="title" name="title" size="20" maxlength="40" placeholder="Insira o titulo" required>	
+				<label>Postagem:</label>
+				<textarea class="form-control" name="post" maxlength="510" cols="63" rows="3" required></textarea><br>
+				<div class="form-group row">
+					<div class="col-xs-6">
+						<select class="form-control"  name="comunidades">
 							<option disabled selected>Selecione a comunidade</option>
 							<?php
 							$stmt=$pdo->prepare("SELECT * FROM comunidades");
@@ -38,13 +31,41 @@ if(!isset ($_SESSION['user'])){
 								echo '<option value="'.$com[$i]['id'].'">'.$com[$i]['nome'].'</option>';
 							}?>
 						</select>
-            <li class='pull-right'><a href="#" class='btn btn-primary btn-xs'>Publicar</a></li>
-          </ul>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>                                                            
+					</div>
+					<div class="col-xs-6">
+						<select name="tema" class="form-control">
+							<option disabled selected>Selecione o Tema</option>
+							<?php
+							$stmt=$pdo->prepare("SELECT * FROM tema");
+							$stmt->execute();
+							$com=$stmt->fetchall();
+							for ($i=0; $i < sizeof($com); $i++) { 
+								echo '<option value="'.$com[$i]['id'].'">'.$com[$i]['nome'].'</option>';
+							}?>
+						</select>
+						<br>
+					</div>
+					<div class="col-xs-6">
+				<input  type="button" class="btnI" value="SELECIONAR">
+				<input type="file" accept="image/*" name="imagem" id="arquivo" class="arquivo" style="display: none;" >
+				<input type="text" name="file" id="file" class="form-control" placeholder="Selecione a imagem" readonly="readonly" >
+				<script>
+					$('.btnI').on('click', function() {
+						$('.arquivo').trigger('click');
+					});
+					$('.arquivo').on('change', function() {
+						var fileName = $(this)[0].files[0].name;
+						$('#file').val(fileName);
+					});
+					
+				</script>
+				</div>
+				</div>
+			</div>
+			<br>
+			<input class="form-control" class="enviar" type="submit" name="">
+		</form>
+	</div>
 
 	<?php 
 	$feed=$pdo->prepare('SELECT * FROM posts');
@@ -54,15 +75,14 @@ if(!isset ($_SESSION['user'])){
 		echo '<div class="postagens">';
 		echo '<footer>'.$posts[$i]['created_at'].'</footer>';
 		echo '<h1><a href="coment.php?post='.$posts[$i]['id'].'">'.$posts[$i]['title']."</a></h1>";
-		echo "<h2>".$posts[$i]['descricao']."</h2>";
 		echo "<p>".$posts[$i]['post']."</p>";
 		if ($posts[$i]['imagem']!=null) {
 			echo '<a href="coment.php?post='.$posts[$i]['id'].'"><img src="'.$posts[$i]['imagem'].'"></a>';
 		}
 		echo '<div class="postA">';
 		if ($_SESSION['id']==$posts[$i]['users_id']) {
-			echo '<a onclick="confirma('.$posts[$i]['id'].')" ><button >Excluir </button></a>';
-			echo '<a href="/php/editar.php?edit='.$posts[$i]['id'].'" ><button > Editar </button></a>';
+			echo '<a onclick="confirma('.$posts[$i]['id'].')" title="exluir" ><button >	&otimes; </button></a>';
+			echo '<a href="/php/editar.php?edit='.$posts[$i]['id'].'" title="editar"><button > &oplus; </button></a>';
 		}
 		echo "</div>";
 		echo "</div><br>";

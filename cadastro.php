@@ -20,7 +20,7 @@
 						</select>
 						<label>Mora em : </label><input type="text" name="bairro" placeholder="bairro"> <input type="text" name="cidade" placeholder="cidade">
 						<label>Data de Nascimento</label>
-						<input type="date" id="data" name="DDN" maxlength="<?= date('d/m/y')?>" required >
+						<input type="date" id="data" name="ddn"required >
 						<label>E-mail</label> <input type="email" name="email" placeholder="Digite seu E-mail" required>
 						<label>Digite sua senha</label> <input type="password" name="password" placeholder="Digite sua senha" required="">
 						<label>Confirme sua senha</label> <input type="password" name="pass" placeholder="Confirme sua senha">

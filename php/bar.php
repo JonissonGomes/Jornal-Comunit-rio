@@ -82,7 +82,7 @@
 
 								<li style="color: black">Feedback</li>
 								<li style="color: black">Ajuda</li>
-								<li style="color: black"><a href="logout.php">Sair</a></li>
+								<li style="color: black"><a href="/php/logout.php">Sair</a></li>
 							</ul>
 
 						</div><!--end account-menu-->

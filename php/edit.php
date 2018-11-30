@@ -2,7 +2,7 @@
 
 require_once 'pacote.php';
 
-$postagem= new postagem($_POST['title'],$_POST['desc'],$_POST['comunidade'],$_POST['post']);
+$postagem= new Postagem($_POST['title'],$_POST['tema'],$_POST['comunidades'],$_POST['post']);
 $postagem->imgDEL($_POST['id']);
 if (isset($_FILES['imagem'])) {
 	$postagem->getimagem($_FILES['imagem']);

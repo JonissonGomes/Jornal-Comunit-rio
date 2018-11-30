@@ -36,12 +36,12 @@ $mail->Password = "paocomovo";
 //Set who the message is to be sent from
 $mail->setFrom('jornalcomunitarioprojeto@gmail.com', 'web jornal');
 //Set who the message is to be sent to
-$mail->addAddress($to,$name);
+$mail->addAddress($to,$hash);
 //Set the subject line
 $mail->Subject = 'Autenticação de cadastro';
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
-$mail->msgHTML('click no link a baixo para concluir o cadastro'."\n\n".'  http://jornal-comunitario.000webhostapp.com/php/validate.php?us='.$name);
+$mail->msgHTML('click no link a baixo para concluir o cadastro'."<br><br>".'  http://jornal-comunitario.000webhostapp.com/php/validate.php?us='.$hash);
 
 //send the message, check for errors
 

@@ -21,9 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `id7031787_login`
 --
-DROP Database if exists jc;
-CREATE Database if not exists jc;
-use jc ;
+
 -- --------------------------------------------------------
 
 --
@@ -42,8 +40,7 @@ CREATE TABLE `coments` (
 -- Extraindo dados da tabela `coments`
 --
 
-INSERT INTO `coments` (`id`, `coment`, `posts_id`, `users_id`, `created_at`) VALUES
-(8, '.', 40, 18, '2018-11-20 15:37:47');
+
 
 -- --------------------------------------------------------
 
@@ -90,7 +87,16 @@ INSERT INTO `comunidades` (`id`, `nome`) VALUES
 (27, 'Umbura');
 
 -- --------------------------------------------------------
-
+CREATE TABLE `tema` (
+ id int not null auto_increment PRIMARY KEY,
+ nome varchar(30) not null
+);
+ INSERT INTO `tema` ( `nome`) VALUES 
+('saúde'),
+('saneamento'),
+('educação'),
+('ação social'),
+('meio ambiente');
 --
 -- Estrutura da tabela `posts`
 --
@@ -98,10 +104,10 @@ INSERT INTO `comunidades` (`id`, `nome`) VALUES
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `descricao` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tema_id` int DEFAULT NULL,
   `post` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   `imagem` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `users_id` int(11) DEFAULT NULL,
+  `users_id` int(11) NOT NULL,
   `comunidades_id` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -110,9 +116,7 @@ CREATE TABLE `posts` (
 -- Extraindo dados da tabela `posts`
 --
 
-INSERT INTO `posts` (`id`, `title`, `descricao`, `post`, `imagem`, `users_id`, `comunidades_id`, `created_at`) VALUES
-(39, 'Estrada', 'Buracos na estrada', 'muitos buracos na estradas', '../img/16-11-2018_04:11:05', 7, 11, '2018-11-16 16:52:06'),
-(40, 'Buraco na rua', 'buracao imenso', 'bla bla bla quebrou o meu carro', '../img/16-11-2018_06:11:39', 15, 1, '2018-11-16 18:16:40');
+
 
 -- --------------------------------------------------------
 
@@ -122,10 +126,14 @@ INSERT INTO `posts` (`id`, `title`, `descricao`, `post`, `imagem`, `users_id`, `
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `username` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `genero` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `bairro` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `cidade` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `ddn` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
-  `validate` tinyint(1) NOT NULL
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `validate` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -180,7 +188,6 @@ ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_posts_users_idx` (`users_id`),
   ADD KEY `fk_posts_comunidades1_idx` (`comunidades_id`);
-
 --
 -- Indexes for table `users`
 --
@@ -231,6 +238,7 @@ ALTER TABLE `coments`
 --
 ALTER TABLE `posts`
   ADD CONSTRAINT `fk_posts_comunidades1` FOREIGN KEY (`comunidades_id`) REFERENCES `comunidades` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_posts_tema1` FOREIGN KEY (`tema_id`) REFERENCES `tema` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_posts_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 

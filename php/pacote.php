@@ -9,15 +9,15 @@ try {
 
 class Postagem{
 	var $titulo;
-	var $descricao;
+	var $tema;
 	var $corpo;
 	var $imagem;
 	var $comunidade;
 
 
-	function __construct($titulo,$desc,$comunidade,$post){
+	function __construct($titulo,$tema,$comunidade,$post){
 		$this->titulo=addslashes($titulo);
-		$this->descricao=addslashes($desc);
+		$this->tema=addslashes($tema);
 		$this->comunidade=addslashes($comunidade);
 		$this->corpo=addslashes($post);
 	}
@@ -35,9 +35,10 @@ class Postagem{
 		}
 	}
 
+
 	function postar(){
-		$resultado=[$this->titulo, $this->descricao, $this->corpo, $this->imagem, $this->comunidade,$_SESSION['id']];
-		query("INSERT INTO posts (title,descricao,post,imagem,comunidades_id,users_id) VALUES (?,?,?,?,?,?)",$resultado);
+		$resultado=[$this->titulo, $this->tema, $this->corpo, $this->imagem, $this->comunidade,$_SESSION['id']];
+		query("INSERT INTO posts (title,tema_id,post,imagem,comunidades_id,users_id) VALUES (?,?,?,?,?,?)",$resultado);
 	}
 	function imgDEL($post_id){
 		$del=fetch("SELECT * FROM posts WHERE id=".$post_id);
@@ -46,8 +47,8 @@ class Postagem{
 		}
 	}
 	function editar($edit){
-		$post=[$this->titulo, $this->descricao, $this->corpo, $this->imagem, $this->comunidade,$_SESSION['id']];
-		query("UPDATE posts SET title=?, descricao=? , post=? , imagem=? , comunidades_id=?, users_id= ? WHERE id=".$edit,$post);
+		$post=[$this->titulo, $this->tema, $this->corpo, $this->imagem, $this->comunidade,$_SESSION['id']];
+		query("UPDATE posts SET title=?, tema_id=? , post=? , imagem=? , comunidades_id=?, users_id= ? WHERE id=".$edit,$post);
 	}
 }
 

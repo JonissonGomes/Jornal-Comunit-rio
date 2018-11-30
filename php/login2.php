@@ -11,7 +11,7 @@ $stmt->execute([$us,$ps]);
 $data = $stmt-> fetch();
 
 if ($data != null) {
-	if ($data['validate']) {		
+	if ($data['validate']== 1) {		
 			$_SESSION['user']=$us;
 			$_SESSION['id']=$data['id'];
 			header('location:home.php');
