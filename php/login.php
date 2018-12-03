@@ -1,12 +1,3 @@
-
-<script type="text/javascript">
-    function ver(){
-        var s = document.getElementById("senha");            
-        s.setAttribute('type', 'text');
-    }
-
-</script>
-
   <!-- Modal -->
   <div class="modal fade" id="mLogin" role="dialog">
     <div class="modal-dialog">

@@ -889,6 +889,7 @@ a{
 	border-radius: 5px;
 	position: relative;
 	width: 50%;
+	padding-right: 0.8%;
 	padding-top: 0.3%;
 	margin-left: 30.2%;
 	text-align: right;
@@ -905,12 +906,6 @@ a{
 }
 General Style
 ---------------------*/
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
 
 .subject {
 	font-family: 'Playfair Display', serif;
@@ -1061,6 +1056,15 @@ section.hero {
 	background-position: bottom center;
 	background-size: 100% auto;
 }
+section.hero:before{
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.5);
+	width: 100%;
+	height: 100%;
+}
 section.hero img{
 	opacity: 0.5;
 }
@@ -1069,16 +1073,17 @@ Call To Actions
 ---------------------*/
 
 .cta {
+	position: absolute;
 	height: 260px;
 	width: 420px;
-	border: 12px solid #000;
+	border: 12px solid #091e33;
 	margin-top: 80px;
 	margin-left: 250px;
 	padding: 20px;
 	font-weight: 800;
 	letter-spacing: -3px;
 	font-size: 60px;
-	color: #000;
+	color: #fff;
 	line-height: 0.8;
 
 	-webkit-box-shadow: 0px 7px 12px rgba(0,0,0,0.4);
@@ -1129,7 +1134,7 @@ Call To Actions
 
 	-webkit-box-shadow: 0px 7px 12px rgba(0,0,0,0.4);
 	-moz-box-shadow: 0px 7px 12px rgba(0,0,0,0.4);
-	box-shadow: 0px 7px 12px rgba(0,0,0,0.4);
+	box-shadow: 0px 2px 12px #fff;
 }
 
 .button-cta:hover {
@@ -1523,4 +1528,98 @@ Credits & Other
   opacity:1;
 }
 
-
+.wrap-custom-file{
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin: 0 0.5rem 1rem;
+  text-align: center;
+}
+  .wrap-custom-file input[type="file"]{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    overflow: hidden;
+    opacity:0;
+  }
+  .wrap-custom-file label{
+  	background-image: url(/img/circle.png);
+  	background-size: 25%;
+  	background-repeat: no-repeat;
+  	background-position: center;
+    z-index: 1;
+    position: absolute;
+    left:0; top: 0; bottom: 0; right: 0;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0.5rem;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 4px;
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    -ms-transition: -ms-transform 0.4s;
+    -o-transition: -o-transform 0.4s;
+    transition: transform 0.4s;
+  }
+    .wrap-custom-file span{ 
+      display: block;
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      color: #777;
+      -webkit-transition: color 0.4s;
+      -moz-transition: color 0.4s;
+      -ms-transition: color 0.4s;
+      -o-transition: color 0.4s;
+      transition: color 0.4s;
+    }
+    .wrap-custom-file .fa{
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      -webkit-transform: translatex(-50%);
+      -moz-transform: translatex(-50%);
+      -ms-transform: translatex(-50%);
+      -o-transform: translatex(-50%);
+      transform: translatex(-50%);
+      font-size: 1.5rem;
+      color: lightcoral;
+      -webkit-transition: color 0.4s;
+      -moz-transition: color 0.4s;
+      -ms-transition: color 0.4s;
+      -o-transition: color 0.4s;
+      transition: color 0.4s;
+    }
+   .wrap-custom-file &:hover{
+      -webkit-transform: translateY(-1rem);
+      -moz-transform: translateY(-1rem);
+      -ms-transform: translateY(-1rem);
+      -o-transform: translateY(-1rem);
+      transform: translateY(-1rem);
+    }
+      .wrap-custom-file span, .wrap-custom-file.fa{
+        color: #333;
+      }
+    
+    .wrap-custom-file &.file-ok{
+      //Styles img background
+      background-size: cover;
+      background-position: center;
+    }
+    .wrap-custom-file  span{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 0.3rem;
+        font-size: 1.1rem;
+        color: #000;
+        background-color: rgba(255,255,255,.7);
+      }
+      .wrap-custom-file .fa{
+        display: none;
+      }
+   

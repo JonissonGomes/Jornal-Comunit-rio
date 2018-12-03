@@ -1,11 +1,14 @@
 <?php include('bar.php');?>
-		<?php
-		if (isset($_GET['post'])) {
-			$_SESSION['post']=$_GET['post'];
-		}
-		$feed=$pdo->prepare('SELECT * FROM posts WHERE id=?');
-		$feed->execute([$_SESSION['post']]);
-		$posts=$feed->fetch();?>
+<?php
+if(!isset ($_SESSION['user'])){
+	header('location:/');
+}
+if (isset($_GET['post'])) {
+	$_SESSION['post']=$_GET['post'];
+}
+$feed=$pdo->prepare('SELECT * FROM posts WHERE id=?');
+$feed->execute([$_SESSION['post']]);
+$posts=$feed->fetch();?>
 <meta charset="UTF-8">
 <title><?=$posts['title']?></title>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" >
@@ -29,6 +32,9 @@
 		</footer>
 		<h1><?=$posts['title']?></h1>
 		<img src="<?= $posts['imagem']?>">
+		<?php $classificado=fetch('SELECT * FROM stars WHERE user_id=?',$_SESSION['id']);
+				if ($classificado!==null) {?>
+					
 		<section class='rating-widget'>
 			
 			<!-- Rating Stars Box -->
@@ -51,92 +57,52 @@
 					</li>
 				</ul>
 			</div>
+			<div>
+				<span></span>
+			</div>
 			
 		</section>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				
-				/* 1. Visualizing things on Hover - See next part for action on click */
-				$('#stars li').on('mouseover', function(){
-    var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
-    
-    // Now highlight all the stars that's not after the current hovered star
-    $(this).parent().children('li.star').each(function(e){
-    	if (e < onStar) {
-    		$(this).addClass('hover');
-    	}
-    	else {
-    		$(this).removeClass('hover');
-    	}
-    });
-    
-  }).on('mouseout', function(){
-  	$(this).parent().children('li.star').each(function(e){
-  		$(this).removeClass('hover');
-  	});
-  });
-  
-  
-  /* 2. Action to perform on click */
-  $('#stars li').on('click', function(){
-    var onStar = parseInt($(this).data('value'), 10); // The star currently selected
-    var stars = $(this).parent().children('li.star');
-    
-    for (i = 0; i < stars.length; i++) {
-    	$(stars[i]).removeClass('selected');
-    }
-    
-    for (i = 0; i < onStar; i++) {
-    	$(stars[i]).addClass('selected');
-    }
-    
-    // JUST RESPONSE (Not needed)
-    var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
-    
-  });
-  
-  
-});
-</script>
-<h2><?=$posts['descricao']?></h2>
-<p><?=$posts['post']?></p>
+		
+			<?php	}
+		?>
+		<p><?=$posts['post']?></p>
 
-<br>
-<br>
-<div id="barcoment">
-	<form action="comentar.php" method="post" style="margin: 100px,100px, 100px;">
-		<div class="form-group">
-			<textarea name="coment" required style="width:100%; height:150px;"></textarea>
-			<button class="btn btn-primary btn-sm" type="submit">Enviar comentário</button>
+		<br>
+		<br>
+		<div id="barcoment">
+			<form action="comentar.php" method="post" style="margin: 100px,100px, 100px;">
+				<div class="form-group">
+					<textarea name="coment" required style="width:100%; height:150px;"></textarea>
+					<button class="btn btn-primary btn-sm" type="submit">Enviar comentário</button>
+				</div>
+			</form>
 		</div>
-	</form>
-</div>
 
-<?php
+		<?php
 		//$stmt=$pdo->prepare('SELECT * FROM coments WHERE posts_id=?');
-$stmt=$pdo->prepare("SELECT u.username, c.coment ,c.created_at FROM users u INNER JOIN coments c WHERE u.id = c.users_id AND c.posts_id = ?");
-$stmt->execute([$_SESSION['post']]);
-$get=$stmt->fetchall();
+		$stmt=$pdo->prepare("SELECT u.username, c.coment ,c.created_at FROM users u INNER JOIN coments c WHERE u.id = c.users_id AND c.posts_id = ?");
+		$stmt->execute([$_SESSION['post']]);
+		$get=$stmt->fetchall();
 
-for ($i=sizeof($get)-1; $i >=0 ; $i--) { ?>
-<br>
-<div class="body_com">
-	<section class="profilebox">
-		<aside>
-			<img class="profpic" src="/img/j.jpg" />
-		</aside>
-		<header>
-			<h1 class="prof-name"><?=$get[$i]['username']?></h1>
-			<h5 class="prof-user"><?=$get[$i]['created_at']?></h5>
-		</header>
-		<main class="user-desc">
-			<br><br><br>
-			<?= $get[$i]['coment'] ?>
-		</br>
-	</main>
-</section>
-</div>
-<?php }
-?>	
+		for ($i=sizeof($get)-1; $i >=0 ; $i--) { ?>
+		<br>
+		<div class="body_com">
+			<section class="profilebox">
+				<aside>
+					<img class="profpic" src="/img/j.jpg" />
+				</aside>
+				<header>
+					<h1 class="prof-name"><?=$get[$i]['username']?></h1>
+					<h5 class="prof-user"><?=$get[$i]['created_at']?></h5>
+				</header>
+				<main class="user-desc">
+					<br><br><br>
+					<?= $get[$i]['coment'] ?>
+				</br>
+			</main>
+		</section>
+	</div>
+	<?php }
+	?>	
 </body>
 </html>

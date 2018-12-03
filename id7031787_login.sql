@@ -21,12 +21,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `id7031787_login`
 --
-
+drop Database if exists jc;
+CREATE Database jc;
+use jc;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `coments`
 --
+CREATE table stars(
+  id int not null auto_increment PRIMARY KEY,
+  valor int not null,
+  user_id int not null,
+  post_id int not null
+  );
+
 
 CREATE TABLE `coments` (
   `id` int(11) NOT NULL,
@@ -234,6 +243,10 @@ ALTER TABLE `coments`
   ADD CONSTRAINT `fk_coments_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
+ALTER TABLE `stars`
+  ADD CONSTRAINT `fk_stars_posts1` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_stars_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
 -- Limitadores para a tabela `posts`
 --
 ALTER TABLE `posts`

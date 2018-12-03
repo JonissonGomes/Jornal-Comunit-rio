@@ -35,7 +35,7 @@
           <!-- Áreas do SlideShow -->
           <div class="carousel-inner">
             <div class="item active">
-              <img src="/img/igarassu.jpg" alt="" style="width:100%;filter: brightness(50%)">
+              <img src="/img/igarassu.jpg" alt="" style="width:100%;filter: brightness(65%)">
               <div class="item">
                 <div class="carousel-caption">
                   <h3>BEM VINDO</h3>
@@ -45,7 +45,7 @@
               <!-- Slide 2 -->
             </div>
             <div class="item">
-              <img src="/img/igarassu2.jpg" alt="" style="width:100%;filter: brightness(50%)">
+              <img src="/img/igarassu2.jpg" alt="" style="width:100%;filter: brightness(65%)">
               <div class="item">
                 <div class="carousel-caption">
                   <h3>O que o Fórum Comunitário oferece?</h3>
@@ -55,7 +55,7 @@
             </div>
             <!-- Slide 3 -->
             <div class="item">
-              <img src="/img/a.jpg" alt="" style="width:100%;filter: brightness(50%)">
+              <img src="/img/a.jpg" alt="" style="width:100%;filter: brightness(65%)">
               <div class="item">
                 <div class="carousel-caption">
                  <!-- Área de seleção abaixo do SlideShow -->
