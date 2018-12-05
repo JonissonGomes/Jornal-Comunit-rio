@@ -32,8 +32,13 @@ $posts=$feed->fetch();?>
 		</footer>
 		<h1><?=$posts['title']?></h1>
 		<img src="<?= $posts['imagem']?>">
-		<?php $classificado=fetch('SELECT * FROM stars WHERE user_id=?',$_SESSION['id']);
-				if ($classificado!==null) {?>
+		<?php
+		$classificado=fetch('SELECT * FROM stars WHERE user_id=?',[$_SESSION['id']]);
+		$media=fetch('SELECT AVG(valor) FROM stars',[]);
+		echo number_format($media[0],2);
+		?>
+
+				<?php if ($classificado==null) {?>
 					
 		<section class='rating-widget'>
 			

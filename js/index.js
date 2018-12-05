@@ -99,6 +99,7 @@ $(document).ready(function(){
     for (i = 0; i < onStar; i++) {
     	$(stars[i]).addClass('selected');
     }
+    $('.rating-widget').addClass('displaynone');
     
     // JUST RESPONSE (Not needed)
     var ratingValue ={ 'valor' : parseInt($('#stars li.selected').last().data('value'), 10)};
@@ -109,7 +110,6 @@ $(document).ready(function(){
     	data: ratingValue,
     	type: 'POST',
     	cache: false,
-    	
     });
 
     
