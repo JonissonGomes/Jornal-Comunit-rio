@@ -1545,7 +1545,7 @@ Credits & Other
     overflow: hidden;
     opacity:0;
   }
-  .wrap-custom-file label{
+  .wrap-custom-file .sImage{
   	background-image: url(/img/circle.png);
   	background-size: 25%;
   	background-repeat: no-repeat;
@@ -1565,7 +1565,7 @@ Credits & Other
     -o-transition: -o-transform 0.4s;
     transition: transform 0.4s;
   }
-    .wrap-custom-file span{ 
+	.sImage span{ 
       display: block;
       margin-top: 2rem;
       font-size: 1.4rem;
@@ -1609,7 +1609,7 @@ Credits & Other
       background-size: cover;
       background-position: center;
     }
-    .wrap-custom-file  span{
+    .sImage  span{
         position: absolute;
         bottom: 0;
         left: 0;

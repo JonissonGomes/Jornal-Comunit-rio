@@ -41,7 +41,7 @@ $mail->addAddress($to,$hash);
 $mail->Subject = 'Autenticação de cadastro';
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
-$mail->msgHTML('click no link a baixo para concluir o cadastro'."<br><br>".'  http://jornal-comunitario.000webhostapp.com/php/validate.php?us='.$hash);
+$mail->msgHTML('click no link a baixo para concluir o cadastro'."<br><br>".'<a href="https://forum-comunitario.epizy.com/php/validate.php?us='.$hash.'">Validar</a>');
 
 //send the message, check for errors
 

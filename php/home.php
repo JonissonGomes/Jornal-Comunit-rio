@@ -46,7 +46,7 @@ if(!isset ($_SESSION['user'])){
 					
 					  <div class="wrap-custom-file col-xs-5">
     <input type="file" name="imagem" id="image1" accept=".gif, .jpg, .png" />
-    <label  for="image1">
+    <label class="sImage" for="image1">
       <span>Selecionar Imagem</span>
     </label>
   </div>

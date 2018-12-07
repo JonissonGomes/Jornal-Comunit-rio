@@ -15,7 +15,7 @@ if ($ps == $ps2) {
 	$stmt->execute([$name,$name]);
 	$data = $stmt-> fetchall();
 	if ($data!=null) {		
-		$_SESSION['erro']= "Nome de usuario ja existe";
+		$_SESSION['inc']= "Nome de usuario ja existe";
 		}elseif (!$mail->send()) {
    $_SESSION['inc']='E-mail invalido';
 		}else {
@@ -25,7 +25,7 @@ if ($ps == $ps2) {
  }
 		
 }else{
-	$_SESSION['erro']= "Senhas não combinam";
+	$_SESSION['inc']= "Senhas não combinam";
 }
 
 header('location:'.$_SERVER['HTTP_REFERER']);

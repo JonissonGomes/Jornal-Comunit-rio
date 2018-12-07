@@ -21,14 +21,16 @@ SET time_zone = "+00:00";
 --
 -- Database: `id7031787_login`
 --
-drop Database if exists jc;
-CREATE Database jc;
-use jc;
+-- drop Database if exists jc;
+-- CREATE Database jc;
+-- use jc;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `coments`
 --
+drop table if exists stars;
+
 CREATE table stars(
   id int not null auto_increment PRIMARY KEY,
   valor int not null,
@@ -36,6 +38,7 @@ CREATE table stars(
   post_id int not null
   );
 
+drop table if exists coments;
 
 CREATE TABLE `coments` (
   `id` int(11) NOT NULL,
@@ -56,7 +59,7 @@ CREATE TABLE `coments` (
 --
 -- Estrutura da tabela `comunidades`
 --
-
+drop table if exists comunidades;
 CREATE TABLE `comunidades` (
   `id` int(11) NOT NULL,
   `nome` varchar(50) COLLATE utf8_unicode_ci NOT NULL
@@ -67,7 +70,6 @@ CREATE TABLE `comunidades` (
 --
 
 INSERT INTO `comunidades` (`id`, `nome`) VALUES
-(1, 'joão de barro'),
 (2, 'Agamenon Magalhães'),
 (3, 'Alto do Céu'),
 (4, 'Ana de Albuquerque'),
@@ -96,6 +98,7 @@ INSERT INTO `comunidades` (`id`, `nome`) VALUES
 (27, 'Umbura');
 
 -- --------------------------------------------------------
+drop table if exists tema;
 CREATE TABLE `tema` (
  id int not null auto_increment PRIMARY KEY,
  nome varchar(30) not null
@@ -109,7 +112,7 @@ CREATE TABLE `tema` (
 --
 -- Estrutura da tabela `posts`
 --
-
+drop table if exists posts;
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -132,7 +135,7 @@ CREATE TABLE `posts` (
 --
 -- Estrutura da tabela `users`
 --
-
+drop table if exists users;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
