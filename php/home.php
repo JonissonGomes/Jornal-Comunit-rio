@@ -99,8 +99,8 @@ if(!isset ($_SESSION['user'])){
 		}
 		echo '<div class="postA">';
 		if ($_SESSION['id']==$posts[$i]['users_id']) {
-			echo '<a onclick="confirma('.$posts[$i]['id'].')" title="exluir" ><button >	&otimes; </button></a>';
-			echo '<a href="/php/editar.php?edit='.$posts[$i]['id'].'" title="editar"><button > &oplus; </button></a>';
+			echo '<a onclick="confirma('.$posts[$i]['id'].')" title="exluir" ><button >	Excluir </button></a>';
+			echo '<a href="/php/editar.php?edit='.$posts[$i]['id'].'" title="editar"><button > Editar </button></a>';
 		}
 		echo "</div>";
 		echo "</div><br>";
