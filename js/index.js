@@ -118,3 +118,17 @@ $(document).ready(function(){
   
   
 });
+
+
+// $('#add_coment').on('submit', function(e) {
+//             e.preventDefault();
+//             $.ajax({
+//                 type: "POST",
+//                 url: $(this).attr('action'), //"add.php"
+//                 data: $(this).serialize(),
+//                 cache:false,
+//                 success: function(row) {
+                    
+//                 }
+//             });
+//         });

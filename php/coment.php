@@ -35,7 +35,7 @@ $posts=$feed->fetch();?>
 		<?php
 		$classificado=fetch('SELECT * FROM stars WHERE user_id=?',[$_SESSION['id']]);
 		$media=fetch('SELECT AVG(valor) FROM stars',[]);
-		echo number_format($media[0],2);
+		echo '<center><h5>'.number_format($media[0],2).'</h5></center>';
 		?>
 
 				<?php if ($classificado==null) {?>

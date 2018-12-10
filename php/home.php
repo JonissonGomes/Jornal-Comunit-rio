@@ -72,7 +72,7 @@ if(!isset ($_SESSION['user'])){
 		if( fileName ){
       $label
         .addClass('file-ok')
-        .css({"background-image": "url(' "+ tmppath + "')", "background-size": "100%","background-repeat":"no-repeat","background-position": "center"});
+        .css({"background-image": "url(' "+ tmppath + "')", "background-size": "100%","background-repeat":"no-repeat"});
 			$labelText.text(fileName);
     }else{
       $label.removeClass('file-ok');
