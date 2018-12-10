@@ -29,7 +29,7 @@ class Postagem{
 		//SE O ARQUIVO FOR UMA IMAGEM O PROCESSO DE UPLOAD É INICIADO
 		if ($nam!=null) {
 			//O DESTINO DA IMAGEM É SALVO PARA QUE POSSA SER SALVO NO BD
-			$this->imagem = '../img/'.date('d-m-Y')."_".date('h-m-s') ;
+			$this->imagem = '../img/postagens/'.date('d-m-Y')."_".date('h-m-s') ;
 			$arquivo_tmp = $img[ 'tmp_name' ];
 			move_uploaded_file ( $arquivo_tmp, $this->imagem );
 		}
@@ -51,6 +51,21 @@ class Postagem{
 		query("UPDATE posts SET title=?, tema_id=? , post=? , imagem=? , comunidades_id=?, users_id= ? WHERE id=".$edit,$post);
 	}
 }
+
+
+function getimagem($img){
+		//VERIFICAR SE O ARQUIVO ENVIADO É UMA IMAGEM 
+		$re = '/jpg|png|jpge/m';
+		preg_match_all($re, $img['name'], $nam, PREG_SET_ORDER, 0);
+		//SE O ARQUIVO FOR UMA IMAGEM O PROCESSO DE UPLOAD É INICIADO
+		if ($nam!=null) {
+			//O DESTINO DA IMAGEM É SALVO PARA QUE POSSA SER SALVO NO BD
+			$imagem = '../img/perfil/'.date('d-m-Y')."_".date('h-m-s') ;
+			$arquivo_tmp = $img[ 'tmp_name' ];
+			move_uploaded_file ( $arquivo_tmp, $imagem );
+		}
+		echo $imagem;
+	}
 
 
 

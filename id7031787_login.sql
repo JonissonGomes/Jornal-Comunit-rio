@@ -102,7 +102,7 @@ INSERT INTO `comunidades` (`id`, `nome`) VALUES
 drop table if exists tema;
 CREATE TABLE `tema` (
  id int not null auto_increment PRIMARY KEY,
- nome varchar(30) not null
+ nome varchar(30) COLLATE utf8_unicode_ci not null
 );
  INSERT INTO `tema` ( `nome`) VALUES 
 ('saúde'),
@@ -146,6 +146,7 @@ CREATE TABLE `users` (
   `ddn` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `imagem` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `validate` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
