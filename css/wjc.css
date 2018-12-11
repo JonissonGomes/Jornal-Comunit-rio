@@ -240,8 +240,8 @@ p{
 	border-radius: 50%;
 	display: inline-block;
 	margin-top: 35px;
-	background: url('/img/perfil-none.jpg') -70px -10px no-repeat;
-	background-size: 220px;
+	background-size: 158px;
+	background-position: center;
 }
 
 #profile-details {
@@ -1428,6 +1428,14 @@ Credits & Other
 /*------------------------perfil-----------------------------*/
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+
+#formulario span{
+	background-color: lightblue;
+	padding: 15px; 
+	border-radius: 15px;
+	cursor: pointer;
+}
+
 
 .cont{
   position:relative;

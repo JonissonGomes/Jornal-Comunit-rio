@@ -7,15 +7,28 @@
 			$stmt->execute([$_SESSION['id']]);
 			$fetch=$stmt->fetch();?>
 <div class="cont postagens">
-  <div class="profile"></div>
+  <label for='imagem' class="profile" style="background-image: url(<?=$_SESSION['imagem']?>);"></label>
   
   <div class="info">
     <h2><?= $fetch['username']?></h3>
     <p>Sexo: <?=$fetch['genero']?></p>
     <p>Data de Nascimento: <?=$fetch['ddn']?></p>
     <p><?=$fetch['bairro'].' - '.$fetch['cidade']?></p>
+<form id='formulario' action="set_imagemP.php" method="POST" enctype="multipart/form-data">
+	<label for="imagem">
+		<span>Escolha sua imagem</span>
+		<input type="file" style="display: none;" name="imagemP" id="imagem">
+	</label>
+</form>
+<script type="text/javascript">
+$('#imagem').on('change', function(event) {
+	$('#formulario').submit();
+});
+</script>
   </div>
-  <div class="footer"></div>
+  <div class="footer">
+  	
+  </div>
 </div>
 <center><strong><h3 style="color: #fff;">Suas publicações</h3></strong></center>
 	<?php 

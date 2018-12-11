@@ -85,16 +85,21 @@ $posts=$feed->fetch();?>
 
 		<?php
 		//$stmt=$pdo->prepare('SELECT * FROM coments WHERE posts_id=?');
-		$stmt=$pdo->prepare("SELECT u.username, c.coment ,c.created_at FROM users u INNER JOIN coments c WHERE u.id = c.users_id AND c.posts_id = ?");
+		$stmt=$pdo->prepare("SELECT u.username,u.imagem, c.coment ,c.created_at FROM users u INNER JOIN coments c WHERE u.id = c.users_id AND c.posts_id = ?");
 		$stmt->execute([$_SESSION['post']]);
 		$get=$stmt->fetchall();
 
-		for ($i=sizeof($get)-1; $i >=0 ; $i--) { ?>
+		for ($i=sizeof($get)-1; $i >=0 ; $i--) { 
+			if ($get[$i]['imagem']==null) {
+				$get[$i]['imagem']='../img/perfil-none.jpg';
+			}
+			?>
+
 		<br>
 		<div class="body_com">
 			<section class="profilebox">
 				<aside>
-					<img class="profpic" src="/img/j.jpg" />
+					<img class="profpic" src="<?=$get[$i]['imagem']?>" />
 				</aside>
 				<header>
 					<h1 class="prof-name"><?=$get[$i]['username']?></h1>

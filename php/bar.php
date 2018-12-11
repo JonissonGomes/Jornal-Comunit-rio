@@ -67,7 +67,7 @@
 
 						<div class="account-header">
 
-							<div id="profile-pic"></div>
+							<div id="profile-pic" style="background-image:url(<?= $_SESSION['imagem']?>);"></div>
 							<div id="profile-details">
 								<h1 style="color: black"><?= $_SESSION['user']?></h1>
 								<div id="profile-buttons">

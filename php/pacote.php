@@ -60,11 +60,12 @@ function getimagem($img){
 		//SE O ARQUIVO FOR UMA IMAGEM O PROCESSO DE UPLOAD É INICIADO
 		if ($nam!=null) {
 			//O DESTINO DA IMAGEM É SALVO PARA QUE POSSA SER SALVO NO BD
-			$imagem = '../img/perfil/'.date('d-m-Y')."_".date('h-m-s') ;
+			$imagem = '../img/perfil/'.$_SESSION['user'];
 			$arquivo_tmp = $img[ 'tmp_name' ];
 			move_uploaded_file ( $arquivo_tmp, $imagem );
+			query('UPDATE users SET imagem=? WHERE id='.$_SESSION['id'],[$imagem]);
+			$_SESSION['imagem']=$imagem;
 		}
-		echo $imagem;
 	}
 
 
