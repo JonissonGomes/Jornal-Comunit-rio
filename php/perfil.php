@@ -2,12 +2,14 @@
 <title>Perfil</title>
 </head>
 <body>
-<div style="width: 80%;margin-left: 50px; ">
+<div style="width: 80%;margin-left: 50px;display: flex;justify-content: space-around; ">
 <?php $stmt= $pdo->prepare('SELECT * from users where id=?');
 			$stmt->execute([$_SESSION['id']]);
 			$fetch=$stmt->fetch();?>
+	<div>
 <div class="cont postagens">
-  <label for='imagem' class="profile" style="background-image: url(<?=$_SESSION['imagem']?>);"></label>
+  <!-- <label for='imagem' class="profile" style="background-image: url(<?=$_SESSION['imagem']?>);"></label> -->
+  <label for="imagem"><img class="profpic profile" src="<?=$_SESSION['imagem']?>"></label>
   
   <div class="info">
     <h2><?= $fetch['username']?></h3>
@@ -30,6 +32,8 @@ $('#imagem').on('change', function(event) {
   	
   </div>
 </div>
+</div>
+<div class="postsP">
 <center><strong><h3 style="color: #fff;">Suas publicações</h3></strong></center>
 	<?php 
 	$feed=$pdo->prepare('SELECT u.username, p.* FROM users u INNER JOIN posts p WHERE u.id = p.users_id AND p.users_id = ?');
@@ -43,7 +47,7 @@ $('#imagem').on('change', function(event) {
 		echo "<h2>".$posts[$i]['tema']."</h2>";
 		echo "<p>".$posts[$i]['post']."</p>";
 		if ($posts[$i]['imagem']!=null) {
-			echo '<a href="coment.php?post='.$posts[$i]['id'].'"><img src="'.$posts[$i]['imagem'].'"></a>';
+			echo '<a href="coment.php?post='.$posts[$i]['id'].'"><img style="width:100%" src="'.$posts[$i]['imagem'].'"></a>';
 		}
 		echo '<div class="postA">';
 		if ($_SESSION['id']==$posts[$i]['users_id']) {
@@ -55,6 +59,6 @@ $('#imagem').on('change', function(event) {
  	}
 	?>
 </div>
-
+</div>
 </body>
 </html>

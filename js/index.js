@@ -110,6 +110,10 @@ $(document).ready(function(){
     	data: ratingValue,
     	type: 'POST',
     	cache: false,
+      success: function(retorno){
+        var div= document.getElementById('media');
+        div.innerHTML= retorno;
+      }
     });
 
     

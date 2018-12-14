@@ -48,13 +48,16 @@ if(!isset($_SESSION['id'])){
     <?php 
     if (isset($_GET['comunidade'])) {
       $feed=$pdo->prepare('SELECT * FROM posts WHERE comunidades_id=?');
+    }else{
+      $feed=$pdo->prepare('SELECT * FROM posts');
+      }
+
       $feed->execute([$_GET['comunidade']]);
       $posts=$feed->fetchall();
       for ($i=sizeof($posts)-1; $i >=0 ; $i--) { 
 
-        echo '<div class="postagens">';
+        echo '<div class="postagens" style="margin:auto">';
         echo '<a href="coment.php?post='.$posts[$i]['id'].'"><h1>'.$posts[$i]['title']."</h1></a>";
-        echo "<h2>".$posts[$i]['descricao']."</h2>";
         echo "<p>".$posts[$i]['post']."</p>";
         if ($posts[$i]['imagem']!=null) {
           echo '<a href="coment.php?post='.$posts[$i]['id'].'"><img src="'.$posts[$i]['imagem'].'"></a>';
@@ -68,7 +71,6 @@ if(!isset($_SESSION['id'])){
         echo "</div><br>";
 
       }
-    }
 
     ?>
   </body>

@@ -84,13 +84,13 @@ if(!isset ($_SESSION['user'])){
 });
 		</script>
 	</div>
-
+<div>
 	<?php 
 	$feed=$pdo->prepare('SELECT * FROM posts');
 	$feed->execute();
 	$posts=$feed->fetchall(); 
 	for ($i=sizeof($posts)-1; $i >=0 ; $i--) { 
-		echo '<div class="postagens">';
+		echo '<div class="postagens" style="margin: auto;" >';
 		echo '<footer>'.$posts[$i]['created_at'].'</footer>';
 		echo '<h1><a href="coment.php?post='.$posts[$i]['id'].'">'.$posts[$i]['title']."</a></h1>";
 		echo "<p>".$posts[$i]['post']."</p>";
@@ -107,7 +107,7 @@ if(!isset ($_SESSION['user'])){
 
 	}
 	?>
-
+</div>
 </body>
 </html>
 </body>

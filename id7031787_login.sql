@@ -21,10 +21,10 @@ SET time_zone = "+00:00";
 --
 -- Database: `id7031787_login`
 --
-drop Database if exists jc;
-CREATE Database jc;
-ALTER DATABASE `jc` CHARSET = UTF8 COLLATE = utf8_general_ci;
-use jc;
+-- drop Database if exists jc;
+-- CREATE Database jc;
+-- ALTER DATABASE `jc` CHARSET = UTF8 COLLATE = utf8_general_ci;
+-- use jc;
 -- --------------------------------------------------------
 
 --

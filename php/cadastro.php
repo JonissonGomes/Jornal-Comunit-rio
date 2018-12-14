@@ -22,7 +22,17 @@
 						<input type="text" name="cidade" placeholder="Cidade">
 						<input type="text" name="bairro" placeholder="Bairro"> 
 						<label>Data de Nascimento</label>
-						<input type="date" id="data" name="DDN" maxlength="<?= date('d/m/y')?>" required >
+						<input type="date" id="data" name="DDN" required >
+						<script type="text/javascript">
+							$('#data').on('blur',function(event) {
+								var agora= new Date();								
+								var escolhido = new Date(this.value);
+								if (agora < escolhido) {
+								console.log('data invalida');
+								this.value = '';
+								}
+							});
+						</script>
 						<label>E-mail</label> <input type="email" name="email" placeholder="Digite seu E-mail" required>
 						<label>Digite sua senha</label> <input type="password" name="password" placeholder="Digite sua senha" required="">
 						<label>Confirme sua senha</label> <input type="password" name="pass" placeholder="Confirme sua senha">
