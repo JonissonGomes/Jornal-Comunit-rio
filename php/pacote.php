@@ -73,6 +73,7 @@ function getimagem($img){
 
 
 function deletar($del){
+	query("DELETE FROM stars where post_id=?",[$del]);
 	query("DELETE FROM coments where posts_id=?",[$del]);
 	query("DELETE FROM posts where id=?",[$del]);
 }

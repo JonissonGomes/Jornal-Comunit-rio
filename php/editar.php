@@ -58,6 +58,7 @@
     </label>
   </div>
 					
+			<input type="password" name="id" value="<?=$_GET['edit']?>" style="display: none;">
 </div>
 				</div>
 			</div>
@@ -92,6 +93,5 @@
 		</script>
 	</div>
 
-			<input type="password" name="id" value="<?=$_GET['edit']?>" style="display: none;">
 </body>
 </html>
