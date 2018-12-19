@@ -63,7 +63,7 @@ function getimagem($img){
 			$imagem = '../img/perfil/'.$_SESSION['user'];
 			$arquivo_tmp = $img[ 'tmp_name' ];
 			move_uploaded_file ( $arquivo_tmp, $imagem );
-			query('UPDATE users SET imagem=? WHERE id='.$_SESSION['id'],[$imagem]);
+			query('UPDATE users SET imagem_perfil=? WHERE id='.$_SESSION['id'],[$imagem]);
 			$_SESSION['imagem']=$imagem;
 		}
 	}

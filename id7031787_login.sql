@@ -13,33 +13,29 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+
 
 --
 -- Database: `id7031787_login`
 --
--- drop Database if exists jc;
--- CREATE Database jc;
--- ALTER DATABASE `jc` CHARSET = UTF8 COLLATE = utf8_general_ci;
--- use jc;
--- --------------------------------------------------------
+drop Database if exists jc;
+CREATE Database jc;
+use jc;
+
 
 --
 -- Estrutura da tabela `coments`
 --
-drop table if exists stars;
 
-CREATE table stars(
+
+CREATE table stars (
   id int not null auto_increment PRIMARY KEY,
   valor int not null,
   user_id int not null,
   post_id int not null
   );
 
-drop table if exists coments;
+
 
 CREATE TABLE `coments` (
   `id` int(11) NOT NULL,
@@ -55,12 +51,12 @@ CREATE TABLE `coments` (
 
 
 
--- --------------------------------------------------------
+
 
 --
 -- Estrutura da tabela `comunidades`
 --
-drop table if exists comunidades;
+
 CREATE TABLE `comunidades` (
   `id` int(11) NOT NULL,
   `nome` varchar(50) COLLATE utf8_unicode_ci NOT NULL
@@ -99,7 +95,7 @@ INSERT INTO `comunidades` (`id`, `nome`) VALUES
 (27, 'Umbura');
 
 -- --------------------------------------------------------
-drop table if exists tema;
+
 CREATE TABLE `tema` (
  id int not null auto_increment PRIMARY KEY,
  nome varchar(30) COLLATE utf8_unicode_ci not null
@@ -109,11 +105,12 @@ CREATE TABLE `tema` (
 ('saneamento'),
 ('educação'),
 ('ação social'),
-('meio ambiente');
+('meio ambiente'),
+('segurança');
 --
 -- Estrutura da tabela `posts`
 --
-drop table if exists posts;
+
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -136,7 +133,7 @@ CREATE TABLE `posts` (
 --
 -- Estrutura da tabela `users`
 --
-drop table if exists users;
+
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -146,7 +143,7 @@ CREATE TABLE `users` (
   `ddn` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `imagem` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `imagem_perfil` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `validate` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -260,6 +257,3 @@ ALTER TABLE `posts`
   ADD CONSTRAINT `fk_posts_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -13,12 +13,11 @@ if(!isset($_SESSION['id'])){
     <div class="container">
       <h2 class="pr">Comunidades Cadastradas</h2>
       <p class="pr">Pesquise o nome da comunidade e tenha acesso as suas publicações.</p>
-      <p class="pr">Não encontrou uma comunidade? Faça o cadastro dela.</p>
       <div class="dropdown">
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Lista de Comunidades
           <span class="caret"></span></button>
           <ul class="dropdown-menu" id="ul-comunidades">
-            <input class="form-control" id="procurarcomunidade" type="text" placeholder="Search..">
+            <input class="form-control" id="procurarcomunidade" type="text" placeholder="Procurar...">
             <?php
             $stmt= $pdo->prepare('SELECT * FROM comunidades');
             $stmt->execute();

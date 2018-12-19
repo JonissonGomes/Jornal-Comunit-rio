@@ -9,27 +9,28 @@ if (isset($_FILES['imagem'])) {
 $postagem->postar();
 // echo $_FILES['imagem']['name'];
 
-$feed=fetchall('SELECT u.imagem, p.* FROM posts p inner join users u where p.users_id=u.id');
-for ($i=sizeof($feed)-1; $i >=0 ; $i--) { 
+$get=fetchall('SELECT u.imagem_perfil,u.username, p.* FROM posts p inner join users u where p.users_id=u.id');
+
+for ($i=sizeof($get)-1; $i >=0 ; $i--) { 
 ?>
 
 <div class="postagens" style="margin: auto;" >
-<footer><h6><?=$feed[$i]['created_at']?></h6><img class="profpic" src="<?=$feed[$i]['imagem'] ?>"></footer>
-	<h1><a href="coment.php?post=<?=$feed[$i]['id']?>"><?=$feed[$i]['title']?></a></h1>
-	<p><?=$feed[$i]['post']?></p>
+<div><a href="#" data-toggle="modal" data-target="#mPerfil" ><img style="position: relative !important;float: left;left: 7px;" class="profpic" src="<?=$get[$i]['imagem_perfil']?>" ></a href="#"><h4 style="    margin: 48px 126px;position: absolute;"><strong><?=$get[$i]['username']?></strong><br><?=$get[$i]['created_at']?></h4></div>
+	<h1><a href="coment.php?post=<?=$get[$i]['id']?>"><?=$get[$i]['title']?></a></h1>
+	<p><?=$get[$i]['post']?></p>
 	<?php 
-	if ($feed[$i]['imagem']!=null) {
-		echo '<a href="coment.php?post='.$feed[$i]['id'].'"><img src="'.$feed[$i]['imagem'].'"></a>';
+	if ($get[$i]['imagem']!=null) {
+		echo '<a href="coment.php?post='.$get[$i]['id'].'"><img src="'.$get[$i]['imagem'].'"></a>';
 	}
 	?>
 	<div class="postA">
 		<?php
-		if ($_SESSION['id']==$feed[$i]['users_id']) {
-			echo '<a onclick="confirma('.$feed[$i]['id'].')" title="exluir" ><button >	Excluir </button></a>';
-			echo '<a href="/php/editar.php?edit='.$feed[$i]['id'].'" title="editar"><button > Editar </button></a>';
+		if ($_SESSION['id']==$get[$i]['users_id']) {
+			echo '<a onclick="confirma('.$get[$i]['id'].')" title="exluir" ><button class="postAbutton">	Excluir </button></a>';
+			echo '<a href="/php/editar.php?edit='.$get[$i]['id'].'" title="editar"><button class="postAbutton"> Editar </button></a>';
 		}
 		?>
 	</div>
 </div>
 <br>
-<?php } ?>
+<?php include 'perfil.modal.php'; } ?>
