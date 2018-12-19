@@ -9,12 +9,12 @@ if (isset($_FILES['imagem'])) {
 $postagem->postar();
 // echo $_FILES['imagem']['name'];
 
-$feed=fetchall('SELECT * FROM posts');
+$feed=fetchall('SELECT u.imagem, p.* FROM posts p inner join users u where p.users_id=u.id');
 for ($i=sizeof($feed)-1; $i >=0 ; $i--) { 
 ?>
 
 <div class="postagens" style="margin: auto;" >
-<footer><?=$feed[$i]['created_at']?></footer>
+<footer><h6><?=$feed[$i]['created_at']?></h6><img class="profpic" src="<?=$feed[$i]['imagem'] ?>"></footer>
 	<h1><a href="coment.php?post=<?=$feed[$i]['id']?>"><?=$feed[$i]['title']?></a></h1>
 	<p><?=$feed[$i]['post']?></p>
 	<?php 
