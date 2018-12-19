@@ -29,7 +29,7 @@ class Postagem{
 		//SE O ARQUIVO FOR UMA IMAGEM O PROCESSO DE UPLOAD É INICIADO
 		if ($nam!=null) {
 			//O DESTINO DA IMAGEM É SALVO PARA QUE POSSA SER SALVO NO BD
-			$this->imagem = '../img/postagens/'.date('d-m-Y')."_".date('h-m-s') ;
+			$this->imagem = '../img/postagens/'.date('Y-m-d')."_".date('H-m-s') ;
 			$arquivo_tmp = $img[ 'tmp_name' ];
 			move_uploaded_file ( $arquivo_tmp, $this->imagem );
 		}

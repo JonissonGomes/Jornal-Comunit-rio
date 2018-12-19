@@ -43,7 +43,7 @@ drop table if exists coments;
 
 CREATE TABLE `coments` (
   `id` int(11) NOT NULL,
-  `coment` varchar(8000) COLLATE utf8_unicode_ci NOT NULL,
+  `coment` text COLLATE utf8_unicode_ci NOT NULL,
   `posts_id` int(11) NOT NULL,
   `users_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -118,7 +118,7 @@ CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `tema_id` int DEFAULT NULL,
-  `post` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `post` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `imagem` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `users_id` int(11) NOT NULL,
   `comunidades_id` int(11) DEFAULT NULL,

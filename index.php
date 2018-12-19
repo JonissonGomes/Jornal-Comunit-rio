@@ -17,7 +17,11 @@
 
     <section class='hero'>
       <div class='cta'>Fórum Comunitário:</br><span class="par"></span>resolução de problemas</div>
-      <button onclick="jump('sec-contact');" class='button-cta'>Publicar</button>
+   <?php if (isset($_SESSION['id'])): ?>
+      <a href="/php/home.php"><button class='button-cta'>Publicar</button></a>
+    <?php else: ?>
+    <button type="button" class="button-cta" data-toggle="modal" data-target="#mLogin">Publicar</button>
+  <?php endif ?>
     </section>
     <section class='coments'>
       <div class='section-name' id='sec-coments'></div>
@@ -133,7 +137,7 @@
       <section class='second-cta'>
         <div class='section-name' id='sec-contact'></div>
         <div class='section-title negative'>Crie sua conta já!</div>
-        <a href="cadastro.php"> <button class='button-sec-cta'>Criar</button></a>
+        <button type="button" class="button-sec-cta" data-toggle="modal" data-target="#mCadastrar">Criar</button>
       </section>
       <section class='footer'>
       </svg>

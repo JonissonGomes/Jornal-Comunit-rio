@@ -13,12 +13,12 @@ if(!isset ($_SESSION['user'])){
 <body>
 
 	<div class="form-group container" id="POSTS">
-		<form method="post" action="post.php?post" enctype="multipart/form-data">
+		<form id="postar" method="post" action="post.php?post" enctype="multipart/form-data">
 			<div class="formPost">
 				<label for="title">Titulo:</label>
 				<input class="form-control" type="text" id="title" name="title" size="20" maxlength="40" placeholder="Insira o titulo" required>	
 				<label>Postagem:</label>
-				<textarea class="form-control" name="post" maxlength="510" cols="63" rows="3" required></textarea><br>
+				<textarea class="form-control" name="post" required></textarea><br>
 				<div class="form-group row" style="display: flex; justify-content: space-between;">
 					<div class="col-xs-7">
 						<select class="form-control"  name="comunidades">
@@ -46,7 +46,7 @@ if(!isset ($_SESSION['user'])){
 					
 					  <div class="wrap-custom-file col-xs-5">
     <input type="file" name="imagem" id="image1" accept=".gif, .jpg, .png" />
-    <label class="sImage" for="image1">
+    <label id="image2" class="sImage" for="image1">
       <span>Selecionar Imagem</span>
     </label>
   </div>
@@ -56,6 +56,10 @@ if(!isset ($_SESSION['user'])){
 			</div>
 			<br>
 		</form>
+	</div>
+<div id="all">
+	
+</div>
 		<script type="text/javascript">
 		$('input[type="file"]').each(function(){
   // Refs
@@ -82,32 +86,28 @@ if(!isset ($_SESSION['user'])){
   
 // End loop of file input elements  
 });
-		</script>
-	</div>
-<div>
-	<?php 
-	$feed=$pdo->prepare('SELECT * FROM posts');
-	$feed->execute();
-	$posts=$feed->fetchall(); 
-	for ($i=sizeof($posts)-1; $i >=0 ; $i--) { 
-		echo '<div class="postagens" style="margin: auto;" >';
-		echo '<footer>'.$posts[$i]['created_at'].'</footer>';
-		echo '<h1><a href="coment.php?post='.$posts[$i]['id'].'">'.$posts[$i]['title']."</a></h1>";
-		echo "<p>".$posts[$i]['post']."</p>";
-		if ($posts[$i]['imagem']!=null) {
-			echo '<a href="coment.php?post='.$posts[$i]['id'].'"><img src="'.$posts[$i]['imagem'].'"></a>';
-		}
-		echo '<div class="postA">';
-		if ($_SESSION['id']==$posts[$i]['users_id']) {
-			echo '<a onclick="confirma('.$posts[$i]['id'].')" title="exluir" ><button >	Excluir </button></a>';
-			echo '<a href="/php/editar.php?edit='.$posts[$i]['id'].'" title="editar"><button > Editar </button></a>';
-		}
-		echo "</div>";
-		echo "</div><br>";
 
-	}
-	?>
-</div>
+		$('#postar').on('submit', function(event) {
+			event.preventDefault();
+			var data = new FormData(this);
+			$.ajax({
+				url: $(this).attr('action'),
+				enctype: 'multipart/form-data',
+				type: 'POST',
+				data: data,
+				processData: false,
+        cache: false,
+        contentType: false,
+				success: function(data){
+					$('#all').html(data);
+					$('#postar').trigger('reset');
+					$('#image2').removeAttr('style');
+				}
+			})
+			
+		});
+		getPostagens();
+		</script>
 </body>
 </html>
 </body>

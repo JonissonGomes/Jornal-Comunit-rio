@@ -143,3 +143,11 @@ function getComentarios(){
           }
         })
       }
+function getPostagens(){
+          $.ajax({
+          url: $('#postar').attr('action'),
+          success: function(data){
+            $('#all').html(data);
+          }
+        })
+      }
