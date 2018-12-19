@@ -63,7 +63,7 @@ function ver(){
 		s.setAttribute('type', 'text');
 	}
 }
-
+function estrelas(){
 $(document).ready(function(){
 				
 				/* 1. Visualizing things on Hover - See next part for action on click */
@@ -99,7 +99,7 @@ $(document).ready(function(){
     for (i = 0; i < onStar; i++) {
     	$(stars[i]).addClass('selected');
     }
-    $('.rating-widget').addClass('displaynone');
+    // $('.rating-widget').addClass('displaynone');
     
     // JUST RESPONSE (Not needed)
     var ratingValue ={ 'valor' : parseInt($('#stars li.selected').last().data('value'), 10)};
@@ -111,8 +111,8 @@ $(document).ready(function(){
     	type: 'POST',
     	cache: false,
       success: function(retorno){
-        var div= document.getElementById('media');
-        div.innerHTML= retorno;
+        $('#estrela').html(retorno);
+        console.log(retorno);
       }
     });
 
@@ -122,17 +122,24 @@ $(document).ready(function(){
   
   
 });
+}
 
-
-// $('#add_coment').on('submit', function(e) {
-//             e.preventDefault();
-//             $.ajax({
-//                 type: "POST",
-//                 url: $(this).attr('action'), //"add.php"
-//                 data: $(this).serialize(),
-//                 cache:false,
-//                 success: function(row) {
-                    
-//                 }
-//             });
-//         });
+function getEstrela(){
+  var pageurl = 'classificar.php';
+    $.ajax({
+      url: pageurl,
+      cache: false,
+      success: function(retorno){
+        $('#estrela').html(retorno);
+        estrelas();
+      }
+    });
+}
+function getComentarios(){
+          $.ajax({
+          url: $('#forms').attr('action'),
+          success: function(data){
+            $('#Pcoment').html(data);
+          }
+        })
+      }

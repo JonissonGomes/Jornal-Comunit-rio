@@ -31,45 +31,16 @@ $posts=$feed->fetch();?>
 			</div>
 		</footer>
 		<h1><?=$posts['title']?></h1>
-		<img src="<?= $posts['imagem']?>">
-		<?php
-		$classificado=fetch('SELECT * FROM stars WHERE user_id=? and post_id=?',[$_SESSION['id'],$_SESSION['post']]);
-		$media=fetch('SELECT AVG(valor) FROM stars where post_id=?',[$_SESSION['post']]);
-		?>
-		<center><h3 id="media"><?= number_format($media[0],2)?></h3></center>
-
-				<?php if ($classificado==null) {?>
-					
-		<section class='rating-widget'>
+		<img src="<?= $posts['imagem']?>">				
+		<div id='estrela'>
 			
-			<!-- Rating Stars Box -->
-			<div class='rating-stars text-center'>
-				<ul id='stars'>
-					<li class='star' title='Péssimo' data-value='1'>
-						<i class='fa fa-star fa-fw'></i>
-					</li>
-					<li class='star' title='Ruim' data-value='2'>
-						<i class='fa fa-star fa-fw'></i>
-					</li>
-					<li class='star' title='Bom' data-value='3'>
-						<i class='fa fa-star fa-fw'></i>
-					</li>
-					<li class='star' title='Muito bom' data-value='4'>
-						<i class='fa fa-star fa-fw'></i>
-					</li>
-					<li class='star' title='Excelente' data-value='5'>
-						<i class='fa fa-star fa-fw'></i>
-					</li>
-				</ul>
-			</div>
-			<div>
-				<span></span>
-			</div>
+			<script type="text/javascript">
+				getEstrela();
+			</script>
 			
-		</section>
+		</div>
 		
-			<?php	}
-		?>
+		
 		<p><?=$posts['post']?></p>
 
 		<br>
@@ -82,53 +53,27 @@ $posts=$feed->fetch();?>
 				</div>
 			</form>
 		</div>
-<!-- <script type="text/javascript">
-	$('#forms').on('submit', function(e) {
-            $.ajax({
-                type: "POST",
-                url: $(this).attr('action'), //"add.php"
-                data: $(this).serialize(),
-                success: function(row) {
-                		console.log(this);
-                    $('#add_weapon').trigger("reset");
-                }
-            });
-        });
-</script>
- --><div id="Pcoment">
-		<?php
-		//$stmt=$pdo->prepare('SELECT * FROM coments WHERE posts_id=?');
-		$stmt=$pdo->prepare("SELECT u.*, c.coment ,c.created_at FROM users u INNER JOIN coments c WHERE u.id = c.users_id AND c.posts_id = ?");
-		$stmt->execute([$_SESSION['post']]);
-		$get=$stmt->fetchall();
-		
-		for ($i=sizeof($get)-1; $i >=0 ; $i--) { 
-			if ($get[$i]['imagem']==null) {
-				$get[$i]['imagem']='../img/perfil-none.jpg';
-			}
-			?>
 
-		<br>
-		<div class="body_com">
-			<section class="profilebox">
-				<aside>
-					<a href="#" data-toggle="modal" data-target="#mPerfil" ><img class="profpic" src="<?=$get[$i]['imagem']?>" ></a href="#">
-				</aside>
-				<header>
-					<h1 class="prof-name"><?=$get[$i]['username']?></h1>
-					<h5 class="prof-user"><?=$get[$i]['created_at']?></h5>
-				</header>
-				<main class="user-desc">
-					<br><br><br>
-					<?= $get[$i]['coment'] ?>
-				</br>
-			</main>
-		</section>
-	</div>
-	
+		<div id="Pcoment">
 
-	<?php include 'perfil.modal.php'; }
-	?>	
-	</div>
-</body>
-</html>
+		</div>
+		<script type="text/javascript">
+			$('#forms').on('submit', function(event) {
+				event.preventDefault();
+				$.ajax({
+					url: $(this).attr('action'),
+					type: 'POST',
+					data: $(this).serialize(),
+					success: function(data){
+						getComentarios();
+					}
+				})
+				$(this).trigger('reset');
+
+
+			});
+			
+			getComentarios();
+		</script>
+	</body>
+	</html>
